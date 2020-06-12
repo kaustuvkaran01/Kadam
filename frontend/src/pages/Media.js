@@ -2,11 +2,19 @@ import React, { Component } from 'react';
 
 import styled from 'styled-components';
 
+//Importing the Components
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+
 class Media extends Component {
     render() {
         return (
             <MediaContainer>
-                This is the Media and Blogs page.
+                <Navbar />
+                <p>
+                    This is the Media Page
+                </p>
+                <Footer />
             </MediaContainer>
         );
     }
@@ -15,5 +23,6 @@ class Media extends Component {
 export default Media;
 
 const MediaContainer = styled.div`
-  display: flex;
+display: flex;
+flex-direction: column;
 `;

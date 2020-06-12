@@ -14,11 +14,11 @@ import Media from './pages/Media';
 function App() {
   return (
     <Switch>
-      <Route exact path="/" component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/impact" component={Impact} />
-      <Route path="/mad" component={Mad} />
-      <Route path="/media" component={Media} />
+      <Route exact path="/" component={ Home } />
+      <Route path="/about" component={ About } />
+      <Route path="/impact" component={ Impact } />
+      <Route path="/mad" component={ Mad } />
+      <Route path="/media" component={ Media } />
     </Switch>
   );
 }

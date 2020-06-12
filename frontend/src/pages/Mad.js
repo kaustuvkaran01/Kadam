@@ -2,11 +2,19 @@ import React, { Component } from 'react';
 
 import styled from 'styled-components';
 
+//Importing the Components
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+
 class Mad extends Component {
     render() {
         return (
             <MadContainer>
-                This is the Make a Difference a page.
+                <Navbar />
+                <p>
+                    This is the Make a Difference page.
+                </p>
+                <Footer />
             </MadContainer>
         );
     }
@@ -15,5 +23,6 @@ class Mad extends Component {
 export default Mad;
 
 const MadContainer = styled.div`
-  display: flex;
+display: flex;
+flex-direction: column;
 `;

@@ -2,12 +2,19 @@ import React, { Component } from 'react';
 
 import styled from 'styled-components';
 
+//Importing the Components
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 class Impact extends Component {
     render() {
         return (
             <ImpactContainer>
-                This is the 'OUR Impact' page
+                <Navbar />
+                <p>
+                    This is the OUR Impact page.
+                </p>
+                <Footer />
             </ImpactContainer>
         );
     }
@@ -16,5 +23,6 @@ class Impact extends Component {
 export default Impact;
 
 const ImpactContainer = styled.div`
-  display: flex;
+display: flex;
+flex-direction: column;
 `;
