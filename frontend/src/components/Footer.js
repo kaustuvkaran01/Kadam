@@ -17,12 +17,11 @@ export default function Footer() {
           <br />
           <br />
           <br />
-          <AiOutlineHome /> Lol this NGO doesn't have a permanent office. Ghumne
-          chaloge?
+          <AiOutlineHome /> This is a Virtual NGO.
           <br />
           <br />
           <br />
-          <MdLocalPhone /> 8059645585... Coffee?
+          <MdLocalPhone /> Phone number
         </p>
       </Location>
       <NewsLetter>
