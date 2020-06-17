@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import styled from 'styled-components';
+import landingimage from '../components/images/landing-image.jpg';
 
 //Importing the Components
 import Navbar from '../components/Navbar';
@@ -11,9 +12,12 @@ class Home extends Component {
         return (
             <HomeContainer>
                 <Navbar />
-                <p style={{height:"90vh"}}>
+                {/* <p style={{height:"90vh"}}>
                     This is the Home page.
-                </p>
+                </p> */}
+                <div className="landing-image">
+                    hello
+                </div>
                 <Footer />
             </HomeContainer>
         );
@@ -25,4 +29,10 @@ export default Home;
 const HomeContainer = styled.div`
     display: flex;
     flex-direction: column;
+
+    .landing-image{
+        background-image: url({landing-image});
+
+    }
 `;
+
