@@ -6,16 +6,27 @@ import { NavLink, Link } from 'react-router-dom';
 function Navbar() {
   return (
     <NavbarContainer>
-        {/* <a href style={{paddingLeft:"2.5rem"}}>Home</a>
+      {/* <a href style={{paddingLeft:"2.5rem"}}>Home</a>
         <a href>Something</a>
         <a href>Homeset</a>
         <a href style={{paddingRight:"2.5rem"}}>Somethingset</a> */}
-        <NavLink className='' to='/'>HOME</NavLink>  
-        <NavLink className='' to='/about'>ABOUT US</NavLink>
-        <NavLink className='' to='/impact'>OUR IMPACT</NavLink>
-        <NavLink className='' to='/mad'>MAKE A DIFFERENCE</NavLink>
-        <NavLink className='' to='/media'>MEDIA AND BLOG</NavLink>
-
+      <div className="links">
+        <NavLink className="link-text" to="/">
+          HOME
+        </NavLink>
+        <NavLink className="link-text" to="/about">
+          ABOUT US
+        </NavLink>
+        <NavLink className="link-text" to="/impact">
+          OUR IMPACT
+        </NavLink>
+        <NavLink className="link-text" to="/mad">
+          MAKE A DIFFERENCE
+        </NavLink>
+        <NavLink className="link-text" to="/media">
+          MEDIA AND BLOG
+        </NavLink>
+      </div>
     </NavbarContainer>
   );
 }
@@ -28,6 +39,8 @@ const NavbarContainer = styled.div`
   color: #ecc731;
   height: 10vh;
   width: 100%;
-    margin: 0 auto;
-    justify-content: space-between;
+  margin: 0 auto;
+  justify-content: space-between;
+
+    
 `;
