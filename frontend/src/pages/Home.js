@@ -16,7 +16,7 @@ class Home extends Component {
                     This is the Home page.
                 </p> */}
                 <div className="landing-image">
-                    hello
+                    
                 </div>
                 <Footer />
             </HomeContainer>
@@ -31,7 +31,9 @@ const HomeContainer = styled.div`
     flex-direction: column;
 
     .landing-image{
-        background-image: url({landing-image});
+        height: 100vh;
+        background-image: url(${landingimage});
+        background-size: cover;
 
     }
 `;
