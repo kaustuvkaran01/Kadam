@@ -43,7 +43,7 @@ const NavbarContainer = styled.div`
   width: 100%;
   margin: 0 auto;
   justify-content: space-between;
-  
+  font-size:2vh;
   
   
   
