@@ -44,7 +44,7 @@ export default function Footer() {
                 fontSize: "small",
                 width: "15rem",
               }}
-            />
+              />
             <input
               type="submit"
               value="SUBMIT"
@@ -56,8 +56,9 @@ export default function Footer() {
                 fontSize: "small",
                 width: "5rem",
               }}
-            />
+              />
           </form>
+            
         </p>
         <p className="heading">
           <strong>Follow Us</strong>

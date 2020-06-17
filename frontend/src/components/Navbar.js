@@ -7,17 +7,27 @@ import logo from './images/logo.png';
 function Navbar() {
   return (
     <NavbarContainer>
-      
-        
-        <img className="logo" src={logo}/>
-        <div className='links'>
-        <NavLink className='link-text' to='/'>HOME</NavLink>  
-        <NavLink className='link-text' to='/about'>ABOUT US</NavLink>
-        <NavLink className='link-text' to='/impact'>OUR IMPACT</NavLink>
-        <NavLink className='link-text' to='/mad'>MAKE A DIFFERENCE</NavLink>
-        <NavLink className='link-text' to='/media'>MEDIA AND BLOG</NavLink>
-        </div>
+      <NavLink className="" to="/">
+        <img className="logo" src={logo} />
+      </NavLink>
 
+      <div className="all-links">
+        <NavLink className="link-text" to="/">
+          HOME
+        </NavLink>
+        <NavLink className="link-text" to="/about">
+          ABOUT US
+        </NavLink>
+        <NavLink className="link-text" to="/impact">
+          OUR IMPACT
+        </NavLink>
+        <NavLink className="link-text" to="/mad">
+          MAKE A DIFFERENCE
+        </NavLink>
+        <NavLink className="link-text" to="/media">
+          MEDIA AND BLOG
+        </NavLink>
+      </div>
     </NavbarContainer>
   );
 }
@@ -27,26 +37,37 @@ const NavbarContainer = styled.div`
 
   display: flex;
   flex-direction: row;
-  background: grey;
+  background: #32302F;
   color: #ecc731;
-  height: 10vh;
+  height: 12vh;
   width: 100%;
   margin: 0 auto;
-  // justify-content: space-between;
-  float: right;
-
+  justify-content: space-between;
+  
+  
+  
+  
+  
   .logo{
-    height:5rem;
-    width:5rem;
+    height:4.5rem;
+    width:4.5rem;
+    padding-bottom:0.2rem;
   }
-
-  .links{
+  
+  .all-links{
     display: flex;
-    justify-content:space-around;
+    justify-content:flex-end;
     margin : 1.5rem 1.5rem 0rem 1.5rem;
   }
   .link-text{
-    padding-left: 1.5rem
-
+    &:hover {
+      border-bottom: 2px solid rgba(255,255,255,0.5);
+      
+    }
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom:0.5rem;
+    text-decoration:none;
+    color:white;
   }
     `;
