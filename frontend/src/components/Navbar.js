@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { AiOutlineHome } from 'react-icons/ai';
-
+import {Link} from 'react-router-dom';
 
 function Navbar() {
   return (
     <NavbarContainer>
-        <a href style={{paddingLeft:"2.5rem"}}>Home</a>
-        <a href>Something</a>
+        <Link to ="/">HOME</Link>
+        <Link to ="/about">ABOUT</Link>
         <a href>Homeset</a>
         <a href style={{paddingRight:"2.5rem"}}>Somethingset</a>
     </NavbarContainer>
