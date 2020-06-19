@@ -34,7 +34,7 @@ function Navbar() {
 export default Navbar;
 
 const NavbarContainer = styled.div`
-
+  position:fixed;
   display: flex;
   flex-direction: row;
   background: #32302F;
@@ -44,9 +44,6 @@ const NavbarContainer = styled.div`
   margin: 0 auto;
   justify-content: space-between;
   font-size:2vh;
-  
-  
-  
   
   .logo{
     height:4.5rem;

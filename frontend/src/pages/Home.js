@@ -56,7 +56,7 @@ const HomeContainer = styled.div`
         display:flex;
         justify-content: center;
         align-items: center;
-        height: 88vh;
+        height: 100vh;
         //navbar is 12vh
         background-image: url(${landingimage});
         background-size: cover;
@@ -88,6 +88,7 @@ const HomeContainer = styled.div`
         background-size:cover;
         background-position:center;
         display:flex;
+        
     }
     
 
