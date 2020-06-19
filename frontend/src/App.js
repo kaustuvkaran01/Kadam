@@ -11,6 +11,7 @@ import Impact from './pages/Impact';
 import Mad from './pages/Mad';
 import Media from './pages/Media';
 import Blog from './pages/Blog';
+import Test from './pages/test'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="/mad" component={ Mad } />
       <Route path="/media" component={ Media } />
       <Route path="/blog" component={ Blog } />
+      <Route path="/test" component={ Test } />
     </Switch>
   );
 }
