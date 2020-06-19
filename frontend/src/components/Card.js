@@ -1,13 +1,14 @@
 import React from 'react';
-
+import logo from './images/landing-image.jpg';
 import styled from 'styled-components';
 
 function Card( props ) {
+
   return (
     <CardContainer>
-        <img />
+      <img src={props.logo}/>
         <p>
-            {props.text}
+          {props.text}
         </p>
     </CardContainer>
   );
@@ -16,14 +17,14 @@ export default Card;
 
 const CardContainer = styled.div`
     display: flex;
+    flex-wrap:wrap;
+    background: yellow;
     height: 25rem;
     width: 20rem;
-    background: yellow;
-    margin: 1rem;
-
-    img {
-        // src=${props => props.imageurl}
-        src = url();
-        height:50%;
+    margin: 1rem auto;
+    img{
+        height: 50%;
+        width: 100%;
     }
+
 `;

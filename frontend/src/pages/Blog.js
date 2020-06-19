@@ -5,17 +5,26 @@ import styled from 'styled-components';
 //Importing the Components
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import Card from '../components/Card';
 
-import BlogMain from '../components/Blog/BlogMain';
+import logo from '../components/images/landing-image.jpg'
 
 class Blog extends Component {
     render() {
         return (
-            <BlogContainer>
-                <Navbar />
-                    <BlogMain />
-                <Footer />
-            </BlogContainer>
+          <BlogContainer>
+            <Navbar />
+            <div className="cards">
+              <Card text="This is the first card" image={logo}/>
+              <Card text="This is the second card" image={logo}/>
+              <Card text="This is the third card" image={logo}/>
+              <Card text="This is the fourth card" image={logo}/>
+              <Card text="This is the fifth card" image={logo}/>
+              <Card text="This is the sixth card" image={logo}/>
+              <Card text="This is the seventh card" image={logo}/>
+            </div>
+            <Footer />
+          </BlogContainer>
         );
     }
 }
@@ -23,7 +32,14 @@ class Blog extends Component {
 export default Blog;
 
 const BlogContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+//   display: flex;
+//   flex-direction: column;
+    .cards{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 1rem auto;
+        justify-content: center;
+    }
 
 `;

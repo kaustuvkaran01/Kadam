@@ -7,29 +7,31 @@ import logo from './images/logo.png';
 function Navbar() {
   return (
     <NavbarContainer>
-      <NavLink className="" to="/">
-        <img className="logo" src={logo} />
-      </NavLink>
+      <div className="nav">
+        <NavLink className="" to="/">
+          <img className="logo" src={logo} />
+        </NavLink>
 
-      <div className="all-links">
-        <NavLink className="link-text" to="/">
-          HOME
-        </NavLink>
-        <NavLink className="link-text" to="/about">
-          ABOUT US
-        </NavLink>
-        <NavLink className="link-text" to="/impact">
-          OUR IMPACT
-        </NavLink>
-        <NavLink className="link-text" to="/mad">
-          MAKE A DIFFERENCE
-        </NavLink>
-        <NavLink className="link-text" to="/media">
-          MEDIA
-        </NavLink>
-        <NavLink className="link-text" to="/blog">
-          BLOGS
-        </NavLink>
+        <div className="all-links">
+          <NavLink className="link-text" to="/">
+            HOME
+          </NavLink>
+          <NavLink className="link-text" to="/about">
+            ABOUT US
+          </NavLink>
+          <NavLink className="link-text" to="/impact">
+            OUR IMPACT
+          </NavLink>
+          <NavLink className="link-text" to="/mad">
+            MAKE A DIFFERENCE
+          </NavLink>
+          <NavLink className="link-text" to="/media">
+            MEDIA
+          </NavLink>
+          <NavLink className="link-text" to="/blog">
+            BLOGS
+          </NavLink>
+        </div>
       </div>
     </NavbarContainer>
   );
@@ -37,17 +39,21 @@ function Navbar() {
 export default Navbar;
 
 const NavbarContainer = styled.div`
-  position:fixed;
-  display: flex;
-  flex-direction: row;
-  background: #32302F;
-  color: #ecc731;
-  height: 12vh;
-  width: 100%;
-  margin: 0 auto;
-  justify-content: space-between;
-  font-size:2vh;
   
+  padding-bottom: 10vh;
+  .nav{
+
+    position:fixed;
+    display: flex;
+    flex-direction: row;
+    background: #32302F;
+    color: #ecc731;
+    height: 10vh;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+    font-size:2vh;
+  }
   .logo{
     height:4.5rem;
     width:4.5rem;
