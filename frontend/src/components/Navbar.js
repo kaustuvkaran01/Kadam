@@ -46,9 +46,9 @@ const NavbarContainer = styled.div`
     position:fixed;
     display: flex;
     flex-direction: row;
-    background: #32302F;
+    background: #404040;
     color: #ecc731;
-    height: 10vh;
+    height: 11vh;
     width: 100%;
     margin: 0 auto;
     justify-content: space-between;

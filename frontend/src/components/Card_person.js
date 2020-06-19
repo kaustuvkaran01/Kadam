@@ -1,28 +1,28 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import logo from './images/landing-image.jpg';
+import logo from './images/gurleen.jpg';
 
 
 
-function Card( props ) {
+function Card_person( props ) {
 
   return (
-    <CardContainer>
+    <Card_personContainer>
       <img src={logo} />
       <p>
         {props.key}
         {props.text}
+        <p className="description">{props.description}</p>
       </p>
-      
-    </CardContainer>
+    </Card_personContainer>
   );
 }
-export default Card;
+export default Card_person;
 
-const CardContainer = styled.div`
+const Card_personContainer = styled.div`
     display: flex;
-    flex-wrap:wrap;
+    flex-direction: column;
     background: transparent;
     height: 25rem;
     width: 20rem;
@@ -32,12 +32,17 @@ const CardContainer = styled.div`
     align-items: center;
     img{
         height: 50%;
-        width: 100%;
+        width: 60%;
+        border-radius: 24px;
     }
     // &:hover {
 
     //     transform: scale(1.05);
     //     transition: transform 0.25s ease-out;
     // }
+
+    .description {
+        color: rgba(0,0,0,0.4);
+    }
     
 `;

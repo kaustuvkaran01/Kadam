@@ -51,6 +51,7 @@ export default Home;
 const HomeContainer = styled.div`
     display: flex;
     flex-direction: column;
+    font-family: Avenir Roman;
 
     .landing-image{
         display:flex;
@@ -118,6 +119,7 @@ const HomeContainer = styled.div`
         display:flex;
         justify-content:center;
         align-items: center;
+        border-radius: 24px;
     }
 `;
 
