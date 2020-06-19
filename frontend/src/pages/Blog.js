@@ -34,7 +34,6 @@ export default Blog;
 const BlogContainer = styled.div`
 //   display: flex;
 //   flex-direction: column;
-    background: black;
     .cards{
         display: flex;
         flex-direction: row;
