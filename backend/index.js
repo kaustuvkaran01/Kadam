@@ -1,17 +1,16 @@
 const express = require("express");
+const connectDB = require("./config/db");
 const app = express();
 const cookieParser = require("cookie-parser");
-const mongoose = require("mongoose");
+const cors = require("cors");
 app.use(cookieParser());
 app.use(express.json());
 
-mongoose.connect(
-  "mongodb://localhost:27017/mernauth",
-  { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false },
-  () => {
-    console.log("successfully connected to database");
-  }
-);
+//CORS
+app.use(cors({ origin: true, credentials: true }));
+
+//Connecting to MongoDB
+connectDB();
 
 //ROUTES
 const index = require("./routes/index");
