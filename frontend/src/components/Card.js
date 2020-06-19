@@ -5,7 +5,7 @@ import logo from './images/landing-image.jpg';
 import ProgressBar from "../components/progress-bar";
 
 const testData = [
-  { bgcolor: "#ef6c00", completed: 60 },
+  { bgcolor: "#ef6c00", completed: 50 },
 ];
 
 function Card( props ) {

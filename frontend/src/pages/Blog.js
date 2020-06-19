@@ -47,6 +47,7 @@ export default Blog;
 const BlogContainer = styled.div`
   //   display: flex;
   //   flex-direction: column;
+  font-family: Avenir Roman;
   .cards {
     display: flex;
     flex-direction: row;
