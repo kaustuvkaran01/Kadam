@@ -25,7 +25,10 @@ function Navbar() {
           MAKE A DIFFERENCE
         </NavLink>
         <NavLink className="link-text" to="/media">
-          MEDIA AND BLOG
+          MEDIA
+        </NavLink>
+        <NavLink className="link-text" to="/blog">
+          BLOGS
         </NavLink>
       </div>
     </NavbarContainer>
