@@ -31,6 +31,9 @@ function Navbar() {
           <NavLink className="link-text" to="/blog">
             BLOGS
           </NavLink>
+          <NavLink className="link-text" to="/test">
+            Test
+          </NavLink>
         </div>
       </div>
     </NavbarContainer>
@@ -42,7 +45,7 @@ const NavbarContainer = styled.div`
   
   padding-bottom: 10vh;
   .nav{
-
+    z-index: 99;
     position:fixed;
     display: flex;
     flex-direction: row;

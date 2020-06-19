@@ -6,7 +6,7 @@ import success1 from '../components/images/success1.jpg';
 import success2 from '../components/images/success2.jpg';
 import success3 from '../components/images/success3.jpg';
 import success4 from '../components/images/success4.jpg';
-
+import {Progress} from 'reactstrap';
 //Importing the Components
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -16,6 +16,7 @@ class Home extends Component {
         return (
           <HomeContainer>
             <Navbar />
+           
             <div className="landing-image">
               <div className="landing-text">
                 “One person can make a difference and everyone should try" -
@@ -33,6 +34,13 @@ class Home extends Component {
                 Yousafzai. Our motto of doing good, one step at a time, has
                 allowed us to achieve a great many things, and spread happiness
                 and awareness to thousands of individuals across India.
+                <Progress multi style={{width:500}}>
+          <Progress bar value='15' />
+          <Progress bar color='success' value='30' />
+          <Progress bar color='info' value='25' />
+          <Progress bar color='warning' value='20' />
+          <Progress bar color='danger' value='5' />
+        </Progress>
               </div>
             </div>
             {/*Success story section*/}
