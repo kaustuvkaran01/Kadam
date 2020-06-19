@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './images/landing-image.jpg';
+
 import styled from 'styled-components';
 
 function Card( props ) {
@@ -18,7 +18,7 @@ export default Card;
 const CardContainer = styled.div`
     display: flex;
     flex-wrap:wrap;
-    background: yellow;
+    background: white;
     height: 25rem;
     width: 20rem;
     margin: 1rem auto;

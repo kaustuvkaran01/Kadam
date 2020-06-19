@@ -34,12 +34,15 @@ export default Blog;
 const BlogContainer = styled.div`
 //   display: flex;
 //   flex-direction: column;
+    background: black;
     .cards{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         margin: 1rem auto;
         justify-content: center;
+        margin-left: 5rem;
+        margin-right: 5rem; 
     }
 
 `;
