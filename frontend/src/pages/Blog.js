@@ -12,25 +12,26 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 function Blog() {
-  const [items, setitems] = useState([]);
-  useEffect(() => {
-    axios
-      .post("localhost:5000/blogs")
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    setItems(items);
-  }, []);
+//   const [items, setItems] = useState([]);
+//   useEffect(() => {
+//     axios
+//       .post("localhost:5000/blogs")
+//       .then((res) => {
+//         console.log(res.data);
+//       })
+//       .catch((err) => {
+//         console.log(err);
+//       });
+//     setItems(items);
+//   }, []);
   return (
     <BlogContainer>
       <Navbar />
       <div className="cards">
-        {items.map((item) => (
+        {/* {items.map((item) => (
           <Card key={item._id} text={item.title} />
-        ))}
+        ))} */}
+        <Card text="This is the first card" image={logo} />
         <Card text="This is the second card" image={logo} />
         <Card text="This is the third card" image={logo} />
         <Card text="This is the fourth card" image={logo} />
@@ -54,5 +55,7 @@ const BlogContainer = styled.div`
     flex-wrap: wrap;
     margin: 1rem auto;
     justify-content: center;
+    margin-left: 5rem;
+    margin-right: 5rem;
   }
 `;

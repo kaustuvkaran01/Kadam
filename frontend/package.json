@@ -13,6 +13,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-tabs": "^3.1.1",
+    "reactstrap": "^8.4.1",
     "styled-components": "^5.1.1",
     "styled-media-query": "^2.1.2",
     "tachyons": "^4.12.0"
