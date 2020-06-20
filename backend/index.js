@@ -19,7 +19,8 @@ const userRouter = require("./routes/User");
 app.use("/user", userRouter);
 const adminRouter = require("./routes/Admin");
 app.use("/admin", adminRouter);
-
+const authRouter = require("./routes/Auth");
+app.use("/google", authRouter);
 app.listen(5000, () => {
   console.log("Listening on 5000 port");
 });
