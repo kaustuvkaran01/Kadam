@@ -31,7 +31,7 @@ userRouter.post("/register", (req, res) => {
     else {
       const newUser = new User({ username, password });
       newUser.save((err) => {
-        if (err)
+        if (err || password == null)
           res.status(500).json({
             message: { msgBody: "Error has occured", msgError: true },
           });
