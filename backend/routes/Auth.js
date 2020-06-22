@@ -2,6 +2,7 @@ const express = require("express");
 const passport = require("passport");
 const router = express.Router();
 
+// GOOGLE
 // @desc    Auth with Google
 // @route   GET /auth/google
 router.get("/google", passport.authenticate("google", { scope: ["profile"] }));
@@ -11,6 +12,19 @@ router.get("/google", passport.authenticate("google", { scope: ["profile"] }));
 router.get(
   "/google/callback",
   passport.authenticate("google", { failureRedirect: "/" }),
+  (req, res) => {
+    res.redirect("/blogs");
+  }
+);
+
+//FACEBOOK
+router.get("/facebook", passport.authenticate("facebook"));
+
+// @desc    Google auth callback
+// @route   GET /auth/google/callback
+router.get(
+  "/facebook/callback",
+  passport.authenticate("facebook", { failureRedirect: "/" }),
   (req, res) => {
     res.redirect("/blogs");
   }
