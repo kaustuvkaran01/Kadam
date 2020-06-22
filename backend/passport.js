@@ -83,25 +83,15 @@ passport.use(
       callbackURL: "/auth/facebook/callback",
       profileFields: ["emails", "name", "displayName"],
     },
-    async (accessToken, refreshToken, profile, done) => {
-      const {
-        _json: { email, first_name, last_name },
-      } = profile;
+    function (accessToken, refreshToken, profile, done) {
+      const { email, first_name, last_name } = profile._json;
       const userData = {
         email,
-        name: first_name + " " + last_name,
+        firstName: first_name,
+        lastName: last_name,
       };
-      try {
-        let user = await User.findOne({ email: email });
-        if (user) {
-          done(null, user);
-        } else {
-          user = await User.create(newUser);
-          done(null, user);
-        }
-      } catch (err) {
-        console.error(err);
-      }
+      new User(userData).save();
+      done(null, profile);
     }
   )
 );
