@@ -1,11 +1,13 @@
 // Script for adding admin
-const Admin = require("./models/User");
+const Admin = require("../models/User");
 const mongoose = require("mongoose");
-mongoose.connect("localhost:27017/mernauth");
+const keys = require("../config/keys");
+mongoose.connect(keys.mongodb.mongoURI);
 
 const adminInput = {
-  username: USER_ID,
-  password: PASSWORD,
+  email: "email@gmail.com",
+  username: "KADAM",
+  password: "123123",
   isAdmin: true,
 };
 

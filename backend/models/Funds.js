@@ -1,28 +1,34 @@
 const mongoose = require("mongoose");
 
-const BlogSchema = new mongoose.Schema({
+const FundSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
   },
-  author: {
+  campaign: {
     type: String,
     required: true,
   },
   description: {
     type: String,
   },
+  target: {
+    type: Number,
+  },
+  collected: {
+    type: Number,
+  },
   published_date: {
     type: Date,
   },
   updated_date: {
     type: Date,
-    default: Date.now,
+    default: Date.now(),
   },
-  isApproved: {
+  isComplete: {
     type: Boolean,
     default: false,
   },
 });
 
-module.exports = Blog = mongoose.model("blog", BlogSchema);
+module.exports = Fund = mongoose.model("fund", FundSchema);

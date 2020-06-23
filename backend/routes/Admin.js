@@ -6,6 +6,7 @@ const JWT = require("jsonwebtoken");
 const User = require("../models/User");
 const Donate = require("../models/Donate");
 const Blog = require("../models/Blogs");
+const Fund = require("../models/Funds");
 
 const signToken = (userID) => {
   return JWT.sign(
@@ -24,6 +25,9 @@ adminRouter.post(
   (req, res) => {
     if (req.isAuthenticated() && req.user.isAdmin) {
       const { _id, username } = req.user;
+      const token = signToken(_id);
+      res.cookie("access_token", token, { httpOnly: true, sameSite: true });
+      res.status(200).json({ isAuthenticated: true, user: { username } });
     } else {
       res.status(500).json({
         message: {
@@ -99,8 +103,9 @@ adminRouter.post(
     if (req.isAuthenticated() && req.user.isAdmin) {
       req.body.isApproved = true;
       console.log(req.body);
+      const published_date = Date.now();
       const { title, author, description, isApproved } = req.body;
-      Blog.create({ title, author, description, isApproved })
+      Blog.create({ title, author, description, isApproved, published_date })
         .then((blog) => res.json({ msg: "Blog added successfully" }))
         .catch((err) =>
           res.status(400).json({ error: "Unable to add this blog" })
@@ -170,6 +175,24 @@ adminRouter.put(
 );
 
 //Hide a blog
+adminRouter.put(
+  "/blogs/hide/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    if (req.isAuthenticated() && req.user.isAdmin && req.blog.isApproved) {
+      req.body.isApproved = false;
+      Blog.findByIdAndUpdate(req.params.id, req.body)
+        .then((blog) => res.json({ msg: "Updated successfully" }))
+        .catch((err) =>
+          res.status(400).json({ error: "Unable to update the Database" })
+        );
+    } else {
+      res.status(403).json({
+        message: { msgBody: "You're not an admin,go away", msgError: true },
+      });
+    }
+  }
+);
 
 //Volunteer
 adminRouter.put(
@@ -183,6 +206,78 @@ adminRouter.put(
         .catch((err) =>
           res.status(400).json({ error: "Unable to update the Database" })
         );
+    } else {
+      res.status(403).json({
+        message: { msgBody: "You're not an admin,go away", msgError: true },
+      });
+    }
+  }
+);
+
+// ADMIN FUNDRAISER
+
+//Post a fundraiser
+
+adminRouter.post(
+  "/funds",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    if (req.isAuthenticated() && req.user.isAdmin) {
+      console.log(req.body);
+      const { title, description, target, campaign } = req.body;
+      const published_date = Date.now();
+      console.log(published_date);
+      Fund.create({
+        title,
+        description,
+        target,
+        campaign,
+        published_date,
+      })
+        .then((blog) => res.json({ msg: "Fundraiser added successfully" }))
+        .catch((err) =>
+          res.status(400).json({ error: "Unable to add Fundraiser" })
+        );
+    } else {
+      res.status(403).json({
+        message: { msgBody: "You're not an admin,go away", msgError: true },
+      });
+    }
+  }
+);
+
+//Update Fundraiser
+
+adminRouter.put(
+  "/funds/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    if (req.isAuthenticated() && req.user.isAdmin) {
+      Fund.findByIdAndUpdate(req.params.id, req.body)
+        .then((blog) => res.json({ msg: "Updated successfully" }))
+        .catch((err) =>
+          res.status(400).json({ error: "Unable to update the Database" })
+        );
+    } else {
+      res.status(403).json({
+        message: { msgBody: "You're not an admin,go away", msgError: true },
+      });
+    }
+  }
+);
+
+//Delete fundraiser
+
+adminRouter.delete(
+  "/funds/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    if (req.isAuthenticated() && req.user.isAdmin) {
+      Fund.findByIdAndRemove(req.params.id, req.body)
+        .then((blog) =>
+          res.json({ mgs: "Fundraiser entry deleted successfully" })
+        )
+        .catch((err) => res.status(404).json({ error: "No such Fundraiser" }));
     } else {
       res.status(403).json({
         message: { msgBody: "You're not an admin,go away", msgError: true },
