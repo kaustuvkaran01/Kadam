@@ -5,7 +5,7 @@ const passportConfig = require("../passport");
 const JWT = require("jsonwebtoken");
 const User = require("../models/User");
 const Donate = require("../models/Donate");
-
+const Fund = require("../models/Funds");
 const signToken = (userID) => {
   return JWT.sign(
     {
@@ -99,6 +99,26 @@ userRouter.post(
     } else {
       res.status(403).json({
         message: { msgBody: "You're not a volunteer,go away", msgError: true },
+      });
+    }
+  }
+);
+
+//Donation
+
+userRouter.post(
+  "/donate/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    if (req.isAuthenticated()) {
+      User.findByIdAndUpdate(req.params.id, req.body)
+        .then((blog) => res.json({ msg: "Updated successfully" }))
+        .catch((err) =>
+          res.status(400).json({ error: "Unable to update the Database" })
+        );
+    } else {
+      res.status(403).json({
+        message: { msgBody: "Login first", msgError: true },
       });
     }
   }
