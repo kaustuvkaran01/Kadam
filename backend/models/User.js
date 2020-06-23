@@ -5,6 +5,9 @@ const UserSchema = new mongoose.Schema({
   googleId: {
     type: String,
   },
+  facebookId: {
+    type: String,
+  },
   firstName: {
     type: String,
     required: true,
@@ -22,7 +25,7 @@ const UserSchema = new mongoose.Schema({
   },
   username: {
     type: String,
-    // required: true,
+    required: true,
     min: 6,
     max: 15,
   },
@@ -31,6 +34,7 @@ const UserSchema = new mongoose.Schema({
   },
   email: {
     type: String,
+    required: true,
   },
   isAdmin: {
     type: Boolean,

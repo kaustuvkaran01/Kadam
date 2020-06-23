@@ -58,11 +58,13 @@ passport.use(
         lastName: email.name.familyName,
         image: email.photos[0].value,
       };
-
+      const filter = { email: email.emails[0].value };
       try {
-        let user = await User.findOne({ googleId: email.id });
-
+        let user = await User.findOne(filter);
         if (user) {
+          user.googleId = email.id;
+          user.image = email.photos[0].value;
+          await user.save();
           done(null, user);
         } else {
           user = await User.create(newUser);
@@ -93,11 +95,14 @@ passport.use(
         lastName: email.name.familyName,
         image: email.photos[0].value,
       };
-
+      const filter = { email: email.emails[0].value };
       try {
-        let user = await User.findOne({ facebookId: email.id });
+        let user = await User.findOne(filter);
 
         if (user) {
+          user.facebookId = email.id;
+          user.image = email.photos[0].value;
+          await user.save();
           done(null, user);
         } else {
           user = await User.create(newUser);

@@ -24,9 +24,6 @@ adminRouter.post(
   (req, res) => {
     if (req.isAuthenticated() && req.user.isAdmin) {
       const { _id, username } = req.user;
-      const token = signToken(_id);
-      res.cookie("access_token", token, { httpOnly: true, sameSite: true });
-      res.status(200).json({ isAuthenticated: true, user: { username } });
     } else {
       res.status(500).json({
         message: {
