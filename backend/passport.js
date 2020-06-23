@@ -49,17 +49,18 @@ passport.use(
       clientSecret: keys.google.CLIENT_SECRET,
       callbackURL: "/auth/google/callback",
     },
-    async (accessToken, refreshToken, profile, done) => {
+    async (accessToken, refreshToken, profile, email, done) => {
       const newUser = {
-        googleId: profile.id,
-        username: profile.displayName,
-        firstName: profile.name.givenName,
-        lastName: profile.name.familyName,
-        image: profile.photos[0].value,
+        googleId: email.id,
+        username: email.displayName,
+        email: email.emails[0].value,
+        firstName: email.name.givenName,
+        lastName: email.name.familyName,
+        image: email.photos[0].value,
       };
 
       try {
-        let user = await User.findOne({ googleId: profile.id });
+        let user = await User.findOne({ googleId: email.id });
 
         if (user) {
           done(null, user);
@@ -81,17 +82,30 @@ passport.use(
       clientID: keys.facebook.APP_ID,
       clientSecret: keys.facebook.APP_SECRET,
       callbackURL: "/auth/facebook/callback",
-      profileFields: ["emails", "name", "displayName"],
+      profileFields: ["emails", "name", "displayName", "photos"],
     },
-    function (accessToken, refreshToken, profile, done) {
-      const { email, first_name, last_name } = profile._json;
-      const userData = {
-        email,
-        firstName: first_name,
-        lastName: last_name,
+    async (accessToken, refreshToken, profile, email, done) => {
+      const newUser = {
+        facebookId: email.id,
+        username: email.displayName,
+        email: email.emails[0].value,
+        firstName: email.name.givenName,
+        lastName: email.name.familyName,
+        image: email.photos[0].value,
       };
-      new User(userData).save();
-      done(null, profile);
+
+      try {
+        let user = await User.findOne({ facebookId: email.id });
+
+        if (user) {
+          done(null, user);
+        } else {
+          user = await User.create(newUser);
+          done(null, user);
+        }
+      } catch (err) {
+        console.error(err);
+      }
     }
   )
 );

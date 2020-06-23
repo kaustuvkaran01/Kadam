@@ -17,7 +17,10 @@ const signToken = (userID) => {
 // GOOGLE
 // @desc    Auth with Google
 // @route   GET /auth/google
-router.get("/google", passport.authenticate("google", { scope: ["profile"] }));
+router.get(
+  "/google",
+  passport.authenticate("google", { scope: ["profile", "email"] })
+);
 
 // @desc    Google auth callback
 // @route   GET /auth/google/callback
@@ -36,7 +39,10 @@ router.get(
 );
 
 //FACEBOOK
-router.get("/facebook", passport.authenticate("facebook"));
+router.get(
+  "/facebook",
+  passport.authenticate("facebook", { scope: ["email"] })
+);
 
 // @desc    Facebook auth callback
 // @route   GET /auth/facebook/callback
