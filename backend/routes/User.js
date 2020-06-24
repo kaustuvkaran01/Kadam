@@ -119,7 +119,6 @@ userRouter.post(
         .catch((err) =>
           res.status(400).json({ error: "Unable to update the Database" })
         );
-      let funds = null;
       Fund.findById(req.params.id)
         .exec()
         .then((result) => {
@@ -131,6 +130,58 @@ userRouter.post(
       res.status(403).json({
         message: { msgBody: "Login first", msgError: true },
       });
+    }
+  }
+);
+
+userRouter.get(
+  "/get_profile",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    if (req.isAuthenticated()) {
+      const id = req.user._id;
+      User.findById(id)
+        .then((results) => res.json(results))
+        .catch((err) => res.status(404).json({ nouserfound: "No User found" }));
+    } else {
+      res
+        .status(403)
+        .json({ message: { msgBody: "Login first", msgError: true } });
+    }
+  }
+);
+
+userRouter.get(
+  "/get_donation",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    if (req.isAuthenticated()) {
+      const id = req.user._id;
+      Donate.find({ user: id })
+        .then((results) => res.json(results))
+        .catch((err) => res.status(404).json({ nouserfound: "No User found" }));
+    } else {
+      res
+        .status(403)
+        .json({ message: { msgBody: "Login first", msgError: true } });
+    }
+  }
+);
+
+//FUND ID
+userRouter.get(
+  "/get_donation/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    if (req.isAuthenticated()) {
+      const id = req.params.id;
+      Fund.findById(id)
+        .then((results) => res.json(results))
+        .catch((err) => res.status(404).json({ nouserfound: "No User found" }));
+    } else {
+      res
+        .status(403)
+        .json({ message: { msgBody: "Login first", msgError: true } });
     }
   }
 );
