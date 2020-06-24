@@ -29,6 +29,10 @@ const FundSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  isApproved: {
+    type: Boolean,
+    default: true,
+  },
 });
 
 module.exports = Fund = mongoose.model("fund", FundSchema);

@@ -269,7 +269,7 @@ adminRouter.put(
 //Delete fundraiser
 
 adminRouter.delete(
-  "/funds/:id",
+  "/funds/hide/:id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     if (req.isAuthenticated() && req.user.isAdmin) {
@@ -286,4 +286,23 @@ adminRouter.delete(
   }
 );
 
+//Hide a fundraiser
+adminRouter.put(
+  "/funds/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    if (req.isAuthenticated() && req.user.isAdmin) {
+      req.body.isApproved = false;
+      Fund.findByIdAndUpdate(req.params.id, req.body)
+        .then((blog) => res.json({ msg: "Updated successfully" }))
+        .catch((err) =>
+          res.status(400).json({ error: "Unable to update the Database" })
+        );
+    } else {
+      res.status(403).json({
+        message: { msgBody: "You're not an admin,go away", msgError: true },
+      });
+    }
+  }
+);
 module.exports = adminRouter;
