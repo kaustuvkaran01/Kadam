@@ -31,7 +31,6 @@ const UserSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    required: true,
   },
   isAdmin: {
     type: Boolean,
@@ -41,7 +40,6 @@ const UserSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  donate: [{ type: mongoose.Schema.Types.ObjectId, ref: "Donate" }],
 });
 
 UserSchema.pre("save", function (next) {
