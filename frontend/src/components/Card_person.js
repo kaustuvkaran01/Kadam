@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import logo from './images/gurleen.jpg';
+import logo from './images/hamza.jpg';
 
 
 

@@ -7,8 +7,8 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 
-import logo1 from '../components/images/gurleen.jpg';
-import logo2 from '../components/images/hamza.jpg';
+import logo1 from '../components/images/bp.jpg';
+import logo2 from '../components/images/bp2.jpg';
 class Media extends Component {
     render() {
         return (
