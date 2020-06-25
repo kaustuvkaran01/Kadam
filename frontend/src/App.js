@@ -26,7 +26,10 @@ function App() {
       <Route path="/blog" component={ Blog } />
       <Route path="/test" component={ Test } />
       <Route path="/admin" component={ AdminPanel } />
-      <Route path="/user" component={ UserPanel } />
+
+      //User routes
+      <Route path="/user/bio" component={ UserPanel } />
+      <Route path="/user/contact" component={ UserPanel } />
     </Switch>
   );
 }
