@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Blog = require("../models/Blogs");
 const Fund = require("../models/Funds");
+const User = require("../models/User");
 
 //GET request visible to all
 

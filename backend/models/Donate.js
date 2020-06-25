@@ -5,12 +5,12 @@ const DonateSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  total: {
-    type: Number,
-  },
   user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
-  fund: [{ type: mongoose.Schema.Types.ObjectId, ref: "Donate" }],
-  email: { type: mongoose.Schema.Types.String, ref: "User", required: true },
+  fund: { type: mongoose.Schema.Types.ObjectId, ref: "Donate" },
+  donatedAt: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 module.exports = mongoose.model("Donate", DonateSchema);

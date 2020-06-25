@@ -17,6 +17,7 @@ const FundSchema = new mongoose.Schema({
   },
   collected: {
     type: Number,
+    default: 0,
   },
   published_date: {
     type: Date,
