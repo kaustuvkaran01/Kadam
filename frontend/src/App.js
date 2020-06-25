@@ -13,6 +13,7 @@ import Media from './pages/Media';
 import Blog from './pages/Blog';
 import Test from './pages/test';
 import AdminPanel from './pages/AdminPanel';
+import UserPanel from './pages/UserPanel';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Route path="/blog" component={ Blog } />
       <Route path="/test" component={ Test } />
       <Route path="/admin" component={ AdminPanel } />
+      <Route path="/user" component={ UserPanel } />
     </Switch>
   );
 }

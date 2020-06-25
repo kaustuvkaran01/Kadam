@@ -36,9 +36,15 @@ function Admin() {
                 <CampaignCard text="ShhEx Ed" value="80"/>
           </div>
         </div>
-        <div className="main-card">
+        {/* <div className="main-card">
           <CampaignCard text="Something" value="90"/>
-        </div>
+        </div> */}
+        <br />
+        <br />
+        <br />
+      <div>
+        <Table />
+      </div>
       </div>
     </AdminContainer>
   );
@@ -74,7 +80,8 @@ const AdminContainer = styled.div`
 
     .main-area {
         display: flex;
-        height:100vh;
+        flex-direction: column;
+        height:200vh;
         width: 80vw;
         margin-left: 20vw;
         background: #f5f2d0;
@@ -88,6 +95,7 @@ const AdminContainer = styled.div`
       display: flex;
       flex-wrap:wrap;
       width: 40vw;
+      margin: 3.5rem;
     }
     .main-card {
       display: flex;
