@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Profile from '../components/Profile/Profile';
-import ProfileContact from '../components/Profile/ProfileContact';
+import ProfileBill from '../components/Profile/ProfileBill';
 
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -12,8 +12,8 @@ function UserPanel() {
   return (
     <UserPanelContainer>
         <Navbar />
-        {/* <Profile />         I'll set up the routing later on */} 
-        <ProfileContact />
+        <Profile /> 
+        {/* <ProfileBill /> */}
     </UserPanelContainer>
   );
 }

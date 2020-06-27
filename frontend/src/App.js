@@ -29,7 +29,6 @@ function App() {
 
       //User routes
       <Route path="/user/bio" component={ UserPanel } />
-      <Route path="/user/contact" component={ UserPanel } />
     </Switch>
   );
 }
