@@ -18,7 +18,8 @@ const signToken = (userID) => {
 };
 
 userRouter.post("/register", (req, res) => {
-  const { email, username, password } = req.body;
+  const { email, username, password, firstName, lastName } = req.body;
+  const createdAt = Date.now();
   User.findOne({ username }, (err, user) => {
     if (err)
       res
@@ -29,7 +30,14 @@ userRouter.post("/register", (req, res) => {
         .status(400)
         .json({ message: { msgBody: "Username taken", msgError: true } });
     else {
-      const newUser = new User({ email, username, password });
+      const newUser = new User({
+        email,
+        username,
+        password,
+        firstName,
+        lastName,
+        createdAt,
+      });
       newUser.save((err) => {
         if (err || password == null)
           res.status(500).json({

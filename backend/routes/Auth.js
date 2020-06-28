@@ -32,7 +32,7 @@ router.get(
       const { _id } = req.user;
       const token = signToken(_id);
       res.cookie("access_token", token, { httpOnly: true, sameSite: true });
-      res.redirect("/blogs");
+      res.redirect("http://localhost:3000/profile");
       // res.status(200).json({ isAuthenticated: true, user: { username } });
     }
   }

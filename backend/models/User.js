@@ -19,12 +19,12 @@ const UserSchema = new mongoose.Schema({
   },
   createdAt: {
     type: Date,
-    default: Date.now,
   },
   username: {
     type: String,
     min: 6,
     max: 15,
+    required: true,
   },
   password: {
     type: String,

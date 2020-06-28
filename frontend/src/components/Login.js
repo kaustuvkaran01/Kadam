@@ -1,7 +1,8 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import AuthService from "../Services/AuthService";
 import Message from "./Message";
 import { AuthContext } from "../Context/AuthContext";
+import Axios from "axios";
 
 const Login = (props) => {
   const [user, setUser] = useState({ username: "", password: "" });
@@ -23,6 +24,12 @@ const Login = (props) => {
         props.history.push("/blog");
       } else setMessage(message);
     });
+  };
+  const _handleSignInClick = () => {
+    // Authenticate using via passport api in the backend
+    // Open Twitter login page
+    // Upon successful login, a cookie session will be stored in the client
+    window.open("http://localhost:5000/auth/google", "_self");
   };
 
   return (
@@ -51,6 +58,12 @@ const Login = (props) => {
         />
         <button className="btn btn-lg btn-primary btn-block" type="submit">
           Log in{" "}
+        </button>
+        <button
+          className="btn btn-lg btn-primary btn-block"
+          onClick={_handleSignInClick}
+        >
+          Log in with Google
         </button>
       </form>
       {message ? <Message message={message} /> : null}

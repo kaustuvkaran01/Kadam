@@ -31,8 +31,8 @@ function App() {
       <Route path="/test" component={Test} />
       <Route path="/admin" component={AdminPanel} />
       //User routes
-      <Route path="/profile" component={UserPanel} />
-      //Login
+      <PrivateRoute path="/profile" component={UserPanel} />
+      //Before Login
       <UnPrivateRoute path="/login" component={Login} />
       <UnPrivateRoute path="/register" component={Register} />
     </Switch>
