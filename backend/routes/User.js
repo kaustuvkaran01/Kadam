@@ -150,6 +150,22 @@ userRouter.get(
     }
   }
 );
+userRouter.get(
+  "/update_profile",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    if (req.isAuthenticated()) {
+      const id = req.user._id;
+      User.findByIdAndUpdate(id, req.body)
+        .then((results) => res.json(results))
+        .catch((err) => res.status(404).json({ nouserfound: "No User found" }));
+    } else {
+      res
+        .status(403)
+        .json({ message: { msgBody: "Login first", msgError: true } });
+    }
+  }
+);
 
 userRouter.get(
   "/get_donation",

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "./logo.svg";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
@@ -14,6 +14,10 @@ import Mad from "./pages/Mad";
 import Test from "./pages/test";
 import AdminPanel from "./pages/AdminPanel";
 import UserPanel from "./pages/UserPanel";
+import PrivateRoute from "./hocs/PrivateRoute";
+import UnPrivateRoute from "./hocs/UnPrivateRoute";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 function App() {
   return (
@@ -27,7 +31,10 @@ function App() {
       <Route path="/test" component={Test} />
       <Route path="/admin" component={AdminPanel} />
       //User routes
-      <Route path="/user/bio" component={UserPanel} />
+      <Route path="/profile" component={UserPanel} />
+      //Login
+      <UnPrivateRoute path="/login" component={Login} />
+      <UnPrivateRoute path="/register" component={Register} />
     </Switch>
   );
 }
