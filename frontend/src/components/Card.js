@@ -1,61 +1,62 @@
-import React from 'react';
+import React from "react";
 
-import styled from 'styled-components';
-import logo from './images/landing-image.jpg';
+import styled from "styled-components";
+import logo from "./images/landing-image.jpg";
 import ProgressBar from "../components/progress-bar";
 
-const testData = [
-  { bgcolor: "#ef6c00", completed: 50 },
-];
+const testData = [{ bgcolor: "#ef6c00", collected: 80, target: 100 }];
 
-function Card( props ) {
-
+function Card(props) {
   return (
     <CardContainer>
       <img src={logo} />
       <div className="flex">
-      <p>
-        {/* {props.key} */}
-        {props.text}
-      </p>
-      <div >
-      {testData.map((item, idx) => (
-        <ProgressBar key={idx} bgcolor={item.bgcolor} completed={item.completed} />
-      ))}
-    </div>
-    </div>
+        <p>
+          {/* {props.key} */}
+          {props.text}
+        </p>
+        <div>
+          {testData.map((item, idx) => (
+            <ProgressBar
+              key={idx}
+              bgcolor="#ef6c00"
+              collected={props.collected}
+              target={props.target}
+            />
+          ))}
+        </div>
+      </div>
     </CardContainer>
   );
 }
 export default Card;
 
 const CardContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  background: transparent;
+  height: 25rem;
+  width: 20rem;
+  margin: 1rem auto;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  img {
+    height: 50%;
+    width: 100%;
+  }
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.25s ease-out;
+  }
+  .progress {
+    width: 100%;
+  }
+  .flex {
+    width: 100%;
     display: flex;
-    flex-wrap:wrap;
-    background: transparent;
-    height: 25rem;
-    width: 20rem;
-    margin: 1rem auto;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    img{
-        height: 50%;
-        width: 100%;
-    }
-    &:hover {
-
-        transform: scale(1.05);
-        transition: transform 0.25s ease-out;
-    }
-    .progress {
-        width: 100%;
-    }
-    .flex{
-      width:100%;
-      display:flex;
-      flex-direction: column;
-      //justify-content:center;
-      // align-items:center;
-    }
+    flex-direction: column;
+    //justify-content:center;
+    // align-items:center;
+  }
 `;
