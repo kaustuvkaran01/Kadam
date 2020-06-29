@@ -16,8 +16,10 @@ import AdminPanel from "./pages/AdminPanel";
 import UserPanel from "./pages/UserPanel";
 import PrivateRoute from "./hocs/PrivateRoute";
 import UnPrivateRoute from "./hocs/UnPrivateRoute";
+import AdminRoute from "./hocs/AdminRoute";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import AdminLogin from "./components/Admin/AdminLogin";
 
 function App() {
   return (
@@ -29,9 +31,10 @@ function App() {
       <Route path="/media" component={Media} />
       <Route path="/blog" component={Blog} />
       <Route path="/test" component={Test} />
-      <Route path="/admin" component={AdminPanel} />
+      <Route path="/admin/login" component={AdminLogin} />
       //User routes
       <PrivateRoute path="/profile" component={UserPanel} />
+      <AdminRoute path="/admin" component={AdminPanel} />
       //Before Login
       <UnPrivateRoute path="/login" component={Login} />
       <UnPrivateRoute path="/register" component={Register} />

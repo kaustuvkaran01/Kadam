@@ -8,7 +8,7 @@ import { AuthContext } from "../Context/AuthContext";
 
 function Navbar() {
   useEffect(() => {
-    console.log(user, isAuthenticated);
+    console.log(user.isAdmin);
   }, []);
 
   const { isAuthenticated, user, setIsAuthenticated, setUser } = useContext(
