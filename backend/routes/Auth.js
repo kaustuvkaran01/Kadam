@@ -6,7 +6,7 @@ const JWT = require("jsonwebtoken");
 const signToken = (userID) => {
   return JWT.sign(
     {
-      iss: "KADAMBEST123",
+      iss: "KADAMBEST123ADMIN",
       sub: userID,
     },
     "KADAMBEST",
@@ -26,7 +26,9 @@ router.get(
 // @route   GET /auth/google/callback
 router.get(
   "/google/callback",
-  passport.authenticate("google", { failureRedirect: "/" }),
+  passport.authenticate("google", {
+    failureRedirect: "http://localhost:3000/",
+  }),
   (req, res) => {
     if (req.isAuthenticated()) {
       const { _id } = req.user;
@@ -48,13 +50,15 @@ router.get(
 // @route   GET /auth/facebook/callback
 router.get(
   "/facebook/callback",
-  passport.authenticate("facebook", { failureRedirect: "/" }),
+  passport.authenticate("facebook", {
+    failureRedirect: "http://localhost:3000/",
+  }),
   (req, res) => {
     if (req.isAuthenticated()) {
       const { _id } = req.user;
       const token = signToken(_id);
       res.cookie("access_token", token, { httpOnly: true, sameSite: true });
-      res.redirect("/blogs");
+      res.redirect("http://localhost:3000/profile");
     }
   }
 );
