@@ -71,4 +71,5 @@ export default Test;
 
 const TestContainer = styled.div`
   background: #f4f5f6;
+  height: 120vh;
 `;

@@ -20,6 +20,8 @@ import AdminRoute from "./hocs/AdminRoute";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import AdminLogin from "./components/Admin/AdminLogin";
+import AddBlog from './components/Admin/AddBlog';
+import AddFundraiser from './components/Admin/AddFundraiser';
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
       <Route path="/blog" component={Blog} />
       <Route path="/test" component={Test} />
       <Route path="/admin/login" component={AdminLogin} />
+      <Route path="/admin/addblog" component={AddBlog} />
+      <Route path="/admin/addfundraiser" component={AddFundraiser} />
       //User routes
       <PrivateRoute path="/profile" component={UserPanel} />
       <AdminRoute path="/admin" component={AdminPanel} />
