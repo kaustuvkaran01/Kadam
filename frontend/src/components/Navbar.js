@@ -123,4 +123,10 @@ const NavbarContainer = styled.div`
     text-decoration: none;
     color: white;
   }
+  button{
+    background: #007BFF;
+    border-radius: 12px;
+    border: none;
+    color: white;
+  }
 `;
