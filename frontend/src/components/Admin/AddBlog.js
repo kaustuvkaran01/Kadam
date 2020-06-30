@@ -47,7 +47,10 @@ function AddBlog() {
           <br />
           <label for="desc">Description</label>
           <br />
-          <input
+          <textarea cols="60" rows="5" class="textarea">
+            Enter details here
+          </textarea>
+          {/* <input
             type="textarea"
             id="description"
             name="text"
@@ -55,7 +58,7 @@ function AddBlog() {
             className="desc"
             cols="30"
             rows="10"
-          />
+          /> */}
           {/* <br />
           <br />
           <label for="fname">I IDENTIFY AS</label>
@@ -120,15 +123,15 @@ function AddBlog() {
 export default AddBlog;
 
 const AddBlogContainer = styled.div`
-background: #f5f2d0;
+  background: #f5f2d0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   height: 100vh;
   font-family: Avenir Roman;
   margin: 0.5rem auto;
-  margin-top:0;
-  margin-bottom:0;
+  margin-top: 0;
+  margin-bottom: 0;
   h2 {
     font-weight: 400;
   }
@@ -143,6 +146,7 @@ background: #f5f2d0;
     background: white;
     margin: 3rem auto;
     margin-top: 1.5rem;
+    margin-bottom: 0;
     border-radius: 12px;
     box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.1);
   }
@@ -160,11 +164,15 @@ background: #f5f2d0;
     background: #f5f5f5;
     padding-left: 0.85rem;
   }
-  .desc{
-    height: 5rem;
-    cols:30;
-    rows:5;
+  .textarea {
+    border-radius: 6px;
+    background: #f5f5f5;
   }
+  // .desc{
+  //   height: 5rem;
+  //   cols:30;
+  //   rows:5;
+  // }
   .about-input {
     height: 10.5rem;
   }

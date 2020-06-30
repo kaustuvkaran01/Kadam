@@ -3,6 +3,7 @@ import AuthService from "../../Services/AuthService";
 import Message from "../Message";
 import { AuthContext } from "../../Context/AuthContext";
 import Axios from "axios";
+import styled from 'styled-components';
 
 const AdminLogin = (props) => {
   const [user, setUser] = useState({ username: "", password: "" });
@@ -28,36 +29,48 @@ const AdminLogin = (props) => {
   };
 
   return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <h3>Please sign in</h3>
-        <label htmlFor="username" className="sr-only">
-          Username:{" "}
-        </label>
-        <input
-          type="text"
-          name="username"
-          onChange={onChange}
-          className="form-control"
-          placeholder="Enter Username"
-        />
-        <label htmlFor="password" className="sr-only">
-          Password:{" "}
-        </label>
-        <input
-          type="password"
-          name="password"
-          onChange={onChange}
-          className="form-control"
-          placeholder="Enter Password"
-        />
-        <button className="btn btn-lg btn-primary btn-block" type="submit">
-          Log in{" "}
-        </button>
-      </form>
-      {message ? <Message message={message} /> : null}
-    </div>
+    <AdminLoginContainer>
+      <div className="container-form">
+        <form onSubmit={onSubmit}>
+          <h3>Please sign in</h3>
+          <label htmlFor="username" className="sr-only">
+            Username:{" "}
+          </label>
+          <input
+            type="text"
+            name="username"
+            onChange={onChange}
+            className="form-control"
+            placeholder="Enter Username"
+          />
+          <label htmlFor="password" className="sr-only">
+            Password:{" "}
+          </label>
+          <input
+            type="password"
+            name="password"
+            onChange={onChange}
+            className="form-control"
+            placeholder="Enter Password"
+          />
+          <button className="btn btn-lg btn-primary btn-block" type="submit">
+            Log in{" "}
+          </button>
+        </form>
+        {message ? <Message message={message} /> : null}
+      </div>
+    </AdminLoginContainer>
   );
 };
 
 export default AdminLogin;
+
+const AdminLoginContainer = styled.div`
+  background: #f5f2d0;  
+display: flex;
+  .container-form{
+    margin: 2rem auto;
+    margin-bottom: 0;
+    width: 50%;
+  }
+`;
