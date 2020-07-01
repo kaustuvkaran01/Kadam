@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 //Importing the Components
-import Navbar from '../components/Navbar';
+import NavbarNew from '../components/test2nav';
 import Footer from '../components/Footer';
 
 import TabContentOne from '../components/Media/TabContentOne';
@@ -22,7 +22,7 @@ class Media extends Component {
     render() {
         return (
           <MediaContainer>
-            <Navbar />
+            <NavbarNew />
             <h3 style={{ fontSize: "2.5rem", margin: "1rem auto" }}>Gallery</h3>
             <div className="gallery">
               <Tabs className="tabs" selectedIndex={this.state.tabIndex}
@@ -84,7 +84,7 @@ const MediaContainer = styled.div`
 display: flex;
 flex-direction: column;
 font-family: Avenir Roman;
-font-weight: 900;
+// font-weight: 900;
 
 .gallery {
     display: flex;

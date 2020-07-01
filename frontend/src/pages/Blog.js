@@ -3,14 +3,14 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 //Importing the Components
-import Navbar from "../components/Navbar";
+import NavbarNew from "../components/test2nav";
 import Footer from "../components/Footer";
 
 class Blog extends Component {
   render() {
     return (
       <BlogContainer>
-        <Navbar />
+        <NavbarNew />
         <p>This is Blog page.</p>
         <Footer />
       </BlogContainer>

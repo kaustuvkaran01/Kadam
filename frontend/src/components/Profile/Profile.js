@@ -36,13 +36,8 @@ function Profile() {
           <p>{User.email}</p>
         </div>
       </div>
-<<<<<<< HEAD
-      {/* <h2 style={{ margin: "auto" }}>Thank you for Donating!</h2> */}
-      <div className="bill-cards">
-=======
       
       {/* <div className="bill-cards">
->>>>>>> 342346b9d9f209e2f4ad25ce25c91cc02ed42868
         <BillCard amount="15000" cause="Bloody Pure Campaign" />
         <BillCard amount="15000" cause="Bloody Pure Campaign" />
         <BillCard amount="15000" cause="Bloody Pure Campaign" />

@@ -4,9 +4,11 @@ import styled from "styled-components";
 
 import ProgressBar from "../components/progress-bar";
 import Table from "../components/Admin/Table";
+import NavbarNew from '../components/test2nav';
 
 import AuthService from "../Services/AuthService";
 import { AuthContext } from "../Context/AuthContext";
+
 const testData = [
   { bgcolor: "#6a1b9a", completed: 60 },
   { bgcolor: "#00695c", completed: 30 },
@@ -39,6 +41,7 @@ function Test() {
 
   return (
     <TestContainer>
+    <NavbarNew/>
       <div>
         {testData.map((item, idx) => (
           <ProgressBar

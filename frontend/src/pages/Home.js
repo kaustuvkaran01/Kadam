@@ -8,14 +8,15 @@ import success3 from '../components/images/success3.jpg';
 import success4 from '../components/images/success4.jpg';
 
 //Importing the Components
-import Navbar from '../components/Navbar';
+// import Navbar from '../components/Navbar';
+import NavbarNew from '../components/test2nav'
 import Footer from '../components/Footer';
 
 class Home extends Component {
     render() {
         return (
           <HomeContainer>
-            <Navbar />
+            <NavbarNew />
             <div className="landing-image">
               <div className="landing-text">
                 “One person can make a difference and everyone should try" -
@@ -52,6 +53,7 @@ const HomeContainer = styled.div`
     display: flex;
     flex-direction: column;
     font-family: Avenir Roman;
+    
 
     .landing-image{
         display:flex;
