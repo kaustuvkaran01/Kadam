@@ -12,6 +12,7 @@ import Blog from "./pages/Blog";
 import Media from "./pages/Media";
 import Mad from "./pages/Mad";
 import Test from "./pages/test";
+import Example from "./pages/test2nav";
 import AdminPanel from "./pages/AdminPanel";
 import UserPanel from "./pages/UserPanel";
 import PrivateRoute from "./hocs/PrivateRoute";
@@ -20,6 +21,7 @@ import AdminRoute from "./hocs/AdminRoute";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import AdminLogin from "./components/Admin/AdminLogin";
+
 
 function App() {
   return (
@@ -31,6 +33,7 @@ function App() {
       <Route path="/media" component={Media} />
       <Route path="/blog" component={Blog} />
       <Route path="/test" component={Test} />
+      <Route path="/test2" component={Example} />
       <Route path="/admin/login" component={AdminLogin} />
       //User routes
       <PrivateRoute path="/profile" component={UserPanel} />

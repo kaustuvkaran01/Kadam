@@ -91,7 +91,7 @@ function Profile() {
           </form>
         </div>
       </div>
-      <h2 style={{ margin: "auto" }}>Thank you for Donating!</h2>
+      {/* <h2 style={{ margin: "auto" }}>Thank you for Donating!</h2> */}
       <div className="bill-cards">
         <BillCard amount="15000" cause="Bloody Pure Campaign" />
         <BillCard amount="15000" cause="Bloody Pure Campaign" />
