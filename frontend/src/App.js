@@ -21,6 +21,8 @@ import AdminRoute from "./hocs/AdminRoute";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import AdminLogin from "./components/Admin/AdminLogin";
+import AddBlog from "./components/Admin/AddBlog";
+import AddFundraiser from "./components/Admin/AddFundraiser";
 
 
 function App() {
@@ -35,6 +37,8 @@ function App() {
       <Route path="/test" component={Test} />
       <Route path="/test2" component={Example} />
       <Route path="/admin/login" component={AdminLogin} />
+      <AdminRoute path="/admin/addblog" component={AddBlog} />
+      <AdminRoute path="/admin/addfundraiser" component={AddFundraiser} />
       //User routes
       <PrivateRoute path="/profile" component={UserPanel} />
       <AdminRoute path="/admin" component={AdminPanel} />

@@ -14,6 +14,7 @@ function UserPanel() {
         <Navbar />
         <Profile /> 
         {/* <ProfileBill /> */}
+        <Footer />
     </UserPanelContainer>
   );
 }
