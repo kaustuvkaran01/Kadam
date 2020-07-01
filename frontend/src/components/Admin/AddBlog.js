@@ -1,53 +1,63 @@
 import React, { useEffect, useState } from "react";
-
+import { useFormik } from "formik";
 import styled from "styled-components";
 
 import BillCard from "../Profile/BillCard";
 import axios from "axios";
 
 function AddBlog() {
-  const [User, setUser] = useState([]);
-  useEffect(() => {
-    axios
-      .get("user/get_profile")
-      .then((res) => {
-        console.log(res);
-        setUser(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
+  const blog = useFormik({
+    initialValues: {
+      title: "",
+      author: "",
+      description: "",
+    },
+    onSubmit: (values) => {
+      console.log("Form data", values);
+      axios
+        .post("/admin/blogs", values)
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err));
+    },
+  });
 
   return (
     <AddBlogContainer>
       <div className="container-form">
         <h2>Blog Information</h2>
-        <form className="form-about-bio">
-          <label for="title">Title</label>
+        <form className="form-about-bio" onSubmit={blog.handleSubmit}>
+          <label htmlFor="title">Title:</label>
           <br />
           <input
             type="text"
             id="title"
             name="title"
-            placeholder={User.firstName}
+            onChange={blog.handleChange}
+            value={blog.values.title}
           />
           <br />
           <br />
-          <label for="author">Author</label>
+          <label htmlFor="author">Author:</label>
           <br />
           <input
             type="text"
             id="author"
             name="author"
-            placeholder={User.lastName}
+            onChange={blog.handleChange}
+            value={blog.values.author}
           />
           <br />
           <br />
-          <label for="desc">Description</label>
+          <label htmlFor="description">Description:</label>
           <br />
-          <textarea cols="60" rows="5" class="textarea">
+          <textarea
+            cols="60"
+            rows="5"
+            class="textarea"
+            name="description"
+            onChange={blog.handleChange}
+            value={blog.values.description}
+          >
             Enter details here
           </textarea>
           {/* <input
@@ -74,7 +84,7 @@ function AddBlog() {
           <br />
           <input type="text" id="desc" name="desc" placeholder="XD" /> */}
           <br />
-          <input className="submit-btn" type="submit" name="submit" />
+          <button>Submit the Blog</button>
         </form>
       </div>
       {/* <div className="container-form">

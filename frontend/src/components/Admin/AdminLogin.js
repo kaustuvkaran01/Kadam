@@ -3,7 +3,7 @@ import AuthService from "../../Services/AuthService";
 import Message from "../Message";
 import { AuthContext } from "../../Context/AuthContext";
 import Axios from "axios";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const AdminLogin = (props) => {
   const [user, setUser] = useState({ username: "", password: "" });
@@ -66,9 +66,9 @@ const AdminLogin = (props) => {
 export default AdminLogin;
 
 const AdminLoginContainer = styled.div`
-  background: #f5f2d0;  
-display: flex;
-  .container-form{
+  background: #f5f2d0;
+  display: flex;
+  .container-form {
     margin: 2rem auto;
     margin-bottom: 0;
     width: 50%;

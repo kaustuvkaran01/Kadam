@@ -123,8 +123,8 @@ const NavbarContainer = styled.div`
     text-decoration: none;
     color: white;
   }
-  button{
-    background: #007BFF;
+  button {
+    background: #007bff;
     border-radius: 12px;
     border: none;
     color: white;

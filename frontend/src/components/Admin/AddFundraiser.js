@@ -1,37 +1,61 @@
 import React, { useEffect, useState } from "react";
 
 import styled from "styled-components";
-
+import { useFormik } from "formik";
 import BillCard from "../Profile/BillCard";
 import axios from "axios";
 
 function AddFundraiser() {
-  const [User, setUser] = useState([]);
-  useEffect(() => {
-    axios
-      .get("user/get_profile")
-      .then((res) => {
-        console.log(res);
-        setUser(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
+  const fund = useFormik({
+    initialValues: {
+      title: "",
+      description: "",
+      target: "",
+      campaign: "",
+    },
+    onSubmit: (values) => {
+      console.log("Form data", values);
+      axios
+        .post("/admin/funds", values)
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err));
+    },
+  });
 
   return (
     <AddFundraiserContainer>
       <div className="container-form">
         <h2>Add a Fundraiser</h2>
-        <form className="form-about-fundraiser">
-          <label for="title">Name of the Campaign</label>
+        <form className="form-about-fundraiser" onSubmit={fund.handleSubmit}>
+          <label htmlFor="title">Title</label>
           <br />
           <input
             type="text"
             id="title"
             name="title"
-            placeholder="Name"
+            placeholder="Title"
+            onChange={fund.handleChange}
+            value={fund.values.title}
+          />
+          <label htmlFor="campaign">Campaign</label>
+          <br />
+          <input
+            type="text"
+            id="campaign"
+            name="campaign"
+            placeholder="Campaign"
+            onChange={fund.handleChange}
+            value={fund.values.campaign}
+          />
+          <label htmlFor="target">Target</label>
+          <br />
+          <input
+            type="number"
+            id="target"
+            name="target"
+            placeholder="Target"
+            onChange={fund.handleChange}
+            value={fund.values.target}
           />
           {/* <br />
           <br />
@@ -56,8 +80,15 @@ function AddFundraiser() {
             cols="30"
             rows="10"
           /> */}
-          <textarea cols="60" rows="5" class="textarea">
-              Enter the details of the fundraiser....
+          <textarea
+            cols="60"
+            rows="5"
+            class="textarea"
+            name="description"
+            onChange={fund.handleChange}
+            value={fund.values.description}
+          >
+            Enter the details of the fundraiser....
           </textarea>
           <br />
           <br />
@@ -146,9 +177,9 @@ const AddFundraiserContainer = styled.div`
   h2 {
     font-weight: 400;
   }
-  .textarea{
-      border-radius:6px;
-      background: #f5f5f5;
+  .textarea {
+    border-radius: 6px;
+    background: #f5f5f5;
   }
   .container-form {
     margin: 2rem auto;
