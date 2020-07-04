@@ -146,7 +146,8 @@ export default NavbarNew;
 
 const NavbarNewContainer = styled.div`
 // #343a40 is dark  
-
+display:block;
+height:8vh;
 .dropdown{
     background: #343a40;
   }

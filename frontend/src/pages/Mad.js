@@ -53,6 +53,7 @@ const FundContainer = styled.div`
   //   display: flex;
   //   flex-direction: column;
   font-family: Avenir Roman;
+  background: #fffced;
   .cards {
     display: flex;
     flex-direction: row;

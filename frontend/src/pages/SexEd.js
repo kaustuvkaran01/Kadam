@@ -37,5 +37,5 @@ export class SexEd extends Component {
 export default SexEd
 
 const SexEdContainer = styled.div`
-    background : dark;
+background: #fffced;
 `

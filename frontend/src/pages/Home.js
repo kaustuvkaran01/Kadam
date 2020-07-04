@@ -53,7 +53,7 @@ const HomeContainer = styled.div`
     display: flex;
     flex-direction: column;
     font-family: Avenir Roman;
-    
+    background: #fffced;
 
     .landing-image{
         display:flex;

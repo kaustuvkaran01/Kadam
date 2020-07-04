@@ -22,5 +22,5 @@ export class Sunflower extends Component {
 export default Sunflower
 
 const SunflowerContainer = styled.div`
-    
+background: #fffced;
 `

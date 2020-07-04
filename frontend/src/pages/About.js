@@ -57,7 +57,9 @@ export default About;
 const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
+  flex-wrap:wrap;
   font-family: Avenir Roman;
+  background: #fffced;
   .history {
     font-family: Avenir Roman;
     font-size: 3vh;
@@ -69,7 +71,8 @@ const AboutContainer = styled.div`
 
   .history-text {
     display: flex;
-    justify-content: space-around;
+    flex-wrap:wrap;
+    // justify-content: space-around;
     align-items: center;
     margin: 2rem auto;
     color: rgba(0, 0, 0, 0.7);
@@ -79,6 +82,7 @@ const AboutContainer = styled.div`
     font-size: 3vh;
     font-family: Avenir Roman;
     display: flex;
+    flex-wrap:wrap;
     margin: 1rem auto;
     margin-left: 10rem;
     margin-right: 10rem;

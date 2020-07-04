@@ -22,5 +22,5 @@ export class RakshaKaksha extends Component {
 export default RakshaKaksha
 
 const RakshaKakshaContainer = styled.div`
-    
+background: #fffced;
 `
