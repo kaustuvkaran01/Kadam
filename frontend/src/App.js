@@ -39,11 +39,13 @@ function App() {
       <Route path="/impact" component={Impact} />
       <Route path="/mad" component={Mad} />
       <Route path="/media" component={Media} />
+      <Route path="/blog" component={Blog} />
+      <Route path="/test" component={Test} />
+
       <Route path="/bloodypure" component={BloodyPure} />
       <Route path="/sexed" component={SexEd} />
       <Route path="/rakshakaksha" component={RakshaKaksha} />
       <Route path="/sunflower" component={Sunflower} />
-      <Route path="/test" component={Test} />
       {/* <Route path="/test2" component={NavbarNew} /> */}
       <Route path="/admin/login" component={AdminLogin} />
       <AdminRoute path="/admin/addblog" component={AddBlog} />
