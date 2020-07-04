@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 //Importing the Components
-import Navbar from '../components/Navbar';
+import NavbarNew from '../components/test2nav';
 import Footer from '../components/Footer';
 import Card from '../components/Card';
 import Card_person from '../components/Card_person';
@@ -12,7 +12,7 @@ class About extends Component {
     render() {
         return (
           <AboutContainer>
-            <Navbar />
+            <NavbarNew />
               <div className="history">
                 <h3>OUR HISTORY</h3>
                 <div className="history-text">

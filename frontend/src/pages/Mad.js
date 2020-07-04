@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 //Importing the Components
-import Navbar from "../components/Navbar";
+import NavbarNew from "../components/test2nav";
 import Footer from "../components/Footer";
 import Card from "../components/Card";
 
@@ -25,7 +25,7 @@ function Mad() {
   }, []);
   return (
     <FundContainer>
-      <Navbar />
+      <NavbarNew />
       <div className="cards">
         {fundraisers.map((fundraiser) => (
           <Card
