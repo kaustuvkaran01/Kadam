@@ -49,7 +49,7 @@ function Profile() {
 export default Profile;
 
 const ProfileContainer = styled.div`
-  background: #f5f2d0;
+  background: #fffced;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -58,7 +58,7 @@ const ProfileContainer = styled.div`
   // align-content: center;
   // justify-content: center;
   font-family: Avenir Roman;
-  background: #f5f2d0;
+  background: #fffced;
   margin: 0.5rem auto;
   margin-bottom: 0;
   h2 {
@@ -69,7 +69,7 @@ const ProfileContainer = styled.div`
     flex-direction: column;
     margin: 2rem auto;
     height: 80vh;
-    background: #f5f2d0;
+    background: #fffced;
   }
   .main-bio {
     display: flex;

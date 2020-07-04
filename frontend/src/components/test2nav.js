@@ -44,12 +44,12 @@ const NavbarNew = (props) => {
     return (
       <NavbarNewContainer>
         <NavbarText>
-        <NavLink className="link-text" href="/login">
+        <NavLink className="link-text" href="/login" style={{background:"#007bff", border: "none", borderRadius: "12px", color:"white"}}>
           LOGIN
         </NavLink>
         </NavbarText> 
         <NavbarText>
-        <NavLink className="link-text" href="/register">
+        <NavLink className="link-text" href="/register" >
           REGISTER
         </NavLink>
         </NavbarText>
@@ -67,7 +67,7 @@ const NavbarNew = (props) => {
         </NavLink>
         </NavbarText>
         <NavbarText>
-        <button type="button" onClick={onClickLogoutHandler}>
+        <button type="button" onClick={onClickLogoutHandler} style={{background:"#007bff", border: "none", borderRadius: "12px", color:"white"}}>
           LOGOUT
         </button>
         </NavbarText>

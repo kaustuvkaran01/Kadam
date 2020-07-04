@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import styled from 'styled-components';
-import landingimage from '../components/images/landing-image.jpg';
+import landingimage from '../components/images/BPMain.jpg';
 import success1 from '../components/images/success1.jpg';
 import success2 from '../components/images/success2.jpg';
 import success3 from '../components/images/success3.jpg';
@@ -19,8 +19,8 @@ class Home extends Component {
             <NavbarNew />
             <div className="landing-image">
               <div className="landing-text">
-                “One person can make a difference and everyone should try" -
-                John Fitzgerald Kennedy
+                “Let us remember: One book, one pen, one child, and one teacher
+                can change the world.” – Malala Yousafzai.
               </div>
             </div>
             {/*Who we are*/}
@@ -29,9 +29,9 @@ class Home extends Component {
               <div className="who-we-are-text">
                 <h3>WHO WE ARE:</h3>
                 <br /> “One person can make a difference and everyone should
-                try" - John Fitzgerald Kennedy “Let us remember: One book, one
+                try" - John Fitzgerald Kennedy<br /> “Let us remember: One book, one
                 pen, one child, and one teacher can change the world.” – Malala
-                Yousafzai. Our motto of doing good, one step at a time, has
+                Yousafzai. <br/>Our motto of doing good, one step at a time, has
                 allowed us to achieve a great many things, and spread happiness
                 and awareness to thousands of individuals across India.
               </div>
@@ -53,7 +53,7 @@ const HomeContainer = styled.div`
     display: flex;
     flex-direction: column;
     font-family: Avenir Roman;
-    
+
 
     .landing-image{
         display:flex;
@@ -64,20 +64,21 @@ const HomeContainer = styled.div`
         background-image: url(${landingimage});
         background-size: cover;
         background-position:center;
-        
+
     }
     .landing-text{
         padding:0 8rem;
-        color:white;
+        color:black;
         font-size:5vh;
         text-align:center;
-        
-        
+        font-weight:800;
+
+
     }
     .red{
         background: linear-gradient(rgba(255,0,0,.5), rgba(0,0,0,.5)),url('${success1}');
     }
-    .pink{  
+    .pink{
         background: linear-gradient(rgba(255,20,147,.5), rgba(0,0,0,.5)),url('${success2}');
     }
     .green{
@@ -91,9 +92,9 @@ const HomeContainer = styled.div`
         background-size:cover;
         background-position:center;
         display:flex;
-        
+
     }
-    
+
 
     .who-we-are{
         padding-top:10vh;

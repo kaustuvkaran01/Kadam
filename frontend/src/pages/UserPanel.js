@@ -3,7 +3,7 @@ import React from 'react';
 import Profile from '../components/Profile/Profile';
 import ProfileBill from '../components/Profile/ProfileBill';
 
-import Navbar from '../components/Navbar';
+import NavbarNew from '../components/test2nav';
 import Footer from '../components/Footer';
 
 import styled from 'styled-components';
@@ -11,7 +11,7 @@ import styled from 'styled-components';
 function UserPanel() {
   return (
     <UserPanelContainer>
-        <Navbar />
+        <NavbarNew />
         <Profile /> 
         {/* <ProfileBill /> */}
         <Footer />

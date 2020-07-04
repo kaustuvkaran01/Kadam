@@ -27,7 +27,7 @@ function Navbar() {
   const unauthenticatedNavBar = () => {
     return (
       <NavbarContainer>
-        <NavLink className="link-text" to="/login">
+        <NavLink className="link-text" to="/login" style={{background:"#007bff", border: "none", borderRadius: "12px", color:"white"}}>
           LOGIN
         </NavLink>
         <NavLink className="link-text" to="/register">
@@ -43,7 +43,7 @@ function Navbar() {
         <NavLink className="link-text" to="/profile">
           PROFILE
         </NavLink>
-        <button type="button" onClick={onClickLogoutHandler}>
+        <button type="button" onClick={onClickLogoutHandler}  style={{background:"#007bff", border: "none", borderRadius: "12px", color:"white"}}>
           LOGOUT
         </button>
       </NavbarContainer>
@@ -123,7 +123,7 @@ const NavbarContainer = styled.div`
     text-decoration: none;
     color: white;
   }
-  button {
+  .logout-button {
     background: #007bff;
     border-radius: 12px;
     border: none;

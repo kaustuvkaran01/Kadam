@@ -37,7 +37,7 @@ export default function Footer() {
               placeholder="Email"
               style={{
                 background: "#32302F",
-                color: "#ECC731",
+                color: "#d99945",
                 height: "2rem",
                 border: "2px solid grey",
                 borderRight: "none",
@@ -50,9 +50,9 @@ export default function Footer() {
               value="SUBMIT"
               style={{
                 background: "#32302F",
-                color: "#ECC731",
+                color: "#d99945",
                 height: "2.375rem",
-                border: "2px solid #ECC731",
+                border: "2px solid #d99945",
                 fontSize: "small",
                 width: "5rem",
               }}
@@ -78,9 +78,9 @@ export default function Footer() {
 const FooterContainer = styled.div`
     display: flex;
     flex-direction:row;
-    background: #404040;
+    background: #343A40;
     font-family: Avenir Roman;
-    color: #ECC731;
+    color: #d99945;
     height: 60vh;
     width: 100%;
     margin: 0 auto;
