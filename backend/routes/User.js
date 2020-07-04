@@ -215,12 +215,12 @@ userRouter.get(
 
 //RAZORPAY
 const razorpay = new Razorpay({
-  key_id: "rzp_test_iKqGktR1iz0mCB",
-  key_secret: "22xTQXyZsXwpiwr3HrTRTOwP",
+  key_id: "rzp_test_oiHBIGXLXkiNPr",
+  key_secret: "Kmhzx4uQfMcF7erWvlotjYfC",
 });
 userRouter.post("/verification", (req, res) => {
   // do a validation
-  const secret = "xWCUkUdFWsH2cU7";
+  const secret = "arub3DPqSD9E7N9";
 
   console.log(req.body);
 
@@ -231,22 +231,59 @@ userRouter.post("/verification", (req, res) => {
   const digest = shasum.digest("hex");
 
   console.log(digest, req.headers["x-razorpay-signature"]);
+  console.log(req.headers);
+  console.log(req.payload);
+  console.log(req.body.payload.order.entity.receipt);
 
   if (digest === req.headers["x-razorpay-signature"]) {
     console.log("request is legit");
     // process it
     //mongoDB
-    const { payload, createdAt } = req.body;
-    // const { user } = req.user._id;
-    Invoice.create({ payload, createdAt })
-      .then((pay) => console.log(pay))
-      .catch((err) => console.log(err));
+    const {
+      email,
+      order_id,
+      amount,
+      captured,
+    } = req.body.payload.payment.entity;
+    const { receipt } = req.body.payload.order.entity;
+    Invoice.findOne({ order_id }, (err) => {
+      if (err)
+        res
+          .status(500)
+          .json({ message: { msgBody: "Error has occured", msgError: true } });
+      else {
+        const newInvoice = new Invoice({
+          email,
+          order_id,
+          amount: amount / 100,
+          purpose: "fundraiser",
+          captured,
+          receipt,
+        });
+        console.log(newInvoice);
+        newInvoice.save((err) => {
+          if (err) {
+            console.log(err);
+            res.status(500).json({
+              message: { msgBody: "Error has occured", msgError: true },
+            });
+          } else {
+            console.log("SAVED");
+            res.status(201).json({
+              message: {
+                msgBody: "Invoice created Successfully",
+                msgError: false,
+              },
+            });
+          }
+        });
+      }
+    });
   } else {
     res.status(500).json({
       message: { msgBody: "Error has occured", msgError: true },
     });
   }
-  res.json({ status: "ok" });
 });
 
 userRouter.post("/razorpay", async (req, res) => {

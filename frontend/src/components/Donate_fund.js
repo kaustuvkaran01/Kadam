@@ -1,11 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import logo from "./images/landing-image.jpg";
-import ProgressBar from "../components/progress-bar";
 import axios from "axios";
 import { AuthContext } from "../Context/AuthContext";
-const testData = [{ bgcolor: "#ef6c00", collected: 80, target: 100 }];
 
 function loadScript(src) {
   return new Promise((resolve) => {
@@ -22,14 +19,14 @@ function loadScript(src) {
 }
 
 const __DEV__ = document.domain === "localhost";
-function Card(props) {
+function Donate() {
   const { isAuthenticated, user, setIsAuthenticated, setuser } = useContext(
     AuthContext
   );
   const [User, setUser] = useState([]);
   useEffect(() => {
     axios
-      .get("user/get_profile")
+      .get("/get_profile")
       .then((res) => {
         console.log(res);
         setUser(res.data);
@@ -67,80 +64,35 @@ function Card(props) {
     const data = await fetch("http://localhost:5000/user/razorpay", {
       method: "POST",
     })
-      .then((t) => t.json())
+      .then((t) => {
+        t.json();
+        console.log("TEST", t);
+      })
       .catch((err) => console.log(err));
 
-    console.log(data);
+    console.log("DATA", data);
 
     const options = {
-      key: "rzp_test_oiHBIGXLXkiNPr",
+      key: "rzp_test_iKqGktR1iz0mCB",
       currency: data.currency,
       amount: data.amount.toString(),
       order_id: data.id,
       name: "Donation",
       description: "Thank you for nothing. Please give us some money",
-
+      handler: function (response) {
+        alert(response.razorpay_payment_id);
+        alert(response.razorpay_order_id);
+        alert(response.razorpay_signature);
+      },
       prefill: {
         name: User.username,
         email: User.email,
         phone_number: "9899999999",
       },
-      user: User._id,
     };
     const paymentObject = new window.Razorpay(options);
     paymentObject.open();
   }
-  return (
-    <CardContainer>
-      <img src={logo} />
-      <div className="flex">
-        <p>
-          {/* {props.key} */}
-          {props.text}
-        </p>
-        <div>
-          {testData.map((item, idx) => (
-            <ProgressBar
-              key={idx}
-              bgcolor="#ef6c00"
-              collected={props.collected}
-              target={props.target}
-            />
-          ))}
-          {isAuthenticated ? Authenticated() : unAuthenticated()}
-        </div>
-      </div>
-    </CardContainer>
-  );
+  return <div>{isAuthenticated ? Authenticated() : unAuthenticated()}</div>;
 }
-export default Card;
-
-const CardContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  background: transparent;
-  height: 25rem;
-  width: 20rem;
-  margin: 1rem auto;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  img {
-    height: 50%;
-    width: 100%;
-  }
-  &:hover {
-    transform: scale(1.05);
-    transition: transform 0.25s ease-out;
-  }
-  .progress {
-    width: 100%;
-  }
-  .flex {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    //justify-content:center;
-    // align-items:center;
-  }
-`;
+export default Donate;
