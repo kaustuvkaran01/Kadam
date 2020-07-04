@@ -94,7 +94,7 @@ const NavbarNew = (props) => {
                 Make a Difference!
               </NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar>
+            <UncontrolledDropdown className="dropdown" nav inNavbar>
               <DropdownToggle nav caret>
                 Our Impact
               </DropdownToggle>
@@ -135,6 +135,9 @@ const NavbarNew = (props) => {
           {/* <NavbarText>Login</NavbarText> */}
         </Collapse>
       </Navbar>
+      <div className='filler'>
+  
+      </div>
     </NavbarNewContainer>
   );
 };
@@ -142,6 +145,11 @@ const NavbarNew = (props) => {
 export default NavbarNew;
 
 const NavbarNewContainer = styled.div`
+// #343a40 is dark  
+
+.dropdown{
+    background: #343a40;
+  }
   .custom-nav-link {
     color: white;
   }
@@ -153,5 +161,19 @@ const NavbarNewContainer = styled.div`
   .brand {
     margin: 0;
     padding: 0;
+  }
+  .filler{
+
+  }
+  .dropdown-menu{
+    background-color: #2b2f34;
+    color: white;
+  }
+  .dropdown-item{
+    color: rgba(255,255,255,0.5);
+  }
+  .dropdown-item: hover{
+    background-color:#343a40;
+    color: rgba(255,255,255,0.8);
   }
 `;

@@ -12,7 +12,22 @@ export class SexEd extends Component {
         return (
             <SexEdContainer> 
                     <NavbarNew/>
-                    Hello
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Magni, necessitatibus officiis facere nisi et, ut adipisci a
+                    quis quisquam vitae doloremque tempora repellat quae
+                    accusantium atque eum voluptatibus aperiam cumque. Lorem
+                    ipsum dolor sit amet, consectetur adipisicing elit. Magni,
+                    necessitatibus officiis facere nisi et, ut adipisci a quis
+                    quisquam vitae doloremque tempora repellat quae accusantium
+                    atque eum voluptatibus aperiam cumque.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Magni, necessitatibus officiis facere nisi et, ut adipisci a
+                    quis quisquam vitae doloremque tempora repellat quae
+                    accusantium atque eum voluptatibus aperiam cumque. Lorem
+                    ipsum dolor sit amet, consectetur adipisicing elit. Magni,
+                    necessitatibus officiis facere nisi et, ut adipisci a quis
+                    quisquam vitae doloremque tempora repellat quae accusantium
+                    atque eum voluptatibus aperiam cumque.
                     <Footer />
             </SexEdContainer>     
         )
@@ -22,5 +37,5 @@ export class SexEd extends Component {
 export default SexEd
 
 const SexEdContainer = styled.div`
-    
+    background : dark;
 `
