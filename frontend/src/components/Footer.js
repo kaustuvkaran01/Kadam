@@ -38,11 +38,12 @@ export default function Footer() {
               style={{
                 background: "#32302F",
                 color: "#d99945",
-                height: "2rem",
+                height: "2.35rem",
                 border: "2px solid grey",
                 borderRight: "none",
                 fontSize: "small",
                 width: "15rem",
+                paddingLeft:"1.25rem"
               }}
               />
             <input
@@ -85,6 +86,7 @@ const FooterContainer = styled.div`
     height: 60vh;
     width: 100%;
     margin: 0 auto;
+    padding-top: 5rem;
 
     strong {
         font-size: 1.825rem;

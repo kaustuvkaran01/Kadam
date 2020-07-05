@@ -10,75 +10,110 @@ import bloodypuremain from '../components/images/bloodypure-main.jpg'
 export class BloodyPure extends Component {
     render() {
         return (
-            <BloodyPureContainer> 
-                    <NavbarNew/>
-                    <div className='landing-image'>
-                        <div className='landing-text'>
-                    This is #BloodyPure.
-                    </div>
-                    </div>
+          <BloodyPureContainer>
+            <NavbarNew />
+            <div className="landing-image">
+              <div className="landing-text">This is #BloodyPure.</div>
+            </div>
 
-                    <div className='what-we-do'>
-                        <div className='text'>
-                            <h1>What we do</h1>
-                        Our #BloodyPure initiative was created with the primary goal of creating a society that is free 
-                    of menstrual prejudice. We aim to achieve this by changing the societal perception of menstruation
-                    from a purely “woman’s issue” to a more inclusive understanding of the societal problem. 
-                    Reiterating the role of men in menstruation, and including them in our education campaigns is of utmost
-                     importance, wherein, we reinforce the fact that menstruation is not a disease or a sin, but rather 
-                     a biological process that every female human being undergoes on a regular basis. 
-                     Through the #BloodyPure initiative, we create awareness, spread education, and try to create a positive, 
-                     unbiased perception of the biological process that is menstruation.
-                        </div>
-                        <div >
-                            <img className='image' src={bloodypuremain} />
-                        </div>
-                        
-                    
-                    </div>
-                    <div className='what-we-do red'>
-                        <div >
-                            <img className='image' src={bloodypuremain} />
-                        </div>
-                        <div className='text'>
-                            <h1>India</h1>
-                            India is home to approximately 120 million adolescent girls— roughly 10% of the Indian population. A girl menstruates on an average of five days a month, 12 months a year, and this cycle carries on until she reaches menopause between the ages of 30–40. Periods are normal and healthy, yet many girls across both rural and urban India struggle to manage this monthly occurrence. Menstrual taboos are still widespread and commonplace in our society. Most women, even those working in corporations, are hesitant to apply for leave due to menstrual cramps or other menstrual symptoms, instead labeling it as merely a stomachache. This is a clear sign of the systemic imprinting that occurs in our society that leads to the perception that menstruation is a problem or a disease. At #BloodyPure, we strive to undo this imprinting, for both men and women.
+            <div className="what-we-do">
+              <div className="text">
+                <h1>What we do</h1>
+                Our #BloodyPure initiative was created with the primary goal of
+                creating a society that is free of menstrual prejudice. We aim
+                to achieve this by changing the societal perception of
+                menstruation from a purely “woman’s issue” to a more inclusive
+                understanding of the societal problem. Reiterating the role of
+                men in menstruation, and including them in our education
+                campaigns is of utmost importance, wherein, we reinforce the
+                fact that menstruation is not a disease or a sin, but rather a
+                biological process that every female human being undergoes on a
+                regular basis. Through the #BloodyPure initiative, we create
+                awareness, spread education, and try to create a positive,
+                unbiased perception of the biological process that is
+                menstruation.
+              </div>
+              <div>
+                <img className="image" src={bloodypuremain} />
+              </div>
+            </div>
+            <div className="what-we-do sec-color">
+              <div>
+                <img className="image" src={bloodypuremain} />
+              </div>
+              <div className="text">
+                <h1>India</h1>
+                India is home to approximately 120 million adolescent girls—
+                roughly 10% of the Indian population. A girl menstruates on an
+                average of five days a month, 12 months a year, and this cycle
+                carries on until she reaches menopause between the ages of
+                30–40. Periods are normal and healthy, yet many girls across
+                both rural and urban India struggle to manage this monthly
+                occurrence. Menstrual taboos are still widespread and
+                commonplace in our society. Most women, even those working in
+                corporations, are hesitant to apply for leave due to menstrual
+                cramps or other menstrual symptoms, instead labeling it as
+                merely a stomachache. This is a clear sign of the systemic
+                imprinting that occurs in our society that leads to the
+                perception that menstruation is a problem or a disease. At
+                #BloodyPure, we strive to undo this imprinting, for both men and
+                women.
+              </div>
+            </div>
+            <div className="what-we-do ">
+              <div className="text">
+                <h1>Impact.</h1>
+                IMPACT The #BloodyPure campaign was initiated in August 2019,
+                since which we have organized (NO of EVENTS) events across 4
+                major cities, namely Amritsar, Bangalore, Chennai, and
+                Coimbatore. These events are educational in nature and
+                interactive by intent. Through these events we have reached out
+                to more than (NO of STUDENTS) students, and have involved more
+                than (NO of VOLUNTEERS) volunteers across the nation.
+                #BloodyPure also provides hygiene kits to girls in rural areas,
+                funded via our online fundraising. We have collaborated with
+                Rebelle Pads, a cloth pad manufacturer, wherein we receive a kit
+                containing 4 cloth pads, 1 wet pouch and 1 cloth bag at
+                ₹(PRICE). Furthermore, these kits not only facilitate hygienic
+                practices during menstruation, but are also eco-friendly as they
+                sec-coloruce the monthly waste production caused by mainstream plastic
+                sanitary napkins. Once received, these kits are then distributed
+                to female children in areas of need. Through our BloodyPure
+                memberships, sponsors, donations, and collaborations we have
+                provided over 150 hygiene kits across the country. 80 kits were
+                distributed to female students in a government school located in
+                Tholasampatti Village, in the Salem district of Tamil Nadu, and
+                70 kits to female students in SGRD School, Amritsar.
+              </div>
 
-                        </div>
-                        
-                    
-                    </div>
-                    <div className='what-we-do '>
-                        <div className='text'>
-                            <h1>Impact.</h1>
-                            IMPACT
-The #BloodyPure campaign was initiated in August 2019, since which we have organized (NO of EVENTS) events across 4 major cities, namely Amritsar, Bangalore, Chennai, and Coimbatore. These events are educational in nature and interactive by intent. Through these events we have reached out to more than (NO of STUDENTS) students, and have involved more than (NO of VOLUNTEERS) volunteers across the nation.  
-#BloodyPure also provides hygiene kits to girls in rural areas, funded via our online fundraising. We have collaborated with Rebelle Pads, a cloth pad manufacturer, wherein we receive a kit containing 4 cloth pads, 1 wet pouch and 1 cloth bag at ₹(PRICE). Furthermore, these kits not only facilitate hygienic practices during menstruation, but are also eco-friendly as they reduce the monthly waste production caused by mainstream plastic sanitary napkins. Once received, these kits are then distributed to female children in areas of need. Through our BloodyPure memberships, sponsors, donations, and collaborations we have provided over 150 hygiene kits across the country. 80 kits were distributed to female students in a government school located in Tholasampatti Village, in the Salem district of Tamil Nadu, and 70 kits to female students in SGRD School, Amritsar.
+              <div>
+                <img className="image" src={bloodypuremain} />
+              </div>
+            </div>
+            <div className="what-we-do sec-color">
+              <div>
+                <img className="image" src={bloodypuremain} />
+              </div>
+              <div className="text">
+                <h1>Where we work</h1>
+                Our main targeted demographic for our educational events are for
+                school children from 6th standard to 12th standard. Amritsar,
+                Chennai, Coimbatore, and Bangalore are the major cities in which
+                we have a core team presence, while having smaller and
+                travelling teams in smaller cities. We aim to strike a chord
+                with these school children, both boys and girls, in order to
+                create awareness and normalize periods for both genders, and
+                thus as a society as a whole. Since learning starts early on in
+                a person’s life, we feel that if we can inform, educate, and
+                normalize menstruation at this age, we combat the issue from
+                forming late on in a person’s life. This is the primary
+                reasoning behind targeting students at such a young age.
+              </div>
+            </div>
 
-
-                        </div>
-                        
-                        <div >
-                            <img className='image' src={bloodypuremain} />
-                        </div>
-                    
-                    </div>
-                    <div className='what-we-do red'>
-                        <div >
-                            <img className='image' src={bloodypuremain} />
-                        </div>
-                        <div className='text'>
-                            <h1>Where we work</h1>
-                            Our main targeted demographic for our educational events are for school children from 6th standard to 12th standard. Amritsar, Chennai, Coimbatore, and Bangalore are the major cities in which we have a core team presence, while having smaller and travelling teams in smaller cities. We aim to strike a chord with these school children, both boys and girls, in order to create awareness and normalize periods for both genders, and thus as a society as a whole. Since learning starts early on in a person’s life, we feel that if we can inform, educate, and normalize menstruation at this age, we combat the issue from forming late on in a person’s life. This is the primary reasoning behind targeting students at such a young age.
-
-                        </div>
-                        
-                    
-                    </div>
-                    
-                    <Footer />
-            </BloodyPureContainer>     
-        )
+            <Footer />
+          </BloodyPureContainer>
+        );
     }
 }
 
@@ -90,7 +125,8 @@ font-family: Avenir Roman;
 
 @keyframes pulse {
     0% {
-      background-color: #90305A;
+    //   background-color: #90305A;
+    background-color:#FF0000;
     }
     100%{
         background-color: #660000;
@@ -168,9 +204,11 @@ font-family: Avenir Roman;
 h1{
     margin-bottom:2rem;
 }
-.red{
+.sec-color{
     margin-top:5rem;
-    margin-bottom:5rem;
+    margin-bottom:0rem;
+    padding-bottom: 2.5rem;
+    padding-top: 2.5rem;
     background:#660000;
     color:white;
 }

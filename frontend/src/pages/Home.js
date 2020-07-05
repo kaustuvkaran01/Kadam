@@ -37,10 +37,26 @@ class Home extends Component {
               </div>
             </div>
             {/*Success story section*/}
-            <div className="red success-story">Bloody Pure</div>
-            <div className="green success-story">Raksha Kaksha</div>
-            <div className="pink success-story">Sex'ed</div>
-            <div className="blue success-story">Another one</div>
+            <div className="red success-story">
+                <div className="image">
+                    <img alt="Some image"/>
+                </div>
+            </div>
+            <div className="green success-story">
+            <div className="image">
+                    <img alt="Some image"/>
+                </div>
+            </div>
+            <div className="pink success-story">
+            <div className="image">
+                    <img alt="Some image"/>
+                </div>
+            </div>
+            <div className="blue success-story">
+            <div className="image">
+                    <img alt="Some image"/>
+                </div>
+            </div>
             <Footer />
           </HomeContainer>
         );
@@ -88,7 +104,7 @@ const HomeContainer = styled.div`
         background: linear-gradient(rgba(0,0,255,.5), rgba(0,0,0,.5)),url('${success4}');
     }
     .success-story{
-        height: 50vh;
+        height: 60vh;
         background-size:cover;
         background-position:center;
         display:flex;
