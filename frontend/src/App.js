@@ -11,8 +11,14 @@ import Impact from "./pages/Impact";
 import Blog from "./pages/Blog";
 import Media from "./pages/Media";
 import Mad from "./pages/Mad";
+// Impact Pages
+import BloodyPure from "./pages/BloodyPure";
+import SexEd from "./pages/SexEd";
+import RakshaKaksha from "./pages/RakshaKaksha";
+import Sunflower from "./pages/Sunflower";
+//-------------
 import Test from "./pages/test";
-import NavbarNew from "./components/test2nav";
+// import NavbarNew from "./components/test2nav";
 import AdminPanel from "./pages/AdminPanel";
 import UserPanel from "./pages/UserPanel";
 import PrivateRoute from "./hocs/PrivateRoute";
@@ -35,6 +41,11 @@ function App() {
       <Route path="/media" component={Media} />
       <Route path="/blog" component={Blog} />
       <Route path="/test" component={Test} />
+
+      <Route path="/bloodypure" component={BloodyPure} />
+      <Route path="/sexed" component={SexEd} />
+      <Route path="/rakshakaksha" component={RakshaKaksha} />
+      <Route path="/sunflower" component={Sunflower} />
       {/* <Route path="/test2" component={NavbarNew} /> */}
       <Route path="/admin/login" component={AdminLogin} />
       <AdminRoute path="/admin/addblog" component={AddBlog} />

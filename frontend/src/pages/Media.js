@@ -84,6 +84,7 @@ const MediaContainer = styled.div`
 display: flex;
 flex-direction: column;
 font-family: Avenir Roman;
+background: #fffced;
 // font-weight: 900;
 
 .gallery {
