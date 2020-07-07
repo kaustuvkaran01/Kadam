@@ -7,8 +7,8 @@ import NavbarNew from '../components/test2nav';
 import Footer from '../components/Footer';
 import bloodypuremain from '../components/images/bloodypure-main.jpg'
 
-class SexEd extends Component {
-    render() {
+function SexEd(){
+
         return (
           <SexEdContainer>
             <NavbarNew />
@@ -128,7 +128,6 @@ class SexEd extends Component {
           </SexEdContainer>
         );
     }
-}
 
 export default SexEd;
 

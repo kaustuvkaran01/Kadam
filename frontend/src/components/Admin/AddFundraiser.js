@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useFormik } from "formik";
 import BillCard from "../Profile/BillCard";
+import NavbarAdmin from './NavbarAdmin';
+import Footer from '../Footer';
 import axios from "axios";
 
 function AddFundraiser() {
@@ -24,6 +26,7 @@ function AddFundraiser() {
 
   return (
     <AddFundraiserContainer>
+      <NavbarAdmin />
       <div className="container-form">
         <h2>Add a Fundraiser</h2>
         <form className="form-about-fundraiser" onSubmit={fund.handleSubmit}>
@@ -57,29 +60,12 @@ function AddFundraiser() {
             onChange={fund.handleChange}
             value={fund.values.target}
           />
-          {/* <br />
-          <br />
-          <label for="author">Author</label>
-          <br />
-          <input
-            type="text"
-            id="author"
-            name="author"
-            placeholder={User.lastName}
-          /> */}
+
           <br />
           <br />
           <label for="desc">Description</label>
           <br />
-          {/* <input
-            type="textarea"
-            id="description"
-            name="textarea"
-            placeholder={User.lastName}
-            className="desc"
-            cols="30"
-            rows="10"
-          /> */}
+
           <textarea
             cols="60"
             rows="5"
@@ -94,71 +80,12 @@ function AddFundraiser() {
           <br />
           <label for="img">Images to upload</label>
           <br />
-          <input
-            type="file"
-            id="img"
-            name="img"
-            multiple
-            // placeholder={User.lastName}
-          />
-          {/* <br />
-          <br />
-          <label for="fname">I IDENTIFY AS</label>
-          <br />
-          <select className="gender-list">
-            <option value="1">Male</option>
-            <option value="2">Female</option>
-            <option value="3">It's complicated</option>
-          </select> */}
-          {/* <br />
-          <br />
-          <label for="fname">Description</label>
-          <br />
-          <input type="text" id="desc" name="desc" placeholder="XD" /> */}
+          <input type="file" id="img" name="img" multiple />
           <br />
           <input className="submit-btn" type="submit" name="submit" />
         </form>
       </div>
-      {/* <div className="container-form">
-        <h2>About Me</h2>
-        <div>
-          <form className="form-about-fundraiser">
-            <label for="fname">BIO</label>
-            <br />
-            <input type="text" name="fname" className="about-input" />
-            <br />
-            <br />
-            <label for="fname">Email</label>
-            <br />
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="johndoe@gmail.com"
-            />
-            <br />
-            <br />
-            <label for="fname">Phone Number</label>
-            <br />
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Please attach your area code as well"
-            />
-            <br />
-            <input className="submit-btn" type="submit" name="submit" />
-          </form>
-        </div>
-      </div>
-      {/* <h2 style={{ margin: "auto" }}>Thank you for Donating!</h2> */}
-      {/* <div className="bill-cards">
-        <BillCard amount="15000" cause="Bloody Pure Campaign" />
-        <BillCard amount="15000" cause="Bloody Pure Campaign" />
-      
-        <BillCard amount="15000" cause="Bloody Pure Campaign" />
-        <BillCard amount="15000" cause="Bloody Pure Campaign" />
-      </div> */}
+      <Footer />
     </AddFundraiserContainer>
   );
 }
@@ -184,6 +111,7 @@ const AddFundraiserContainer = styled.div`
   .container-form {
     margin: 2rem auto;
     margin-bottom: 0;
+    margin-top:15vh;
   }
   .form-about-fundraiser {
     display: flex;
@@ -208,6 +136,7 @@ const AddFundraiserContainer = styled.div`
     border: 1px;
     background: #f5f5f5;
     padding-left: 0.85rem;
+    margin-bottom:2rem;
   }
   .desc {
     height: 5rem;
@@ -218,13 +147,6 @@ const AddFundraiserContainer = styled.div`
     height: 10.5rem;
   }
 
-  .gender-list {
-    font-family: Avenir Roman;
-    height: 2.75rem;
-    background: #f5f5f5;
-    font-size: large;
-    border-radius: 6px;
-  }
   .submit-btn {
     &:hover {
       background: #863547;

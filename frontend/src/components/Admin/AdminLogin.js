@@ -33,7 +33,7 @@ const AdminLogin = (props) => {
       <div className="container-form">
         <form onSubmit={onSubmit}>
           <h3>Please sign in</h3>
-          <label htmlFor="username" className="sr-only">
+          <label htmlFor="username">
             Username:{" "}
           </label>
           <input
@@ -43,7 +43,7 @@ const AdminLogin = (props) => {
             className="form-control"
             placeholder="Enter Username"
           />
-          <label htmlFor="password" className="sr-only">
+          <label htmlFor="password">
             Password:{" "}
           </label>
           <input
@@ -66,11 +66,46 @@ const AdminLogin = (props) => {
 export default AdminLogin;
 
 const AdminLoginContainer = styled.div`
-  background: #f5f2d0;
-  display: flex;
+background: #f5f2d0;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+height: 100vh;
+font-family: Avenir Roman;
+margin: 0.5rem auto;
+margin-top: 0;
+margin-bottom: 0;
   .container-form {
-    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    width: 40vw;
+    margin: 1rem auto;
+    // margin-left: 0.5rem;
+    margin-top: 5rem;
     margin-bottom: 0;
-    width: 50%;
+    background: white;
+    padding: 2rem;
+    background: white;
+    // margin: 3rem auto;
+    // margin-top: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.1);
+  }
+  label {
+    font-size: 1rem;
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 1rem auto;
+  }
+  input{
+    font-size: 1rem;
+    font-weight: 800;
+    // color: rgba(0, 0, 0, 0.7);
+    background: #f5f5f5;
+    margin: 1rem auto;
+  }
+  button{
+    margin-top: 2rem;
   }
 `;

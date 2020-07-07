@@ -29,6 +29,8 @@ import Register from "./components/Register";
 import AdminLogin from "./components/Admin/AdminLogin";
 import AddBlog from "./components/Admin/AddBlog";
 import AddFundraiser from "./components/Admin/AddFundraiser";
+import MaintainBlog from './components/Admin/MaintainBlog';
+import EditBlog from './components/Admin/EditBlog';
 
 
 function App() {
@@ -42,18 +44,31 @@ function App() {
       <Route path="/blog" component={Blog} />
       <Route path="/test" component={Test} />
 
+
+      {/* Campaign routes */}
       <Route path="/bloodypure" component={BloodyPure} />
       <Route path="/sexed" component={SexEd} />
       <Route path="/rakshakaksha" component={RakshaKaksha} />
       <Route path="/sunflower" component={Sunflower} />
       {/* <Route path="/test2" component={NavbarNew} /> */}
+
+
+      {/* //Admin Routes */}
       <Route path="/admin/login" component={AdminLogin} />
       <AdminRoute path="/admin/addblog" component={AddBlog} />
       <AdminRoute path="/admin/addfundraiser" component={AddFundraiser} />
-      //User routes
+      <AdminRoute path="/admin/maintainblog" component={MaintainBlog} />
+      <AdminRoute path="/admin/editblog" component={EditBlog} />
+
+
+
+      {/* //User routes */}
       <PrivateRoute path="/profile" component={UserPanel} />
       <AdminRoute path="/admin" component={AdminPanel} />
-      //Before Login
+
+
+
+      {/* //Before Login */}
       <UnPrivateRoute path="/login" component={Login} />
       <UnPrivateRoute path="/register" component={Register} />
     </Switch>

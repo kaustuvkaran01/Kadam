@@ -4,6 +4,7 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import axios from "axios";
 import { GrFormViewHide } from 'react-icons/gr';
+import { AiTwotoneDelete } from 'react-icons/ai';
 
 function Table() {
 
@@ -24,7 +25,7 @@ function Table() {
   return (
     <TableContainer>
       <table>
-        <tr>
+        {/* <tr>
           <th>Title</th>
           <th>Description</th>
           <th>Author</th>
@@ -43,18 +44,22 @@ function Table() {
               <GrFormViewHide />
             </button>
           </td>
-        </tr>
+        </tr> */}
 
         {blogs.map((blog) => (
           <tr>
+            <td>{blog._id}</td>
             <td>{blog.title}</td>
             <td>{blog.description}</td>
             <td>{blog.author}</td>
             <td>{blog.published_date}</td>
             <td>{blog.updated_date}</td>
             <td>
-              <button>
+              <button className="btn-hide">
                 <GrFormViewHide />
+              </button>
+              <button className="btn-hide">
+                <AiTwotoneDelete />
               </button>
             </td>
           </tr>
@@ -67,9 +72,10 @@ export default Table;
 
 const TableContainer = styled.div`
     
-    width: 70vw;
+    width: 80vw;
     margin: auto;
-    height: 50vh;
+    height: auto;
+    margin-bottom: 1rem;
     table {
       width: 100%;
       border: 1px solid #ddd;
@@ -87,6 +93,15 @@ const TableContainer = styled.div`
     tr{
       &:hover {
         background: #f5f5f5;
+      }
+    }
+    button{
+      background: transparent;
+      border:1px solid rgba(0,0,0,0.1);
+      border-radius: 6px;
+      margin:1rem auto;
+      &:hover{
+        background: #008080;
       }
     }
 `;

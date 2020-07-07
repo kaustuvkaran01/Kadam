@@ -1,8 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
-import logo from "./images/logo.png";
+import logo from "../images/logo.png";
 import styled from "styled-components";
-import AuthService from "../Services/AuthService";
-import { AuthContext } from "../Context/AuthContext";
+import AuthService from "../../Services/AuthService";
+import { AuthContext } from "../../Context/AuthContext";
 
 import {
   Collapse,
@@ -19,7 +19,7 @@ import {
   NavbarText,
 } from "reactstrap";
 
-const NavbarNew = (props) => {
+function NavbarAdmin(props) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -80,11 +80,11 @@ const NavbarNew = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto custom-nav-link" navbar>
             <NavItem>
-              <NavLink className="link-text" href="/">
-                Home
+              <NavLink className="link-text" href="/admin">
+                Dashboard
               </NavLink>
             </NavItem>
-            <NavItem>
+            {/* <NavItem>
               <NavLink className="link-text" href="/about">
                 About Us
               </NavLink>
@@ -93,31 +93,34 @@ const NavbarNew = (props) => {
               <NavLink className="link-text" href="/mad">
                 Make a Difference!
               </NavLink>
-            </NavItem>
+            </NavItem> */}
             <UncontrolledDropdown className="dropdown" nav inNavbar>
               <DropdownToggle nav caret>
-                Our Impact
+                Add a Component
               </DropdownToggle>
               <DropdownMenu right>
-                <NavLink className="link-text" href="/bloodypure">
-                  <DropdownItem>BloodyPure</DropdownItem>
+                <NavLink className="link-text" href="/admin/addblog">
+                  <DropdownItem>Add a Blog</DropdownItem>
                 </NavLink>
-                <NavLink className="link-text" href="/rakshakaksha">
-                  <DropdownItem>RakshaKaksha</DropdownItem>
+                <NavLink className="link-text" href="/admin/addfundraiser">
+                  <DropdownItem>Add a Fundraiser</DropdownItem>
                 </NavLink>
-                <NavLink className="link-text" href="/sexed">
-                  <DropdownItem>Sex'Ed</DropdownItem>
+                <NavLink className="link-text" href="/admin/maintainblog">
+                  <DropdownItem>Maintain Blogs</DropdownItem>
                 </NavLink>
-                <NavLink className="link-text" href="/sunflower">
+                <NavLink className="link-text" href="/admin/editblog">
+                  <DropdownItem>Edit Blogs</DropdownItem>
+                </NavLink>
+                {/* <NavLink className="link-text" href="/sunflower">
                   <DropdownItem>Sunflower Restoration</DropdownItem>
-                </NavLink>
+                </NavLink> */}
                 {/* <DropdownItem divider />
                 <DropdownItem>
                   Reset
                 </DropdownItem> */}
               </DropdownMenu>
             </UncontrolledDropdown>
-            <NavItem>
+            {/* <NavItem>
               <NavLink className="link-text" href="/media">
                 Media
               </NavLink>
@@ -129,7 +132,7 @@ const NavbarNew = (props) => {
             </NavItem>
             <NavLink className="link-text" href="/test">
               Test
-            </NavLink>
+            </NavLink> */}
           </Nav>
           {isAuthenticated ? authenticatedNavBar() : unauthenticatedNavBar()}
           {/* <NavbarText>Login</NavbarText> */}
@@ -142,12 +145,13 @@ const NavbarNew = (props) => {
   );
 };
 
-export default NavbarNew;
+export default NavbarAdmin;
 
 const NavbarNewContainer = styled.div`
 // #343a40 is dark  
 display:block;
 height:8vh;
+top:0;
 .dropdown{
     background: #343a40;
   }

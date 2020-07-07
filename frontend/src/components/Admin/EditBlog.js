@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import styled from "styled-components";
 
-import BillCard from "../Profile/BillCard";
 import NavbarAdmin from '../Admin/NavbarAdmin';
 import Footer from '../Footer';
 import axios from "axios";
 
-function AddBlog() {
+function EditBlog() {
   const blog = useFormik({
     initialValues: {
       title: "",
@@ -24,10 +23,10 @@ function AddBlog() {
   });
 
   return (
-    <AddBlogContainer>
+    <EditBlogContainer>
       <NavbarAdmin />
       <div className="container-form">
-        <h2>Blog Information</h2>
+        <h2>Edit Blogs</h2>
         <form className="form-about-bio" onSubmit={blog.handleSubmit}>
           <label htmlFor="title">Title:</label>
           <br />
@@ -46,6 +45,17 @@ function AddBlog() {
             type="text"
             id="author"
             name="author"
+            onChange={blog.handleChange}
+            value={blog.values.author}
+          />
+          <br />
+          <br />
+          <label htmlFor="author">Id:</label>
+          <br />
+          <input
+            type="text"
+            id="id"
+            name="id"
             onChange={blog.handleChange}
             value={blog.values.author}
           />
@@ -131,12 +141,12 @@ function AddBlog() {
         <BillCard amount="15000" cause="Bloody Pure Campaign" />
       </div> */}
       <Footer />
-    </AddBlogContainer>
+    </EditBlogContainer>
   );
 }
-export default AddBlog;
+export default EditBlog;
 
-const AddBlogContainer = styled.div`
+const EditBlogContainer = styled.div`
 
   background: #f5f2d0;
   display: flex;
@@ -171,6 +181,8 @@ const AddBlogContainer = styled.div`
     font-size: 1rem;
     font-weight: 800;
     color: rgba(0, 0, 0, 0.7);
+    margin-top:0.5rem;
+    margin-bottom: 0.5rem;
   }
   input {
     height: 2.75rem;
@@ -194,13 +206,6 @@ const AddBlogContainer = styled.div`
     height: 10.5rem;
   }
 
-  .gender-list {
-    font-family: Avenir Roman;
-    height: 2.75rem;
-    background: #f5f5f5;
-    font-size: large;
-    border-radius: 6px;
-  }
   .submit-btn {
     border:none;
     &:hover {
