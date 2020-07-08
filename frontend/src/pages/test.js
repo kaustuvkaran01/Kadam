@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import ProgressBar from "../components/progress-bar";
 import Table from "../components/Admin/Table";
-import NavbarNew from '../components/test2nav';
+import NavbarNew from "../components/test2nav";
 
 import AuthService from "../Services/AuthService";
 import { AuthContext } from "../Context/AuthContext";
@@ -28,8 +28,31 @@ function loadScript(src) {
   });
 }
 
+function Fund(props) {
+  const [Fund, setFund] = useState([]);
+  const id = props.value;
+  useEffect(() => {
+    axios
+      .get(`user/get_donation/${id}`)
+      .then((res) => {
+        console.log(res);
+        setFund(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    console.log(id);
+  }, []);
+  return (
+    <div>
+      <h3>{Fund.title}</h3>
+      <h5>{Fund.campaign}</h5>
+    </div>
+  );
+}
+
 const __DEV__ = document.domain === "localhost";
-function Test() {
+function Test(props) {
   async function displayRazorpay() {
     const res = await loadScript(
       "https://checkout.razorpay.com/v1/checkout.js"
@@ -94,7 +117,7 @@ function Test() {
 
   return (
     <TestContainer>
-    <NavbarNew/>
+      <NavbarNew />
       <div>
         <button onClick={displayRazorpay}>Donate</button>
         {testData.map((item, idx) => (
@@ -114,7 +137,10 @@ function Test() {
       </div>
       <div>
         {Donate.map((donation) => (
-          <h2>{donation.amount}</h2>
+          <div>
+            {donation.amount}
+            <Fund value={donation.fund} />
+          </div>
         ))}
       </div>
       <div>
@@ -127,6 +153,6 @@ function Test() {
 export default Test;
 
 const TestContainer = styled.div`
-background: #fffced;
+  background: #fffced;
   height: 120vh;
 `;

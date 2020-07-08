@@ -117,33 +117,33 @@ userRouter.post(
 
 //Donation
 
-userRouter.post(
-  "/donate/:id",
-  passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    if (req.isAuthenticated()) {
-      const { amount } = req.body;
-      const user = req.user._id;
-      const fund = req.params.id;
-      Donate.create({ amount, user, fund })
-        .then((blog) => res.json({ msg: "Updated successfully" }))
-        .catch((err) =>
-          res.status(400).json({ error: "Unable to update the Database" })
-        );
-      Fund.findById(req.params.id)
-        .exec()
-        .then((result) => {
-          result.collected += amount;
-          console.log(result);
-          result.save();
-        });
-    } else {
-      res.status(403).json({
-        message: { msgBody: "Login first", msgError: true },
-      });
-    }
-  }
-);
+// userRouter.post(
+//   "/invoice/:id",
+//   passport.authenticate("jwt", { session: false }),
+//   (req, res) => {
+//     if (req.isAuthenticated()) {
+//       const { amount } = req.body;
+//       const user = req.user._id;
+//       const fund = req.params.id;
+//       Donate.create({ amount, user, fund })
+//         .then((blog) => res.json({ msg: "Updated successfully" }))
+//         .catch((err) =>
+//           res.status(400).json({ error: "Unable to update the Database" })
+//         );
+//       Fund.findById(req.params.id)
+//         .exec()
+//         .then((result) => {
+//           result.collected += amount;
+//           console.log(result);
+//           result.save();
+//         });
+//     } else {
+//       res.status(403).json({
+//         message: { msgBody: "Login first", msgError: true },
+//       });
+//     }
+//   }
+// );
 
 userRouter.get(
   "/get_profile",
@@ -184,7 +184,7 @@ userRouter.get(
   (req, res) => {
     if (req.isAuthenticated()) {
       const id = req.user._id;
-      Donate.find({ user: id })
+      Invoice.find({ user: id })
         .then((results) => res.json(results))
         .catch((err) => res.status(404).json({ nouserfound: "No User found" }));
     } else {

@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import BillCard from "./BillCard";
 import axios from "axios";
-import logo1 from '../images/hamza.jpg';
+import logo1 from "../images/hamza.jpg";
 
 function Profile() {
   const [User, setUser] = useState([]);
@@ -20,13 +20,15 @@ function Profile() {
       });
   }, []);
 
-
   return (
     <ProfileContainer>
       <div className="container-bio">
-        <h2>Hello!! {User.username}. <br />Glad to have you here!</h2>
+        <h2>
+          Hello!! {User.username}. <br />
+          Glad to have you here!
+        </h2>
         {/* <img src={User.img} /> */}
-        <img src={logo1} />
+        <img src={User.image} />
         <div className="main-bio">
           <label>First Name</label>
           <p>{User.firstName}</p>
@@ -36,7 +38,7 @@ function Profile() {
           <p>{User.email}</p>
         </div>
       </div>
-      
+
       {/* <div className="bill-cards">
         <BillCard amount="15000" cause="Bloody Pure Campaign" />
         <BillCard amount="15000" cause="Bloody Pure Campaign" />
@@ -101,7 +103,7 @@ const ProfileContainer = styled.div`
     display: flex;
     width: 100vw;
   }
-  img{
+  img {
     height: 7.5rem;
     width: 7.5rem;
     border-radius: 50%;
