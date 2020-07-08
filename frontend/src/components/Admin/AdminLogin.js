@@ -23,7 +23,7 @@ const AdminLogin = (props) => {
         authContext.setUser(user);
         console.log();
         authContext.setIsAuthenticated(isAuthenticated);
-        props.history.push("/admin");
+        props.history.push("/");
       } else setMessage(message);
     });
   };
@@ -33,9 +33,7 @@ const AdminLogin = (props) => {
       <div className="container-form">
         <form onSubmit={onSubmit}>
           <h3>Please sign in</h3>
-          <label htmlFor="username">
-            Username:{" "}
-          </label>
+          <label htmlFor="username">Username: </label>
           <input
             type="text"
             name="username"
@@ -43,9 +41,7 @@ const AdminLogin = (props) => {
             className="form-control"
             placeholder="Enter Username"
           />
-          <label htmlFor="password">
-            Password:{" "}
-          </label>
+          <label htmlFor="password">Password: </label>
           <input
             type="password"
             name="password"
@@ -66,15 +62,15 @@ const AdminLogin = (props) => {
 export default AdminLogin;
 
 const AdminLoginContainer = styled.div`
-background: #f5f2d0;
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-height: 100vh;
-font-family: Avenir Roman;
-margin: 0.5rem auto;
-margin-top: 0;
-margin-bottom: 0;
+  background: #f5f2d0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100vh;
+  font-family: Avenir Roman;
+  margin: 0.5rem auto;
+  margin-top: 0;
+  margin-bottom: 0;
   .container-form {
     display: flex;
     flex-direction: column;
@@ -98,14 +94,14 @@ margin-bottom: 0;
     color: rgba(0, 0, 0, 0.7);
     margin: 1rem auto;
   }
-  input{
+  input {
     font-size: 1rem;
     font-weight: 800;
     // color: rgba(0, 0, 0, 0.7);
     background: #f5f5f5;
     margin: 1rem auto;
   }
-  button{
+  button {
     margin-top: 2rem;
   }
 `;

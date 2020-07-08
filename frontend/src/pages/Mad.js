@@ -30,6 +30,7 @@ function Mad() {
         {fundraisers.map((fundraiser) => (
           <Card
             key={fundraiser._id}
+            id={fundraiser._id}
             text={fundraiser.title}
             target={fundraiser.target}
             collected={fundraiser.collected}

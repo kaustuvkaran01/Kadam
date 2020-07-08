@@ -233,8 +233,14 @@ userRouter.post("/verification", (req, res) => {
   console.log(digest, req.headers["x-razorpay-signature"]);
   console.log(req.headers);
   console.log(req.payload);
-  console.log(req.body.payload.order.entity.receipt);
-
+  // console.log(req.body.payload.order.entity.receipt);
+  let reqBody = "";
+  req.on("data", (data) => {
+    reqBody += data;
+  });
+  req.on("end", (data) => {
+    console.log(reqBody);
+  });
   if (digest === req.headers["x-razorpay-signature"]) {
     console.log("request is legit");
     // process it
@@ -245,6 +251,8 @@ userRouter.post("/verification", (req, res) => {
       amount,
       captured,
     } = req.body.payload.payment.entity;
+    const { user, fund } = req.body.payload.payment.entity.notes;
+    console.log("TEST", user, fund);
     const { receipt } = req.body.payload.order.entity;
     Invoice.findOne({ order_id }, (err) => {
       if (err)
@@ -259,6 +267,8 @@ userRouter.post("/verification", (req, res) => {
           purpose: "fundraiser",
           captured,
           receipt,
+          user,
+          fund,
         });
         console.log(newInvoice);
         newInvoice.save((err) => {

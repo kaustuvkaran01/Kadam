@@ -15,7 +15,7 @@ const signToken = (userID) => {
       sub: userID,
     },
     "KADAMBEST",
-    { expiresIn: "1h" }
+    { expiresIn: "0.01h" }
   );
 };
 

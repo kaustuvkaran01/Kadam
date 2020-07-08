@@ -5,6 +5,7 @@ import logo from "./images/landing-image.jpg";
 import ProgressBar from "../components/progress-bar";
 import axios from "axios";
 import { AuthContext } from "../Context/AuthContext";
+
 const testData = [{ bgcolor: "#ef6c00", collected: 80, target: 100 }];
 
 function loadScript(src) {
@@ -85,8 +86,12 @@ function Card(props) {
         email: User.email,
         phone_number: "9899999999",
       },
-      user: User._id,
+      notes: {
+        user: User._id,
+        fund: props.id,
+      },
     };
+    console.log("notes", User.id, props.id);
     const paymentObject = new window.Razorpay(options);
     paymentObject.open();
   }
