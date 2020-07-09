@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import logo from "./images/landing-image.jpg";
-import ProgressBar from "../components/progress-bar";
+import logo from "../images/landing-image.jpg";
+import ProgressBar from "../progress-bar";
 import axios from "axios";
-import { AuthContext } from "../Context/AuthContext";
+import { AuthContext } from "../../Context/AuthContext";
 
 const testData = [{ bgcolor: "#ef6c00", collected: 80, target: 100 }];
 
@@ -114,6 +114,7 @@ function Card(props) {
           ))}
           {isAuthenticated ? Authenticated() : unAuthenticated()}
         </div>
+        <Link to={`funds/${props.fund_id}`}>Button</Link>
       </div>
     </CardContainer>
   );

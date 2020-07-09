@@ -29,9 +29,10 @@ import Register from "./components/Register";
 import AdminLogin from "./components/Admin/AdminLogin";
 import AddBlog from "./components/Admin/AddBlog";
 import AddFundraiser from "./components/Admin/AddFundraiser";
-import MaintainBlog from './components/Admin/MaintainBlog';
-import EditBlog from './components/Admin/EditBlog';
-
+import MaintainBlog from "./components/Admin/MaintainBlog";
+import EditBlog from "./components/Admin/EditBlog";
+import BlogPage from "./components/Blog/BlogPage";
+import FundPage from "./components/FundRaiser/FundPage";
 
 function App() {
   return (
@@ -44,6 +45,9 @@ function App() {
       <Route path="/blog" component={Blog} />
       <Route path="/test" component={Test} />
 
+      {/* Dynamic Routes */}
+      <Route path="/blogs/:id" component={BlogPage} />
+      <Route path="/funds/:id" component={FundPage} />
 
       {/* Campaign routes */}
       <Route path="/bloodypure" component={BloodyPure} />
@@ -52,7 +56,6 @@ function App() {
       <Route path="/sunflower" component={Sunflower} />
       {/* <Route path="/test2" component={NavbarNew} /> */}
 
-
       {/* //Admin Routes */}
       <Route path="/admin/login" component={AdminLogin} />
       <AdminRoute path="/admin/addblog" component={AddBlog} />
@@ -60,13 +63,9 @@ function App() {
       <AdminRoute path="/admin/maintainblog" component={MaintainBlog} />
       <AdminRoute path="/admin/editblog" component={EditBlog} />
 
-
-
       {/* //User routes */}
       <PrivateRoute path="/profile" component={UserPanel} />
       <AdminRoute path="/admin" component={AdminPanel} />
-
-
 
       {/* //Before Login */}
       <UnPrivateRoute path="/login" component={Login} />
