@@ -5,7 +5,7 @@ import styled from "styled-components";
 //Importing the Components
 import NavbarNew from "../components/test2nav";
 import Footer from "../components/Footer";
-import Card from "../components/Card";
+import Card from "../components/FundRaiser/Card";
 
 import logo from "../components/images/landing-image.jpg";
 import axios from "axios";
@@ -30,18 +30,18 @@ function Mad() {
         {fundraisers.map((fundraiser) => (
           <Card
             key={fundraiser._id}
-            id={fundraiser._id}
             text={fundraiser.title}
             target={fundraiser.target}
             collected={fundraiser.collected}
+            fund_id={fundraiser._id}
           />
         ))}
-        <Card text="This is the second card" image={logo} />
+        {/* <Card text="This is the second card" image={logo} />
         <Card text="This is the third card" image={logo} />
         <Card text="This is the fourth card" image={logo} />
         <Card text="This is the fifth card" image={logo} />
         <Card text="This is the sixth card" image={logo} />
-        <Card text="This is the seventh card" image={logo} />
+        <Card text="This is the seventh card" image={logo} /> */}
       </div>
       <Footer />
     </FundContainer>

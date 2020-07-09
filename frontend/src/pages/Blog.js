@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
-import axios from 'axios';
+import axios from "axios";
 
 import styled from "styled-components";
 
 //Importing the Components
 import NavbarNew from "../components/test2nav";
-import BlogCard from '../components/Blog/BlogCard';
+import BlogCard from "../components/Blog/BlogCard";
 import Footer from "../components/Footer";
 
 function Blog() {
-
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
     axios
@@ -23,24 +22,23 @@ function Blog() {
       });
   }, []);
 
-
-    return (
-      <BlogContainer>
-        <NavbarNew />
-        <div className="blog-main">
-
-          {/* <p> Trending Blogs</p> */}
-          {blogs.map((blog) => (
-            <BlogCard
-              title={blog.title}
-              subtitle={blog.subtitle}
-              content={blog.description}
-            />
-          ))}
-        </div>
-        <Footer />
-      </BlogContainer>
-    );
+  return (
+    <BlogContainer>
+      <NavbarNew />
+      <div className="blog-main">
+        {/* <p> Trending Blogs</p> */}
+        {blogs.map((blog) => (
+          <BlogCard
+            title={blog.title}
+            subtitle={blog.author}
+            content={blog.description}
+            blog_id={blog._id}
+          />
+        ))}
+      </div>
+      <Footer />
+    </BlogContainer>
+  );
 }
 
 export default Blog;
@@ -50,12 +48,12 @@ const BlogContainer = styled.div`
   flex-direction: column;
   margin-top: 2vh;
   background: #fffced;
-  .blog-main{
+  .blog-main {
     display: flex;
     flex-wrap: wrap;
-    margin:1rem auto;
+    margin: 1rem auto;
     margin-bottom: 5rem;
-    align-self:center;
+    align-self: center;
     justify-content: center;
     background: #fffced;
     height: auto;

@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import styled from 'styled-components';
+import styled from "styled-components";
 
 //Importing the Components
-import NavbarNew from '../components/test2nav';
-import Footer from '../components/Footer';
-import Card from '../components/Card';
-import Card_person from '../components/Card_person';
+import NavbarNew from "../components/test2nav";
+import Footer from "../components/Footer";
+
+import Card_person from "../components/Card_person";
 
 function About() {
   return (
@@ -55,13 +55,12 @@ function About() {
   );
 }
 
-
 export default About;
 
 const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   font-family: Avenir Roman;
   background: #fffced;
   .history {
@@ -75,7 +74,7 @@ const AboutContainer = styled.div`
 
   .history-text {
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     // justify-content: space-around;
     align-items: center;
     margin: 2rem auto;
@@ -86,7 +85,7 @@ const AboutContainer = styled.div`
     font-size: 3vh;
     font-family: Avenir Roman;
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     margin: 1rem auto;
     margin-left: 10rem;
     margin-right: 10rem;

@@ -14,10 +14,23 @@ router.get("/blogs", (req, res) => {
     .then((blogs) => res.json(blogs))
     .catch((err) => res.status(404).json({ noblogsfound: "No Blogs found" }));
 });
+router.get("/blogs/:id", (req, res) => {
+  Blog.findById(req.params.id)
+    .then((blogs) => res.json(blogs))
+    .catch((err) => res.status(404).json({ noblogsfound: "No Blogs found" }));
+});
 
 router.get("/funds", (req, res) => {
   console.log("fund");
   Fund.find({ isApproved: true })
+    .then((blogs) => res.json(blogs))
+    .catch((err) =>
+      res.status(404).json({ noblogsfound: "No Fundraiser found" })
+    );
+});
+router.get("/funds/:id", (req, res) => {
+  console.log("fund");
+  Fund.find({ isApproved: true, _id: req.params.id })
     .then((blogs) => res.json(blogs))
     .catch((err) =>
       res.status(404).json({ noblogsfound: "No Fundraiser found" })
