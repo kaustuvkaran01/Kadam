@@ -14,7 +14,7 @@ function TabContentThree(props){
   return (
     <TabContentThreeContainer>
       <Nav tabs>
-        <NavItem>
+        <NavItem className="gallery-nav-items">
           <NavLink
             className={classnames({ active: activeTab === '1' })}
             onClick={() => { toggle('1'); }}
@@ -22,7 +22,7 @@ function TabContentThree(props){
             City 1
           </NavLink>
         </NavItem>
-        <NavItem>
+        <NavItem className="gallery-nav-items">
           <NavLink
             className={classnames({ active: activeTab === '2' })}
             onClick={() => { toggle('2'); }}
@@ -30,7 +30,7 @@ function TabContentThree(props){
             City 2
           </NavLink>
         </NavItem>
-        <NavItem>
+        <NavItem className="gallery-nav-items">
           <NavLink
             className={classnames({ active: activeTab === '3' })}
             onClick={() => { toggle('3'); }}
@@ -38,7 +38,7 @@ function TabContentThree(props){
             City 3
           </NavLink>
         </NavItem>
-        <NavItem>
+        <NavItem className="gallery-nav-items">
           <NavLink
             className={classnames({ active: activeTab === '4' })}
             onClick={() => { toggle('4'); }}
@@ -84,5 +84,13 @@ function TabContentThree(props){
 export default TabContentThree;
 
 const TabContentThreeContainer = styled.div`
+.gallery-div{
+  height: auto;
+  width: auto;
+}
 
+img{
+  height: 10rem;
+  margin:1rem;
+}
 `;

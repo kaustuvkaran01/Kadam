@@ -12,14 +12,15 @@ import Gallery from '../Media/Gallery';
 function Admin() {
   return (
     <AdminContainer>
-      <Gallery />
+      <div>
+        <p>This is the admin container</p>
+      </div>
     </AdminContainer>
   );
 }
 export default Admin;
 
 const AdminContainer = styled.div`
-
     display: flex;
     flex-direction: row;
     margin-top: 2vh;

@@ -7,47 +7,46 @@ import TabContentTwo from './TabContentTwo';
 import TabContentThree from './TabContentThree';
 import TabContentFour from './TabContentFour';
 
-function Gallery(props){
-    
+export default function Gallery() {
   const [activeTab, setActiveTab] = useState('1');
 
   const toggle = tab => {
     if(activeTab !== tab) setActiveTab(tab);
   }
-
   return (
-    <GalleryContainer>
+    <GalleryTabContainer>
+      <h2 style={{fontWeight:"800", alignSelf:"center"}}>Gallery</h2>
       <Nav tabs>
-        <NavItem>
+        <NavItem className="gallery-nav-items">
           <NavLink
             className={classnames({ active: activeTab === '1' })}
             onClick={() => { toggle('1'); }}
           >
-            Campaign 1
+            Bloody Pure
           </NavLink>
         </NavItem>
-        <NavItem>
+        <NavItem className="gallery-nav-items">
           <NavLink
             className={classnames({ active: activeTab === '2' })}
             onClick={() => { toggle('2'); }}
           >
-            Campaign 2
+            Raksha Kaksha
           </NavLink>
         </NavItem>
-        <NavItem>
+        <NavItem className="gallery-nav-items">
           <NavLink
             className={classnames({ active: activeTab === '3' })}
             onClick={() => { toggle('3'); }}
           >
-            Campaign 3
+            Sunflower
           </NavLink>
-        </NavItem>
-        <NavItem>
+        </NavItem >
+        <NavItem className="gallery-nav-items">
           <NavLink
             className={classnames({ active: activeTab === '4' })}
             onClick={() => { toggle('4'); }}
           >
-            Campaign 4
+            Sex Ed
           </NavLink>
         </NavItem>
       </Nav>
@@ -81,12 +80,24 @@ function Gallery(props){
           </Row>
         </TabPane>
       </TabContent>
-    </GalleryContainer>
+    </GalleryTabContainer>
   );
 }
 
-export default Gallery;
+const GalleryTabContainer = styled.div`
 
-const GalleryContainer = styled.div`
+  {/* background: blue; */}
+  display:flex;
+  margin:auto;
+  margin-top:2vh;
+  flex-wrap:wrap;
+  flex-direction: column;
+  height:100vh;
+  {/* justify-content:space-evenly; */}
+  width: 90vw;
+  .gallery-nav-items{
+    // width: 7.5rem;
+    margin: auto;
+  }
 
 `;
