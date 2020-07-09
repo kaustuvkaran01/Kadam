@@ -62,7 +62,7 @@ const NavbarNew = (props) => {
           </NavLink>
         </NavbarText>
         <NavbarText>
-          <button type="button" onClick={onClickLogoutHandler}>
+          <button type="button" onClick={onClickLogoutHandler} className="log-button">
             LOGOUT
           </button>
         </NavbarText>
@@ -178,7 +178,7 @@ height:8vh;
     color: rgba(255,255,255,0.8);
   }
 
-  button{
+  .log-button{
     background:#008080;
     border-radius:12px;
     border:none;

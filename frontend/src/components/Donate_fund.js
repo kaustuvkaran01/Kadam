@@ -39,7 +39,7 @@ function Donate() {
     return (
       <>
         <Link to="/login">
-          <button>Donate</button>
+          <button className="btn btn-info btn-primary active">Donate</button>
         </Link>
       </>
     );
@@ -47,7 +47,7 @@ function Donate() {
   const Authenticated = () => {
     return (
       <>
-        <button onClick={displayRazorpay}>Donate</button>
+        <button onClick={displayRazorpay} className="btn btn-info btn-primary active" >Donate</button>
       </>
     );
   };

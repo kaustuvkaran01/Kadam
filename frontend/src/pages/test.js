@@ -5,6 +5,7 @@ import styled from "styled-components";
 import ProgressBar from "../components/progress-bar";
 import Table from "../components/Admin/Table";
 import NavbarNew from "../components/test2nav";
+import BlogCard2 from '../components/Media/Gallery';
 
 import AuthService from "../Services/AuthService";
 import { AuthContext } from "../Context/AuthContext";
@@ -116,17 +117,19 @@ function Test(props) {
   }, []);
 
   return (
+    <div style={{display:"flex",flexDirection:"column",flexWrap:"wrap"}}>
+
     <TestContainer>
       <NavbarNew />
       <div>
         <button onClick={displayRazorpay}>Donate</button>
         {testData.map((item, idx) => (
           <ProgressBar
-            key={idx}
-            bgcolor={item.bgcolor}
-            completed={item.completed}
+          key={idx}
+          bgcolor={item.bgcolor}
+          completed={item.completed}
           />
-        ))}
+          ))}
       </div>
       <br />
       <br />
@@ -147,12 +150,23 @@ function Test(props) {
         <Table />
       </div>
     </TestContainer>
+      <BlogContainer>
+        <BlogCard2 />
+      </BlogContainer>
+        </div>
   );
 }
 
 export default Test;
 
 const TestContainer = styled.div`
-  background: #fffced;
+display: flex;
+flex-direction:column;
+background: #fffced;
   height: 120vh;
+
+`;
+const BlogContainer = styled.div`
+display: flex;
+height: 100vh;
 `;

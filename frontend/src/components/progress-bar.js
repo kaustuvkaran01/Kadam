@@ -12,7 +12,7 @@ const ProgressBar = (props) => {
     >
       <div className="containerStyles">
         <div className="fillerStyles">
-          <span className="labelStyles">{`${
+          <span className="labelStyles" style={{borderRadius:"6px", background:"green"}}>{`${
             (collected / target) * 100
           }%`}</span>
         </div>
@@ -24,10 +24,15 @@ const ProgressBar = (props) => {
 export default ProgressBar;
 
 const ProgressBarContainer = styled.div`
+  margin-bottom:1rem;
   .containerStyles {
     height: 2vh;
     width: 100%;
     background-color: #e0e0de;
+    border-top-left-radius:12px;
+    border-bottom-left-radius:12px;
+    border-top-right-radius:12px;
+    border-bottom-right-radius:12px;
   }
 
   .fillerStyles {

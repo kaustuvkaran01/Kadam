@@ -1,71 +1,88 @@
-import React, { Component } from 'react';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import logo1 from '../images/bp.jpg';
-import logo2 from '../images/bp2.jpg';
-
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
+import classnames from 'classnames';
 
-class TabContentThree extends Component {
-  state = {
-    tabIndex:0,
+function TabContentThree(props){
+    
+  const [activeTab, setActiveTab] = useState('1');
+
+  const toggle = tab => {
+    if(activeTab !== tab) setActiveTab(tab);
   }
-  render() {
-    return (
-      <TabContainer>
-      <Tabs
-        className="tabs"
-        selectedIndex={this.state.tabIndex}
-        onSelect={(tabIndex) => this.setState({ tabIndex })}
-      >
-        <TabList className="tabs-list">
-          <Tab className={`${this.state.tabIndex === 0 ? "active" : null} `}>
-            <p>Chennai</p>
-          </Tab>
-          <Tab className={`${this.state.tabIndex === 1 ? "active" : null} `}>
-            <p>Amritsar</p>
-          </Tab>
-          <Tab className={`${this.state.tabIndex === 2 ? "active" : null} `}>
-            <p>Coimbatore</p>
-          </Tab>
-          <Tab className={`${this.state.tabIndex === 3 ? "active" : null} `}>
-            <p>Bangalore</p>
-          </Tab>
-        </TabList>
-        <TabPanel>
-        <p>First panel</p>
-        </TabPanel>
-        <TabPanel>
-        <p>Second panel</p>
-        </TabPanel>
-        <TabPanel>
-        <p>Third panel</p>
-        </TabPanel>
-        <TabPanel>
-        <p>Fourth panel</p>
-        </TabPanel>
-      </Tabs>
-    </TabContainer>
-    );
-  }
+
+  return (
+    <TabContentThreeContainer>
+      <Nav tabs>
+        <NavItem>
+          <NavLink
+            className={classnames({ active: activeTab === '1' })}
+            onClick={() => { toggle('1'); }}
+          >
+            City 1
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink
+            className={classnames({ active: activeTab === '2' })}
+            onClick={() => { toggle('2'); }}
+          >
+            City 2
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink
+            className={classnames({ active: activeTab === '3' })}
+            onClick={() => { toggle('3'); }}
+          >
+            City 3
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink
+            className={classnames({ active: activeTab === '4' })}
+            onClick={() => { toggle('4'); }}
+          >
+            City 4
+          </NavLink>
+        </NavItem>
+      </Nav>
+      <TabContent activeTab={activeTab}>
+        <TabPane tabId="1">
+          <Row>
+            <Col sm="12">
+              <p>Something real</p>
+            </Col>
+          </Row>
+        </TabPane>
+        <TabPane tabId="2">
+          <Row>
+            <Col sm="12">
+            <p>Something real</p>
+            </Col>
+          </Row>
+        </TabPane>
+        <TabPane tabId="3">
+          <Row>
+            <Col sm="12">
+            <p>Something real</p>
+            </Col>
+          </Row>
+        </TabPane>
+        <TabPane tabId="4">
+          <Row>
+            <Col sm="12">
+            <p>Something real</p>
+            </Col>
+          </Row>
+        </TabPane>
+      </TabContent>
+    </TabContentThreeContainer>
+  );
 }
 
 export default TabContentThree;
 
-const TabContainer = styled.div`
+const TabContentThreeContainer = styled.div`
 
-  display: flex;
-  flex-direction: row;
-
-  .active{
-    background: red;
-}
-
-    img{
-        height: 5rem;
-        width: 5rem;
-    }
-    .tabs-list{
-      display: flex;
-      flex-direction: row;
-    }
 `;

@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
+import TabContentOne from './TabContentOne';
+import TabContentTwo from './TabContentTwo';
+import TabContentThree from './TabContentThree';
+import TabContentFour from './TabContentFour';
 
-function TabContentFour(props){
+function Gallery(props){
     
   const [activeTab, setActiveTab] = useState('1');
 
@@ -12,14 +16,14 @@ function TabContentFour(props){
   }
 
   return (
-    <TabContentFourContainer>
+    <GalleryContainer>
       <Nav tabs>
         <NavItem>
           <NavLink
             className={classnames({ active: activeTab === '1' })}
             onClick={() => { toggle('1'); }}
           >
-            City 1
+            Campaign 1
           </NavLink>
         </NavItem>
         <NavItem>
@@ -27,7 +31,7 @@ function TabContentFour(props){
             className={classnames({ active: activeTab === '2' })}
             onClick={() => { toggle('2'); }}
           >
-            City 2
+            Campaign 2
           </NavLink>
         </NavItem>
         <NavItem>
@@ -35,7 +39,7 @@ function TabContentFour(props){
             className={classnames({ active: activeTab === '3' })}
             onClick={() => { toggle('3'); }}
           >
-            City 3
+            Campaign 3
           </NavLink>
         </NavItem>
         <NavItem>
@@ -43,7 +47,7 @@ function TabContentFour(props){
             className={classnames({ active: activeTab === '4' })}
             onClick={() => { toggle('4'); }}
           >
-            City 4
+            Campaign 4
           </NavLink>
         </NavItem>
       </Nav>
@@ -51,38 +55,38 @@ function TabContentFour(props){
         <TabPane tabId="1">
           <Row>
             <Col sm="12">
-              <p>Something real</p>
+              <TabContentOne/>
             </Col>
           </Row>
         </TabPane>
         <TabPane tabId="2">
           <Row>
             <Col sm="12">
-            <p>Something real</p>
+             <TabContentTwo / >
             </Col>
           </Row>
         </TabPane>
         <TabPane tabId="3">
           <Row>
             <Col sm="12">
-            <p>Something real</p>
+             <TabContentThree / >
             </Col>
           </Row>
         </TabPane>
         <TabPane tabId="4">
           <Row>
             <Col sm="12">
-            <p>Something real</p>
+             <TabContentFour / >
             </Col>
           </Row>
         </TabPane>
       </TabContent>
-    </TabContentFourContainer>
+    </GalleryContainer>
   );
 }
 
-export default TabContentFour;
+export default Gallery;
 
-const TabContentFourContainer = styled.div`
+const GalleryContainer = styled.div`
 
 `;

@@ -6,12 +6,13 @@ import { FaMicroblog } from 'react-icons/fa';
 import CampaignCard from './CampaignCard';
 import Table from './Table';
 import NavbarAdmin from './NavbarAdmin';
+import Gallery from '../Media/Gallery';
 
 
 function Admin() {
   return (
     <AdminContainer>
-      <p>This is the admin container</p>
+      <Gallery />
     </AdminContainer>
   );
 }

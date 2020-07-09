@@ -43,7 +43,7 @@ function Card(props) {
     return (
       <>
         <Link to="/login">
-          <button>Donate</button>
+          <button className="btn btn-primary active">Donate</button>
         </Link>
       </>
     );
@@ -51,7 +51,7 @@ function Card(props) {
   const Authenticated = () => {
     return (
       <>
-        <button onClick={displayRazorpay}>Donate</button>
+        <button onClick={displayRazorpay} className="btn btn-primary active">Donate</button>
       </>
     );
   };
