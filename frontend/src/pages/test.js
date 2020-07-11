@@ -122,6 +122,9 @@ function Test(props) {
     <TestContainer>
       <NavbarNew />
       <div>
+        <br/>
+        <br/>
+        <br/>
         <button onClick={displayRazorpay}>Donate</button>
         {testData.map((item, idx) => (
           <ProgressBar

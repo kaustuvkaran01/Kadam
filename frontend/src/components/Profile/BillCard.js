@@ -18,8 +18,7 @@ function BillCard( props ) {
 export default BillCard;
 
 const BillCardContainer = styled.div`
-    display: flex;
-    flex-wrap: wrap;
+    
     height: 10rem;
     width: 18rem;
     border-radius:12px;
