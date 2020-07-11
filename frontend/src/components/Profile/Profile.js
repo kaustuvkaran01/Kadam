@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import BillCard from "./BillCard";
 import axios from "axios";
+import BlogCard2 from '../Blog/BlogCard2';
 import logo1 from "../images/hamza.jpg";
 
 function Profile() {
@@ -19,11 +20,23 @@ function Profile() {
         console.log(err);
       });
   }, []);
+  const [blogs, setBlogs] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/blogs")
+      .then((res) => {
+        console.log(res);
+        setBlogs(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <ProfileContainer>
       <div className="container-bio">
-        <img src={User.image} />
+        <img className="profile-img" src={User.image} />
         <h2>
           Hello, <div className="info">{User.firstName}</div>
           Glad to have you here!
@@ -47,6 +60,14 @@ function Profile() {
         </div>
         <div className="my-blogs">
           <h2>Here are all of the blogs you've written 🧠</h2>
+          {blogs.map((blog) => (
+          <BlogCard2
+            title={blog.title}
+            subtitle={blog.author}
+            description={blog.description}
+            // blog_id={blog._id}
+          />
+        ))}
         </div>
       </div>
     </ProfileContainer>
@@ -91,7 +112,7 @@ const ProfileContainer = styled.div`
     justify-content: center;
     background: rgba(255, 0, 0, 0.1);
   }
-  img {
+  .profile-img {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -111,7 +132,8 @@ const ProfileContainer = styled.div`
   }
   .my-blogs{
     padding-top:1rem;
-    
     background:rgba(0,0,255,0.1);
+    display: flex;
+    flex-wrap:wrap;
   }
 `;

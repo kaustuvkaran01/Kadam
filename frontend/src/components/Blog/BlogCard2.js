@@ -31,7 +31,9 @@ const BlogCardContainer = styled.div`
 display: flex;
   height: 8.5rem;
   width: 32rem;
-  background:  #f5f2d0;
+//   background:  #f5f2d0;
+// background: rgba(255, 0, 0, 0.1);
+background:#ffe6ee;
   margin: 1rem auto;
   margin-bottom:2rem;
   border-radius:12px;
