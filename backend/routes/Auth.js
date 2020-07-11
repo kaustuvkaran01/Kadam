@@ -6,7 +6,7 @@ const JWT = require("jsonwebtoken");
 const signToken = (userID) => {
   return JWT.sign(
     {
-      iss: "KADAMBEST123ADMIN",
+      iss: "KADAMBEST",
       sub: userID,
     },
     "KADAMBEST",

@@ -4,7 +4,7 @@ import styled from "styled-components";
 import AuthService from "../Services/AuthService";
 import { AuthContext } from "../Context/AuthContext";
 import LoginModal from "./LoginModal";
-
+import { Link } from "react-router-dom";
 import {
   Collapse,
   Navbar,
@@ -32,9 +32,15 @@ const NavbarNew = (props) => {
   const onClickLogoutHandler = () => {
     AuthService.logout().then((data) => {
       if (data.success) {
-        console.log(data,"data")
+        console.log(data, "data");
         setUser(data.user);
         setIsAuthenticated(data.isAuthenticated);
+
+        return (
+          <>
+            <Link to="/" />;
+          </>
+        );
       }
     });
   };
@@ -43,7 +49,7 @@ const NavbarNew = (props) => {
       <NavbarNewContainer>
         <NavbarText>
           {/* <NavLink className="link-text" href="/login"> */}
-            <LoginModal buttonLabel='Login'/>
+          <LoginModal buttonLabel="Login" />
           {/* </NavLink> */}
         </NavbarText>
         {/* <NavbarText>
@@ -64,7 +70,11 @@ const NavbarNew = (props) => {
           </NavLink>
         </NavbarText>
         <NavbarText>
-          <button type="button" onClick={onClickLogoutHandler} className="log-button">
+          <button
+            type="button"
+            onClick={onClickLogoutHandler}
+            className="log-button"
+          >
             LOGOUT
           </button>
         </NavbarText>
@@ -137,9 +147,7 @@ const NavbarNew = (props) => {
           {/* <NavbarText>Login</NavbarText> */}
         </Collapse>
       </Navbar>
-      <div className='filler'>
-  
-      </div>
+      <div className="filler"></div>
     </NavbarNewContainer>
   );
 };
@@ -147,10 +155,10 @@ const NavbarNew = (props) => {
 export default NavbarNew;
 
 const NavbarNewContainer = styled.div`
-// #343a40 is dark  
-display:block;
-height:8vh;
-.dropdown{
+  // #343a40 is dark
+  display: block;
+  height: 8vh;
+  .dropdown {
     background: #343a40;
   }
   .custom-nav-link {
@@ -165,25 +173,24 @@ height:8vh;
     margin: 0;
     padding: 0;
   }
-  .filler{
-
+  .filler {
   }
-  .dropdown-menu{
+  .dropdown-menu {
     background-color: #2b2f34;
     color: white;
   }
-  .dropdown-item{
-    color: rgba(255,255,255,0.5);
+  .dropdown-item {
+    color: rgba(255, 255, 255, 0.5);
   }
-  .dropdown-item: hover{
-    background-color:#343a40;
-    color: rgba(255,255,255,0.8);
+  .dropdown-item: hover {
+    background-color: #343a40;
+    color: rgba(255, 255, 255, 0.8);
   }
 
-  .log-button{
-    background:#008080;
-    border-radius:12px;
-    border:none;
+  .log-button {
+    background: #008080;
+    border-radius: 12px;
+    border: none;
     color: white;
   }
 `;

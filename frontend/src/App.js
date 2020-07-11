@@ -68,7 +68,7 @@ function App() {
       <AdminRoute path="/admin" component={AdminPanel} />
 
       {/* //Before Login */}
-      <UnPrivateRoute path="/login" component={Login} />
+      {/* <UnPrivateRoute path="/login" component={Login} /> */}
       <UnPrivateRoute path="/register" component={Register} />
     </Switch>
   );
