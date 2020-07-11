@@ -23,12 +23,12 @@ function Profile() {
   return (
     <ProfileContainer>
       <div className="container-bio">
-        <h2>
-          Hello!! {User.username}. <br />
-          Glad to have you here!
-        </h2>
-        {/* <img src={User.img} /> */}
+        
         <img src={User.image} />
+        <h2>
+          Hello, <div className='info'>{User.firstName}</div>
+           Glad to have you here!
+        </h2>
         <div className="main-bio">
           <label>First Name</label>
           <p>{User.firstName}</p>
@@ -60,18 +60,20 @@ const ProfileContainer = styled.div`
   // align-content: center;
   // justify-content: center;
   font-family: Avenir Roman;
-  background: #fffced;
   margin: 0.5rem auto;
   margin-bottom: 0;
   h2 {
+    color: #808080;
     font-weight: 400;
+    text-align:center;
+    font-size:1.25rem;
   }
   .container-bio {
     display: flex;
     flex-direction: column;
     margin: 2rem auto;
     height: 80vh;
-    background: #fffced;
+    background: #red;
   }
   .main-bio {
     display: flex;
@@ -104,8 +106,16 @@ const ProfileContainer = styled.div`
     width: 100vw;
   }
   img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom:1rem;
     height: 7.5rem;
     width: 7.5rem;
     border-radius: 50%;
+  }
+  .info{
+    color:black;
+    font-size:2rem;
   }
 `;

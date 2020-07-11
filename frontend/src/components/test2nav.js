@@ -3,6 +3,7 @@ import logo from "./images/logo.png";
 import styled from "styled-components";
 import AuthService from "../Services/AuthService";
 import { AuthContext } from "../Context/AuthContext";
+import LoginModal from "./LoginModal";
 
 import {
   Collapse,
@@ -31,6 +32,7 @@ const NavbarNew = (props) => {
   const onClickLogoutHandler = () => {
     AuthService.logout().then((data) => {
       if (data.success) {
+        console.log(data,"data")
         setUser(data.user);
         setIsAuthenticated(data.isAuthenticated);
       }
@@ -40,15 +42,15 @@ const NavbarNew = (props) => {
     return (
       <NavbarNewContainer>
         <NavbarText>
-          <NavLink className="link-text" href="/login">
-            LOGIN
-          </NavLink>
+          {/* <NavLink className="link-text" href="/login"> */}
+            <LoginModal buttonLabel='Login'/>
+          {/* </NavLink> */}
         </NavbarText>
-        <NavbarText>
+        {/* <NavbarText>
           <NavLink className="link-text" href="/register">
-            REGISTER
+            Register
           </NavLink>
-        </NavbarText>
+        </NavbarText> */}
       </NavbarNewContainer>
     );
   };
