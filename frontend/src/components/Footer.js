@@ -79,6 +79,7 @@ export default function Footer() {
 const FooterContainer = styled.div`
     display: flex;
     flex-direction:row;
+    z-index:99;
     // background: #404040;
     background:#343a40;
     font-family: Avenir Roman;
