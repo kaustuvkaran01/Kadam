@@ -6,6 +6,7 @@ import styled from "styled-components";
 //Importing the Components
 import NavbarNew from "../components/test2nav";
 import BlogCard from "../components/Blog/BlogCard";
+import BlogCard2 from '../components/Blog/BlogCard2';
 import Footer from "../components/Footer";
 
 function Blog() {
@@ -33,6 +34,17 @@ function Blog() {
             subtitle={blog.author}
             content={blog.description}
             blog_id={blog._id}
+          />
+        ))}
+      </div>
+      <div className="blog-main">
+        {/* <p> Trending Blogs</p> */}
+        {blogs.map((blog) => (
+          <BlogCard2
+            title={blog.title}
+            subtitle={blog.author}
+            description={blog.description}
+            // blog_id={blog._id}
           />
         ))}
       </div>

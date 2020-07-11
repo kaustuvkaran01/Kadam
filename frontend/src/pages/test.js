@@ -5,7 +5,8 @@ import styled from "styled-components";
 import ProgressBar from "../components/progress-bar";
 import Table from "../components/Admin/Table";
 import NavbarNew from "../components/test2nav";
-import BlogCard2 from '../components/Media/Gallery';
+import Gallery from '../components/Media/Gallery';
+import BlogCard2 from '../components/Blog/BlogCard2';
 
 import AuthService from "../Services/AuthService";
 import { AuthContext } from "../Context/AuthContext";
@@ -117,7 +118,7 @@ function Test(props) {
   }, []);
 
   return (
-    <div style={{display:"flex",flexDirection:"column",flexWrap:"wrap"}}>
+    <div style={{display:"flex",flexDirection:"column",flexWrap:"wrap", background:"#fffced"}}>
 
     <TestContainer>
       <NavbarNew />
@@ -151,6 +152,8 @@ function Test(props) {
       </div>
     </TestContainer>
       <BlogContainer>
+        <Gallery />
+        <BlogCard2 />
         <BlogCard2 />
       </BlogContainer>
         </div>
@@ -163,10 +166,12 @@ const TestContainer = styled.div`
 display: flex;
 flex-direction:column;
 background: #fffced;
-  height: 120vh;
+  height: auto;
 
 `;
 const BlogContainer = styled.div`
+margin: auto;
 display: flex;
-height: 100vh;
+flex-direction: column;
+// height: 100vh;
 `;
