@@ -27,35 +27,38 @@ class Home extends Component {
             <div className="who-we-are">
               <div className="box">We have served over # people</div>
               <div className="who-we-are-text">
-                <h3>WHO WE ARE:</h3>
+                <h3>
+                  <strong>WHO WE ARE:</strong>
+                </h3>
                 <br /> “One person can make a difference and everyone should
-                try" - John Fitzgerald Kennedy<br /> “Let us remember: One book, one
-                pen, one child, and one teacher can change the world.” – Malala
-                Yousafzai. <br/>Our motto of doing good, one step at a time, has
-                allowed us to achieve a great many things, and spread happiness
-                and awareness to thousands of individuals across India.
+                try" - John Fitzgerald Kennedy
+                <br /> “Let us remember: One book, one pen, one child, and one
+                teacher can change the world.” – Malala Yousafzai. <br />
+                Our motto of doing good, one step at a time, has allowed us to
+                achieve a great many things, and spread happiness and awareness
+                to thousands of individuals across India.
               </div>
             </div>
             {/*Success story section*/}
             <div className="red success-story">
-                <div className="image">
-                    <img alt="Some image"/>
-                </div>
+              <div className="image">
+                <img alt="Some image" />
+              </div>
             </div>
             <div className="green success-story">
-            <div className="image">
-                    <img alt="Some image"/>
-                </div>
+              <div className="image">
+                <img alt="Some image" />
+              </div>
             </div>
             <div className="pink success-story">
-            <div className="image">
-                    <img alt="Some image"/>
-                </div>
+              <div className="image">
+                <img alt="Some image" />
+              </div>
             </div>
             <div className="blue success-story">
-            <div className="image">
-                    <img alt="Some image"/>
-                </div>
+              <div className="image">
+                <img alt="Some image" />
+              </div>
             </div>
             <Footer />
           </HomeContainer>
@@ -113,23 +116,23 @@ const HomeContainer = styled.div`
 
 
     .who-we-are{
-        padding-top:10vh;
+        // padding-top:10vh;
         height:100vh;
         display:flex;
         justify-content:space-around;
         align-items:center;
         text-align:center;
-        font-size:3vh;
+        font-size:1.5rem;
     }
     .who-we-are-text{
         display:flex
         flex-direction:column;
-        height:80vh;
-        width:80vh;
-        margin-top:20vh;
-        margin-right:20vh;
-        justify-content:center;
-        align-items:center;
+        // height:80vh;
+        width:40vw;
+        // margin-top:20vh;
+        // margin-right:20vh;
+        // justify-content:center;
+        // align-items:center;
     }
     .box{
         width: 50vh;
