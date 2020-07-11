@@ -92,7 +92,7 @@ const ProfileContainer = styled.div`
     font-weight: 400;
     text-align: center;
     font-size: 1.25rem;
-    margin: 0rem 1rem;
+    // margin: 0rem 1rem;
     min-width: 100%;
   }
   .container-bio {
@@ -126,7 +126,7 @@ const ProfileContainer = styled.div`
     font-size: 2rem;
   }
   .email {
-    margin: 0.5rem;
+    margin: auto;
     color: green;
     font-size: 1rem;
   }
