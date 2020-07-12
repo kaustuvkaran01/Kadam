@@ -117,7 +117,21 @@ adminRouter.post(
     }
   }
 );
-
+adminRouter.get(
+  "/get_blogs",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    console.log(req.user, req.isAuthenticated());
+    if (req.user.isAdmin) {
+      console.log("blog");
+      Blog.find()
+        .then((blogs) => res.json(blogs))
+        .catch((err) =>
+          res.status(404).json({ noblogsfound: "No Blogs found" })
+        );
+    }
+  }
+);
 //Update a blog
 adminRouter.put(
   "/blogs/:id",

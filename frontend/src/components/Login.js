@@ -3,7 +3,7 @@ import AuthService from "../Services/AuthService";
 import Message from "./Message";
 import { AuthContext } from "../Context/AuthContext";
 import Axios from "axios";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Login = (props) => {
   const [user, setUser] = useState({ username: "", password: "" });
@@ -39,11 +39,9 @@ const Login = (props) => {
   return (
     <LoginContainer>
       <div className="form-container">
-          <h3>Please sign in</h3>
+        <h3>Please sign in</h3>
         <form onSubmit={onSubmit}>
-          <label htmlFor="username" >
-            Username:{" "}
-          </label>
+          <label htmlFor="username">Username: </label>
           <input
             type="text"
             name="username"
@@ -51,9 +49,7 @@ const Login = (props) => {
             className="form-control"
             placeholder="Enter Username"
           />
-          <label htmlFor="password">
-            Password:{" "}
-          </label>
+          <label htmlFor="password">Password: </label>
           <input
             type="password"
             name="password"
@@ -88,7 +84,6 @@ const Login = (props) => {
 };
 
 export default Login;
-
 
 const LoginContainer = styled.div`
   background: #f5f2d0;

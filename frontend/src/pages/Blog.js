@@ -6,7 +6,7 @@ import styled from "styled-components";
 //Importing the Components
 import NavbarNew from "../components/test2nav";
 import BlogCard from "../components/Blog/BlogCard";
-import BlogCard2 from '../components/Blog/BlogCard2';
+import BlogCard2 from "../components/Blog/BlogCard2";
 import Footer from "../components/Footer";
 
 function Blog() {
