@@ -24,6 +24,8 @@ function loadScript(src) {
 
 const __DEV__ = document.domain === "localhost";
 function Card(props) {
+  const [donate, setDonate] = useState([]);
+  const [amntTxt, setAmount] = useState([]);
   const { isAuthenticated, user, setIsAuthenticated, setuser } = useContext(
     AuthContext
   );
@@ -51,9 +53,14 @@ function Card(props) {
   const Authenticated = () => {
     return (
       <>
-        <button onClick={displayRazorpay} className="btn btn-primary active">Donate</button>
+        <button onClick={displayRazorpay} className="btn btn-primary active">
+          Donate
+        </button>
       </>
     );
+  };
+  const myChangeHandler = (event) => {
+    setAmount(event.target.value);
   };
   async function displayRazorpay() {
     const res = await loadScript(
@@ -65,19 +72,21 @@ function Card(props) {
       return;
     }
 
-    const data = await fetch("http://localhost:5000/user/razorpay", {
-      method: "POST",
-    })
-      .then((t) => t.json())
+    await axios
+      .post("http://localhost:5000/user/razorpay", {
+        amount: amntTxt * 100,
+      })
+      .then((res) => {
+        console.log(res);
+        setDonate(res.data);
+      })
       .catch((err) => console.log(err));
-
-    console.log(data);
 
     const options = {
       key: "rzp_test_oiHBIGXLXkiNPr",
-      currency: data.currency,
-      amount: data.amount.toString(),
-      order_id: data.id,
+      currency: donate.currency,
+      amount: Number(amntTxt * 100),
+      order_id: donate.id,
       name: "Donation",
       description: "Thank you for nothing. Please give us some money",
 
@@ -88,10 +97,10 @@ function Card(props) {
       },
       notes: {
         user: User._id,
-        fund: props.id,
+        fund: props.fund_id,
       },
     };
-    console.log("notes", User.id, props.id);
+    console.log("notes", User.id, props.fund_id);
     const paymentObject = new window.Razorpay(options);
     paymentObject.open();
   }
@@ -112,6 +121,7 @@ function Card(props) {
               target={props.target}
             />
           ))}
+          <input onChange={myChangeHandler} />
           {isAuthenticated ? Authenticated() : unAuthenticated()}
         </div>
       </div>

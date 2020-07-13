@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 
 import styled from "styled-components";
 import axios from "axios";
-import { GrFormViewHide } from "react-icons/gr";
+import { GrFormViewHide, GrEdit } from "react-icons/gr";
 import { AiTwotoneDelete } from "react-icons/ai";
+import { Link } from "react-router-dom";
 import BlogCard from "../Blog/BlogCard";
 
 function View(props) {
@@ -90,6 +91,9 @@ function Table() {
             <td>{blog.updated_date}</td>
             <td>
               <View approve={blog.isApproved} blog_id={blog._id} />
+              <Link to={`editblog/${blog._id}`}>
+                <GrEdit />
+              </Link>
             </td>
           </tr>
         ))}

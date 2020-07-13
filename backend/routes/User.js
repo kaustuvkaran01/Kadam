@@ -234,13 +234,7 @@ userRouter.post("/verification", (req, res) => {
   console.log(req.headers);
   console.log(req.payload);
   // console.log(req.body.payload.order.entity.receipt);
-  let reqBody = "";
-  req.on("data", (data) => {
-    reqBody += data;
-  });
-  req.on("end", (data) => {
-    console.log(reqBody);
-  });
+  console.log("request");
   if (digest === req.headers["x-razorpay-signature"]) {
     console.log("request is legit");
     // process it
@@ -298,16 +292,15 @@ userRouter.post("/verification", (req, res) => {
 
 userRouter.post("/razorpay", async (req, res) => {
   const payment_capture = 1;
-  const amount = 20;
   const currency = "INR";
 
   const options = {
-    amount: amount * 100,
+    amount: req.body.amount,
     currency,
     receipt: shortid.generate(),
     payment_capture,
   };
-
+  console.log(req.body);
   try {
     const response = await razorpay.orders.create(options);
     console.log(response);

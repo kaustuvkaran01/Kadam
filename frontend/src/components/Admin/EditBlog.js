@@ -2,23 +2,38 @@ import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import styled from "styled-components";
 
-import NavbarAdmin from '../Admin/NavbarAdmin';
-import Footer from '../Footer';
+import NavbarAdmin from "../Admin/NavbarAdmin";
+import Footer from "../Footer";
 import axios from "axios";
+import { useParams, useHistory } from "react-router";
 
 function EditBlog() {
+  const [blogg, setblogg] = useState([]);
+  const { id } = useParams();
+  const history = useHistory();
+  useEffect(() => {
+    axios
+      .get(`/admin/get_blogs/${id}`)
+      .then((res) => {
+        console.log(res.data);
+        setblogg(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
   const blog = useFormik({
     initialValues: {
-      title: "",
-      author: "",
-      description: "",
+      title: blogg.title,
+      author: blogg.author,
+      description: blogg.description,
     },
     onSubmit: (values) => {
       console.log("Form data", values);
       axios
-        .post("/admin/blogs", values)
+        .put(`/admin/blogs/${id}`, values)
         .then((res) => console.log(res))
         .catch((err) => console.log(err));
+      let path = `/admin/maintainblog`;
+      history.push(path);
     },
   });
 
@@ -31,6 +46,7 @@ function EditBlog() {
           <label htmlFor="title">Title:</label>
           <br />
           <input
+            placeholder={blogg.title}
             type="text"
             id="title"
             name="title"
@@ -42,6 +58,7 @@ function EditBlog() {
           <label htmlFor="author">Author:</label>
           <br />
           <input
+            placeholder={blogg.author}
             type="text"
             id="author"
             name="author"
@@ -50,29 +67,29 @@ function EditBlog() {
           />
           <br />
           <br />
-          <label htmlFor="author">Id:</label>
+          {/* <label htmlFor="author">Id:</label>
           <br />
           <input
+            placeholder={blog.values.author}
             type="text"
             id="id"
             name="id"
             onChange={blog.handleChange}
             value={blog.values.author}
-          />
+          /> */}
           <br />
           <br />
           <label htmlFor="description">Description:</label>
           <br />
           <textarea
+            placeholder={blogg.description}
             cols="60"
             rows="5"
             class="textarea"
             name="description"
             onChange={blog.handleChange}
             value={blog.values.description}
-          >
-            Enter details here
-          </textarea>
+          ></textarea>
           {/* <input
             type="textarea"
             id="description"
@@ -147,7 +164,6 @@ function EditBlog() {
 export default EditBlog;
 
 const EditBlogContainer = styled.div`
-
   background: #f5f2d0;
   display: flex;
   flex-direction: row;
@@ -181,7 +197,7 @@ const EditBlogContainer = styled.div`
     font-size: 1rem;
     font-weight: 800;
     color: rgba(0, 0, 0, 0.7);
-    margin-top:0.5rem;
+    margin-top: 0.5rem;
     margin-bottom: 0.5rem;
   }
   input {
@@ -207,7 +223,7 @@ const EditBlogContainer = styled.div`
   }
 
   .submit-btn {
-    border:none;
+    border: none;
     &:hover {
       background: #863547;
       color: white;

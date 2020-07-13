@@ -61,8 +61,8 @@ function App() {
       <AdminRoute path="/admin/addblog" component={AddBlog} />
       <AdminRoute path="/admin/addfundraiser" component={AddFundraiser} />
       <AdminRoute path="/admin/maintainblog" component={MaintainBlog} />
-      <AdminRoute path="/admin/editblog" component={EditBlog} />
-
+      {/* <AdminRoute path="/admin/editblog" component={EditBlog} /> */}
+      <AdminRoute path="/admin/editblog/:id" component={EditBlog} />
       {/* //User routes */}
       <PrivateRoute path="/profile" component={UserPanel} />
       <AdminRoute path="/admin" component={AdminPanel} />
