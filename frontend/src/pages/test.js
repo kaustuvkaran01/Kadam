@@ -5,8 +5,8 @@ import styled from "styled-components";
 import ProgressBar from "../components/progress-bar";
 import Table from "../components/Admin/Table";
 import NavbarNew from "../components/test2nav";
-import Gallery from '../components/Media/Gallery';
-import BlogCard2 from '../components/Blog/BlogCard2';
+import Gallery from "../components/Media/Gallery";
+import BlogCard2 from "../components/Blog/BlogCard2";
 
 import AuthService from "../Services/AuthService";
 import { AuthContext } from "../Context/AuthContext";
@@ -55,29 +55,30 @@ function Fund(props) {
 
 const __DEV__ = document.domain === "localhost";
 function Test(props) {
+  const [donate, setdonate] = useState([]);
   async function displayRazorpay() {
     const res = await loadScript(
       "https://checkout.razorpay.com/v1/checkout.js"
     );
-
     if (!res) {
       alert("Razorpay SDK failed to load. Are you online?");
       return;
     }
 
-    const data = await fetch("http://localhost:5000/user/razorpay", {
-      method: "POST",
-    })
-      .then((t) => t.json())
+    await axios
+      .post("http://localhost:5000/user/razorpay", {
+        amount: 10 * 100,
+      })
+      .then((res) => {
+        console.log("donate", res.data);
+        setdonate(res.data);
+      })
       .catch((err) => console.log(err));
-
-    console.log(data);
-
     const options = {
-      key: "rzp_test_iKqGktR1iz0mCB",
-      currency: data.currency,
-      amount: data.amount.toString(),
-      order_id: data.id,
+      key: "rzp_test_oiHBIGXLXkiNPr",
+      currency: donate.currency,
+      amount: "100000",
+      order_id: donate.id,
       name: "Donation",
       description: "Thank you for nothing. Please give us some money",
       handler: function (response) {
@@ -118,63 +119,68 @@ function Test(props) {
   }, []);
 
   return (
-    <div style={{display:"flex",flexDirection:"column",flexWrap:"wrap", background:"#fffced"}}>
-
-    <TestContainer>
-      <NavbarNew />
-      <div>
-        <br/>
-        <br/>
-        <br/>
-        <button onClick={displayRazorpay}>Donate</button>
-        {testData.map((item, idx) => (
-          <ProgressBar
-          key={idx}
-          bgcolor={item.bgcolor}
-          completed={item.completed}
-          />
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        flexWrap: "wrap",
+        background: "#fffced",
+      }}
+    >
+      <TestContainer>
+        <NavbarNew />
+        <div>
+          <br />
+          <br />
+          <br />
+          <button onClick={displayRazorpay}>Donate</button>
+          {testData.map((item, idx) => (
+            <ProgressBar
+              key={idx}
+              bgcolor={item.bgcolor}
+              completed={item.completed}
+            />
           ))}
-      </div>
-      <br />
-      <br />
-      <br />
-      <div>
-        <h1>{User.username}</h1>
-        <h1>{User._id}</h1>
-      </div>
-      <div>
-        {Donate.map((donation) => (
-          <div>
-            {donation.amount}
-            <Fund value={donation.fund} />
-          </div>
-        ))}
-      </div>
-      <div>
-        <Table />
-      </div>
-    </TestContainer>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div>
+          <h1>{User.username}</h1>
+          <h1>{User._id}</h1>
+        </div>
+        <div>
+          {Donate.map((donation) => (
+            <div>
+              {donation.amount}
+              <Fund value={donation.fund} />
+            </div>
+          ))}
+        </div>
+        <div>
+          <Table />
+        </div>
+      </TestContainer>
       <BlogContainer>
         <Gallery />
         <BlogCard2 />
         <BlogCard2 />
       </BlogContainer>
-        </div>
+    </div>
   );
 }
 
 export default Test;
 
 const TestContainer = styled.div`
-display: flex;
-flex-direction:column;
-background: #fffced;
+  display: flex;
+  flex-direction: column;
+  background: #fffced;
   height: auto;
-
 `;
 const BlogContainer = styled.div`
-margin: auto;
-display: flex;
-flex-direction: column;
-// height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  // height: 100vh;
 `;

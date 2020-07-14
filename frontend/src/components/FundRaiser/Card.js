@@ -24,7 +24,6 @@ function loadScript(src) {
 
 const __DEV__ = document.domain === "localhost";
 function Card(props) {
-  const [donate, setDonate] = useState([]);
   const [amntTxt, setAmount] = useState([]);
   const { isAuthenticated, user, setIsAuthenticated, setuser } = useContext(
     AuthContext
@@ -71,22 +70,23 @@ function Card(props) {
       alert("Razorpay SDK failed to load. Are you online?");
       return;
     }
+    console.log("HI");
+    const data = await fetch("http://localhost:5000/user/razorpay", {
+      method: "POST",
+      headers: {
+        Accept: "application/json,text/plain,*/*",
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ amount: amntTxt * 100 }),
+    }).then((t) => t.json());
 
-    await axios
-      .post("http://localhost:5000/user/razorpay", {
-        amount: amntTxt * 100,
-      })
-      .then((res) => {
-        console.log(res);
-        setDonate(res.data);
-      })
-      .catch((err) => console.log(err));
-
+    console.log(data);
+    console.log("HAWW");
     const options = {
       key: "rzp_test_oiHBIGXLXkiNPr",
-      currency: donate.currency,
+      currency: data.currency,
       amount: Number(amntTxt * 100),
-      order_id: donate.id,
+      order_id: data.id,
       name: "Donation",
       description: "Thank you for nothing. Please give us some money",
 
@@ -100,6 +100,7 @@ function Card(props) {
         fund: props.fund_id,
       },
     };
+    console.log(options);
     console.log("notes", User.id, props.fund_id);
     const paymentObject = new window.Razorpay(options);
     paymentObject.open();
@@ -123,6 +124,7 @@ function Card(props) {
           ))}
           <input onChange={myChangeHandler} />
           {isAuthenticated ? Authenticated() : unAuthenticated()}
+          <Link to={`/funds/${props.fund_id}`}>button</Link>
         </div>
       </div>
     </CardContainer>
