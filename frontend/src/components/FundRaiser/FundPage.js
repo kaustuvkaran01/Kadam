@@ -5,6 +5,8 @@ import styled from "styled-components";
 
 //Importing the Components
 import NavbarNew from "../test2nav";
+import FundPageTop from './FundPageTop';
+import FundPageMain from './FundPageMain';
 
 import Footer from "../Footer";
 import { useParams } from "react-router";
@@ -26,16 +28,27 @@ function FundPage() {
   }, []);
 
   return (
-    <>
+    <div>
       <NavbarNew />
-      <div>
-        {Fund.title}
-        {Fund.campaign}
-        {Fund.target}
-      </div>
+      <FundPageContainer>
+        <FundPageTop fund="300" goal="1,000" backers="1,155" days="31" />
+        <FundPageMain />
+      </FundPageContainer>
       <Footer />
-    </>
+    </div>
   );
 }
 
 export default FundPage;
+
+const FundPageContainer = styled.div`
+
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  height:auto;
+  margin-top: 2vh;
+  justify-content: center;
+  align-content: center;
+
+`;
