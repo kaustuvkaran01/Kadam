@@ -33,7 +33,7 @@ display: flex;
   width: 32rem;
 //   background:  #f5f2d0;
 // background: rgba(255, 0, 0, 0.1);
-background:#ffe6ee;
+background:white;
   margin: 1rem auto;
   margin-bottom:2rem;
   border-radius:12px;
