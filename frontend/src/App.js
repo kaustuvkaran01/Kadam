@@ -47,7 +47,7 @@ function App() {
 
       {/* Dynamic Routes */}
       <Route path="/blogs/:id" component={BlogPage} />
-      <Route path="/funds/:id" component={FundPage} />
+      <Route exact path="/funds/:id" component={FundPage} />
 
       {/* Campaign routes */}
       <Route path="/bloodypure" component={BloodyPure} />

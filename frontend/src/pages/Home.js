@@ -80,8 +80,8 @@ const HomeContainer = styled.div`
         align-items: center;
         height: 100vh;
         //navbar is 12vh
-        //background-image: url(${landingimage});
-        background:linear-gradient(rgba(247,202,68,0.7),rgba(255,255,255,0.7));
+        background-image: url(${landingimage});
+        // background:linear-gradient(rgba(247,202,68,0.7),rgba(255,255,255,0.7));
         background-size: cover;
         background-position:center;
         border-top: 20px double black;

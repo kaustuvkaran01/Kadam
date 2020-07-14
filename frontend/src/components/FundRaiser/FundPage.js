@@ -12,26 +12,33 @@ import Footer from "../Footer";
 import { useParams } from "react-router";
 
 function FundPage() {
+  // const time = Math.abs(Date.parse(Fund.targetDate) - Date.now()) / 1000;
+  const [delta,setDelta] = useState();
   const [Fund, setFunds] = useState([]);
   const { id } = useParams();
   useEffect(() => {
     axios
       .get(`http://localhost:5000/funds/${id}`)
       .then((res) => {
-        console.log(res);
-        setFunds(res.data);
+        console.log(res.data[0]);
+        setFunds(res.data[0]);
+        setDelta(Math.floor((Math.abs(Date.parse(res.data[0].targetDate) - Date.now()) / 1000)/86400));
+        // setDelta(Math.abs(Date.parse(Fund.targetDate) - Date.now()) / 1000);
+        // console.log(Math.abs(Date.parse(Fund.targetDate) - Date.now()) / 1000);
       })
       .catch((err) => {
         console.log(err);
       });
-    console.log(`http://localhost:5000/funds/${id}`);
+      console.log(`http://localhost:5000/funds/${id}`);
   }, []);
 
+
+        // console.log(Math.floor(delta / 86400));
   return (
     <div>
       <NavbarNew />
       <FundPageContainer>
-        <FundPageTop fund="300" goal="1,000" backers="1,155" days="31" />
+        <FundPageTop title={Fund.title} subtitle={Fund.description} fund={Fund.collected} goal="1,000" backers="1,155" days={delta} />
         <FundPageMain />
       </FundPageContainer>
       <Footer />
@@ -50,5 +57,6 @@ const FundPageContainer = styled.div`
   margin-top: 2vh;
   justify-content: center;
   align-content: center;
+  background:#fffced;
 
 `;

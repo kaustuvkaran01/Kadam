@@ -8,8 +8,8 @@ import logo from '../images/landing-image.jpg';
 export default function FundPageTop(props) {
   return (
     <FundPageTopContainer>
-      <p className="title">THIS IS THE TITLE</p>
-      <p className="subtitle">THIS IS THE SUB-TITLE</p>
+      <p className="title">{props.title}</p>
+  <p className="subtitle">{props.subtitle}</p>
       <div className="donate">
         <img className="fund-main" src={logo} />
         <div className="fund-details">
@@ -140,6 +140,7 @@ const FundPageTopContainer = styled.div`
         align-self: center;
         padding-right: 2rem;
         // border-right: 1px solid rgba(0,0,0,0.4);
+        border-radius:24px;
         
     }
     .fund-details{
