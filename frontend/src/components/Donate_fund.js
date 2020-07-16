@@ -18,7 +18,6 @@ function loadScript(src) {
   });
 }
 
-const __DEV__ = document.domain === "localhost";
 function Donate() {
   const { isAuthenticated, user, setIsAuthenticated, setuser } = useContext(
     AuthContext
@@ -47,7 +46,12 @@ function Donate() {
   const Authenticated = () => {
     return (
       <>
-        <button onClick={displayRazorpay} className="btn btn-info btn-primary active" >Donate</button>
+        <button
+          onClick={displayRazorpay}
+          className="btn btn-info btn-primary active"
+        >
+          Donate
+        </button>
       </>
     );
   };
@@ -61,7 +65,7 @@ function Donate() {
       return;
     }
 
-    const data = await fetch("http://localhost:5000/user/razorpay", {
+    const data = await fetch("/user/razorpay", {
       method: "POST",
     })
       .then((t) => {

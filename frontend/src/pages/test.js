@@ -53,7 +53,6 @@ function Fund(props) {
   );
 }
 
-const __DEV__ = document.domain === "localhost";
 function Test(props) {
   const [donate, setdonate] = useState([]);
   async function displayRazorpay() {
@@ -66,7 +65,7 @@ function Test(props) {
     }
 
     await axios
-      .post("http://localhost:5000/user/razorpay", {
+      .post("http://13.233.255.98:5000/user/razorpay", {
         amount: 10 * 100,
       })
       .then((res) => {

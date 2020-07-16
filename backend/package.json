@@ -24,6 +24,7 @@
     "passport-google-oauth20": "^2.0.0",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
+    "path": "^0.12.7",
     "razorpay": "^2.0.6",
     "shortid": "^2.2.15"
   },

@@ -22,7 +22,6 @@ function loadScript(src) {
   });
 }
 
-const __DEV__ = document.domain === "localhost";
 function Card(props) {
   const [amntTxt, setAmount] = useState([]);
   const { isAuthenticated, user, setIsAuthenticated, setuser } = useContext(
@@ -71,7 +70,7 @@ function Card(props) {
       return;
     }
     console.log("HI");
-    const data = await fetch("http://localhost:5000/user/razorpay", {
+    const data = await fetch("/user/razorpay", {
       method: "POST",
       headers: {
         Accept: "application/json,text/plain,*/*",

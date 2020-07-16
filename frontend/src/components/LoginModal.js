@@ -9,11 +9,11 @@ const LoginModal = (props) => {
 
   const _handleGoogleSignInClick = () => {
     // Open Google login page
-    window.open("http://localhost:5000/auth/google", "_self");
+    window.open("http://13.233.255.98:5000/auth/google", "_self");
   };
   const _handleFacebookSignInClick = () => {
     // Open Facebook login page
-    window.open("http://localhost:5000/auth/facebook", "_self");
+    window.open("http://13.233.255.98:5000/auth/facebook", "_self");
   };
 
   const [modal, setModal] = useState(false);
@@ -28,13 +28,23 @@ const LoginModal = (props) => {
       <Modal centered isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>Welcome to Kadam</ModalHeader>
         <ModalBody>
-          <Button color="primary" onClick={toggle} block onClick={_handleGoogleSignInClick}>
+          <Button
+            color="primary"
+            onClick={toggle}
+            block
+            onClick={_handleGoogleSignInClick}
+          >
             <div>
               <img classname="logo" src={logoGoogle} />
               Login with Google
             </div>
           </Button>{" "}
-          <Button color="secondary" onClick={toggle} block onClick={_handleFacebookSignInClick}>
+          <Button
+            color="secondary"
+            onClick={toggle}
+            block
+            onClick={_handleFacebookSignInClick}
+          >
             <div>
               <img classname="logo" src={logoFacebook} />
               Login with Facebook

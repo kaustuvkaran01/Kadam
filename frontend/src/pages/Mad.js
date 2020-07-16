@@ -14,7 +14,7 @@ function Mad() {
   const [fundraisers, setfundraisers] = useState([]);
   useEffect(() => {
     axios
-      .get("funds")
+      .get("/funds")
       .then((res) => {
         console.log(res);
         setfundraisers(res.data);

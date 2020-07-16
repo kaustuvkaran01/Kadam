@@ -29,11 +29,11 @@ const Login = (props) => {
   };
   const _handleGoogleSignInClick = () => {
     // Open Google login page
-    window.open("http://localhost:5000/auth/google", "_self");
+    window.open("http://13.233.255.98:5000/auth/google", "_self");
   };
   const _handleFacebookSignInClick = () => {
     // Open Facebook login page
-    window.open("http://localhost:5000/auth/facebook", "_self");
+    window.open("http://13.233.255.98:5000/auth/facebook", "_self");
   };
 
   return (

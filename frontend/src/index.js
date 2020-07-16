@@ -9,7 +9,7 @@ import "./fonts/AvenirLTStd-Black.otf";
 import "./fonts/AvenirLTStd-Book.otf";
 import "./fonts/AvenirLTStd-Roman.otf";
 import AuthProvider from "./Context/AuthContext";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 ReactDOM.render(
   <AuthProvider>

@@ -4,6 +4,7 @@ const app = express();
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const passport = require("passport");
+const path = require("path");
 
 app.use(cookieParser());
 app.use(express.json());
@@ -20,6 +21,14 @@ app.use(passport.initialize());
 //ROUTES
 const index = require("./routes/index");
 app.use("/", index);
+
+//Serve static assets
+
+app.use(express.static(path.join(__dirname, "build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+});
+
 const userRouter = require("./routes/User");
 app.use("/user", userRouter);
 const adminRouter = require("./routes/Admin");
