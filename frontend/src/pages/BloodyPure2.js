@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import styled from 'styled-components';
+import { generateMedia } from 'styled-media-query';
 
 //Importing the Components
 import NavbarNew from '../components/test2nav';
@@ -153,14 +154,33 @@ export default function BloodyPure2() {
               </p>
             </form>
           </div>
-          {/* <Footer /> */}
         </AddFundraiserContainer>
+      </div>
+      <div className="what-we-do sec-color">
+        <div className="text">
+          <h1>WHAT DO WE DO WITH YOUR MONEY?</h1>
+          Through #BloodyPure Campaign we also provide cloth pads to girls in
+          rural areas through online fundraising. We have collaboratored with
+          Rebelle Pads, a cloth pad manufacturer where we het 4 cloth pads, 1
+          wet pouch and 1 cloth bag at Rs. 192. We have provided 80 kits to
+          girls in a Government school in Tholasampatti Village, Salem and 70
+          kits to girls in SGRD School, Amritsar. Total 150 kits are distributed
+          with the help of the BloodyPure Memberships, contributing to our
+          mission to reduce the monthly waste production from the mainstream
+          plastic sanitary napkins.
+        </div>
       </div>
 
       <Footer />
     </BloodyPureContainer>
   );
 }
+
+
+const customMedia = generateMedia({
+  smTablet: '740px'
+
+})
 
 
 const BloodyPureContainer = styled.div`
@@ -205,10 +225,15 @@ font-family: Avenir Roman;
 .landing-text{
     padding:0 8rem;
     color:white;
-    font-size:5vh;
+    font-size:xx-large;
     text-align:center;
     background: rgba(0,0,0,0.4);
     animation: slide-top 1s ease-in-out both;
+    ${
+      customMedia.lessThan('smTablet')`
+        width:100%;
+      `
+    }
     
 }
 
@@ -227,6 +252,11 @@ font-family: Avenir Roman;
     margin:3rem;
     border-radius:15px;
     transition: transform .2s;
+    ${customMedia.lessThan('smTablet')`
+    
+        height:10rem;
+
+    `}
 }
 .image:hover{
     transform:scale(1.05);
@@ -247,6 +277,11 @@ font-family: Avenir Roman;
     background: rgba(255,0,0,0.1);
     padding:1rem;
     border-radius: 15px;
+    ${
+      customMedia.lessThan('smTablet')`
+        width:75%;
+      `
+    }
 }
 .text:hover{
     transform:scale(1.05);
@@ -265,6 +300,10 @@ font-family: Avenir Roman;
     &:hover{
         transform:scale(1.05);
     }
+    ${customMedia.lessThan('smTablet')`
+      width:75%;
+    
+    `}
 }
 
 h1{
@@ -290,6 +329,11 @@ const AddFundraiserContainer = styled.div`
   margin: 0.5rem auto;
   margin-top: 0;
   margin-bottom: 0;
+  ${
+    customMedia.lessThan('smTablet')`
+      width:100%;
+    `
+  }
   h2 {
     font-weight: 400;
   }
@@ -301,6 +345,11 @@ const AddFundraiserContainer = styled.div`
     margin: 2rem auto;
     margin-bottom: 0;
     margin-top:15vh;
+    ${
+      customMedia.lessThan('smTablet')`
+        width:100%;
+      `
+    }
   }
   .form-about-fundraiser {
     display: flex;
@@ -311,6 +360,11 @@ const AddFundraiserContainer = styled.div`
     margin-top: 1.5rem;
     border-radius: 12px;
     box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.1);
+    ${
+      customMedia.lessThan('smTablet')`
+        width:100%;
+      `
+    }
   }
   p{
     height: 2.75rem;
@@ -318,6 +372,11 @@ const AddFundraiserContainer = styled.div`
     font-size: small;
     padding-bottom:2rem;
     color: rgba(0, 0, 0, 0.7);
+    ${
+      customMedia.lessThan('smTablet')`
+        width:100%;
+      `
+    }
   }
   label {
     font-size: 1rem;
@@ -333,6 +392,11 @@ const AddFundraiserContainer = styled.div`
     background: #f5f5f5;
     padding-left: 0.85rem;
     margin-bottom:2rem;
+    ${
+      customMedia.lessThan('smTablet')`
+        width:100%;
+      `
+    }
   }
   .desc {
     height: 5rem;
