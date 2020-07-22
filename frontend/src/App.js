@@ -13,6 +13,7 @@ import Media from "./pages/Media";
 import Mad from "./pages/Mad";
 // Impact Pages
 import BloodyPure from "./pages/BloodyPure";
+import BloodyPure2 from './pages/BloodyPure2';
 import SexEd from "./pages/SexEd";
 import RakshaKaksha from "./pages/RakshaKaksha";
 import Sunflower from "./pages/Sunflower";
@@ -53,7 +54,7 @@ function App() {
       <Route exact path="/funds/:id" component={FundPage} />
 
       {/* Campaign routes */}
-      <Route path="/bloodypure" component={BloodyPure} />
+      <Route path="/bloodypure" component={BloodyPure2} />
       <Route path="/sexed" component={SexEd} />
       <Route path="/rakshakaksha" component={RakshaKaksha} />
       <Route path="/sunflower" component={Sunflower} />
