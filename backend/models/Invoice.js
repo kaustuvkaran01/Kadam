@@ -26,6 +26,9 @@ InvoiceSchema.pre("save", function (next) {
     .then((result) => {
       result.collected += this.amount;
       console.log(result);
+      if (collected > target) {
+        result.isCompleted = true;
+      }
       result.save();
     })
     .catch((err) => {

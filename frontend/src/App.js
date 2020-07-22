@@ -33,7 +33,8 @@ import MaintainBlog from "./components/Admin/MaintainBlog";
 import EditBlog from "./components/Admin/EditBlog";
 import BlogPage from "./components/Blog/BlogPage";
 import FundPage from "./components/FundRaiser/FundPage";
-
+import Volunteer from "./components/Volunteer";
+import VolunteerForm from "./components/VolunteerForm";
 function App() {
   return (
     <Switch>
@@ -44,6 +45,8 @@ function App() {
       <Route path="/media" component={Media} />
       <Route path="/blog" component={Blog} />
       <Route path="/test" component={Test} />
+      <Route path="/volunteer" component={Volunteer} />
+      <Route path="/form" component={VolunteerForm} />
 
       {/* Dynamic Routes */}
       <Route path="/blogs/:id" component={BlogPage} />

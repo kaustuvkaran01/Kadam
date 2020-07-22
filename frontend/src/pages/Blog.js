@@ -13,7 +13,7 @@ function Blog() {
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
     axios
-      .get("/blogs")
+      .get("http://localhost:5000/blogs")
       .then((res) => {
         console.log(res);
         setBlogs(res.data);
