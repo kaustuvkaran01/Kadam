@@ -13,7 +13,7 @@ import Media from "./pages/Media";
 import Mad from "./pages/Mad";
 // Impact Pages
 import BloodyPure from "./pages/BloodyPure";
-import BloodyPure2 from './pages/BloodyPure2';
+import BloodyPure2 from "./pages/BloodyPure2";
 import SexEd from "./pages/SexEd";
 import RakshaKaksha from "./pages/RakshaKaksha";
 import Sunflower from "./pages/Sunflower";
@@ -36,6 +36,7 @@ import BlogPage from "./components/Blog/BlogPage";
 import FundPage from "./components/FundRaiser/FundPage";
 import Volunteer from "./components/Volunteer";
 import VolunteerForm from "./components/VolunteerForm";
+import FileUpload from "./components/FileUpload";
 function App() {
   return (
     <Switch>
@@ -48,6 +49,7 @@ function App() {
       <Route path="/test" component={Test} />
       <Route path="/volunteer" component={Volunteer} />
       <Route path="/form" component={VolunteerForm} />
+      <Route path="/file" component={FileUpload} />
 
       {/* Dynamic Routes */}
       <Route path="/blogs/:id" component={BlogPage} />

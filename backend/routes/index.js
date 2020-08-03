@@ -5,6 +5,10 @@ const Fund = require("../models/Funds");
 const User = require("../models/User");
 const Volunteer = require("../models/Volunteer");
 const Form = require("../models/Form");
+const File = require("../models/File");
+const path = require("path");
+const multer = require("multer");
+const fileUpload = require("express-fileupload");
 
 //GET request visible to all
 
@@ -59,6 +63,26 @@ router.get("/get_form/:id", (req, res) => {
   Form.findById(req.params.id)
     .then((form) => res.json(form))
     .catch((err) => res.status(404).json({ noblogsfound: "No Form found" }));
+});
+
+//File upload
+
+router.post("/upload", (req, res) => {
+  if (req.files === null) {
+    return res.status(400).json({ msg: "No file uploaded" });
+  }
+
+  const file = req.files.file;
+  file.name = "image1.jpg";
+
+  file.mv(`${__dirname}/../public/${file.name}`, (err) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send(err);
+    }
+
+    res.json({ fileName: file.name, filePath: `/${file.name}` });
+  });
 });
 
 module.exports = router;

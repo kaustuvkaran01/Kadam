@@ -5,9 +5,11 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const passport = require("passport");
 const path = require("path");
+const fileUpload = require("express-fileupload");
 
 app.use(cookieParser());
 app.use(express.json());
+app.use(fileUpload());
 
 //CORS
 app.use(cors({ origin: true, credentials: true }));
