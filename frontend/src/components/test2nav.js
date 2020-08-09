@@ -5,6 +5,7 @@ import AuthService from "../Services/AuthService";
 import { AuthContext } from "../Context/AuthContext";
 import LoginModal from "./LoginModal";
 import { Link } from "react-router-dom";
+import Login from "./images/login.svg";
 import {
   Collapse,
   Navbar,
@@ -18,6 +19,7 @@ import {
   DropdownMenu,
   DropdownItem,
   NavbarText,
+  Button, ButtonGroup 
 } from "reactstrap";
 
 const NavbarNew = (props) => {
@@ -91,26 +93,11 @@ const NavbarNew = (props) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto custom-nav-link" navbar>
-            <NavItem>
-              <NavLink className="link-text" href="/">
-                Home
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink className="link-text" href="/about">
-                About Us
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink className="link-text" href="/mad">
-                Make a Difference!
-              </NavLink>
-            </NavItem>
-            <UncontrolledDropdown className="dropdown" nav inNavbar>
+            <UncontrolledDropdown className="dropdown link-text" nav inNavbar>
               <DropdownToggle nav caret>
                 Our Impact
               </DropdownToggle>
-              <DropdownMenu right>
+              <DropdownMenu left>
                 <NavLink className="link-text" href="/bloodypure">
                   <DropdownItem>BloodyPure</DropdownItem>
                 </NavLink>
@@ -129,22 +116,45 @@ const NavbarNew = (props) => {
                 </DropdownItem> */}
               </DropdownMenu>
             </UncontrolledDropdown>
+            {/* <NavItem>
+              <NavLink className="link-text" href="/">
+                Home
+              </NavLink>
+            </NavItem> */}
+            {/* <NavItem>
+              <NavLink className="link-text" href="/about">
+                About Us
+              </NavLink>
+            </NavItem> */}
+            <NavItem>
+              <NavLink className="link-text " href="/mad">
+                Make a Difference!
+              </NavLink>
+            </NavItem>
             <NavItem>
               <NavLink className="link-text" href="/media">
-                Media
+                Others
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink className="link-text" href="/blog">
-                Blogs
+                Our Story
               </NavLink>
             </NavItem>
-            <NavLink className="link-text" href="/test">
+            {/* <NavLink className="link-text" href="/test">
               Test
-            </NavLink>
+            </NavLink> */}
           </Nav>
-          {isAuthenticated ? authenticatedNavBar() : unauthenticatedNavBar()}
-          {/* <NavbarText>Login</NavbarText> */}
+          <ButtonGroup>
+      <Button color="danger">Contribute</Button>
+      <Button color="warning">Donate</Button>
+      <Button color="info">Intern</Button>
+      <Button color="success">Volunteer</Button>
+      
+    </ButtonGroup>
+    <img style={{height:"32px",width:"auto" }} src={Login}/>
+          {/* {isAuthenticated ? authenticatedNavBar() : unauthenticatedNavBar()} */}
+          
         </Collapse>
       </Navbar>
       <div className="filler"></div>
@@ -158,8 +168,10 @@ const NavbarNewContainer = styled.div`
   // #343a40 is dark
   display: block;
   height: 8vh;
+  font-size:small;
+  font-weight:600;
   .dropdown {
-    background: #343a40;
+    background: #24231F;
   }
   .custom-nav-link {
     color: white;
@@ -176,7 +188,7 @@ const NavbarNewContainer = styled.div`
   .filler {
   }
   .dropdown-menu {
-    background-color: #2b2f34;
+    background-color: #24231F;
     color: white;
   }
   .dropdown-item {
@@ -192,5 +204,26 @@ const NavbarNewContainer = styled.div`
     border-radius: 12px;
     border: none;
     color: white;
+  }
+  .bg-dark{
+    background-color:#24231F !important;
+  }
+  .navbar-dark .navbar-nav .nav-link {
+    color: white;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    box-sizing:border-box;
+  }
+  .btn-group{
+    margin-right: 3rem;
+  }
+  .btn{
+    margin-right:0.25rem;
+    font-size:small;
+    font-weight:600;
+  }
+  .navbar{
+    padding-left:8rem;
+    padding-right:8rem;
+    
   }
 `;
