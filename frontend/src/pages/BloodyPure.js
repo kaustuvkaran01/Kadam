@@ -42,7 +42,7 @@ export default function BloodyPure() {
         </div>
       </div>
       <BPMainContainer>
-        <div className="illus-1">
+        <div id="white1" className="illus-1">
           <div className="micro-illus">
             <img className="illus-image" src={bpmainillus1} />
             <p className="illus-text">
@@ -88,7 +88,7 @@ export default function BloodyPure() {
             </p>
           </div>
         </div>
-        <div className="illus-2">
+        <div id="color1" className="illus-2">
           <img className="illus-image" src={bpmainillus4} />
           <p className="illus-text">
             <h4>How big is the problem ?</h4>
@@ -102,7 +102,7 @@ export default function BloodyPure() {
             </p>
           </p>
         </div>
-        <div className="illus-1">
+        <div id="white2" className="illus-1">
           <div className="micro-illus">
             <img className="illus-image" src={bpmainillus5} />
             <p className="illus-text">
@@ -152,7 +152,7 @@ export default function BloodyPure() {
             </p>
           </div>
         </div>
-        <div className="illus-2">
+        <div id="color2" className="illus-2">
           <img className="illus-image" src={bpmainillus8} />
           <p className="illus-text">
             <h4>Impact</h4>
@@ -164,7 +164,7 @@ export default function BloodyPure() {
             </p>
           </p>
         </div>
-        <div className="illus-1">
+        <div id="white3" className="illus-1">
         <div className="card">
           <img src={bpmainillus9}/>
           <p>
@@ -217,6 +217,8 @@ const BloodyPureContainer = styled.div`
     width:40%;
     margin-left:15%;
     color:white;
+    min-width:18rem;
+    min-height:30rem;
   }
   h1{
     font-size:xx-large;
@@ -258,19 +260,22 @@ const BPMainContainer = styled.div`
   .illus-1 {
     display: flex;
     flex-direction: row;
+    flex-wrap:wrap;
     // height: 70%;
-    height: 110vh;
-    width: 83%;
+    // height: 110vh;
+    // width: 83%;
+    min-width:80%;
     background: #f3efef;
     align-self: center;
-    margin: 5rem 0 5rem 0;
+    margin: 5rem ;
+    padding-bottom:2rem;
     justify-content: space-evenly;
     align-content: center;
     box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
   }
   .illus-1 .micro-illus {
     margin-top: 4rem;
-    width: 25%;
+    width: 20rem;
     display: flex-column;
     justify-content:center;
     text-align:center;
@@ -293,11 +298,13 @@ const BPMainContainer = styled.div`
     opacity: 1;
   }
   .illus-1 .card {
-    width:20%;
+    // width:20%;
     height:40%;
     text-align:center;
     background:#FECEAB;
-    margin-top: 2rem;
+    margin: 2rem 2rem;
+    padding:1rem;
+  
   }
   .illus-1 .card img{
     width:80%;
@@ -311,22 +318,28 @@ const BPMainContainer = styled.div`
   .illus-2{
     display: flex;
     flex-direction: row;
+    flex-wrap:wrap;
     // height: 70%;
-    height: 50vh;
-    width: 83%;
+    // height: 50vh;
+    // width: 83%;
     background: transparent;
     align-self: center;
-    margin: 5rem 0 5rem 0;
+    margin: 5rem;
     justify-content: space-evenly;
     align-content: center;
   }
   .illus-2 .illus-image{
-    height:20rem;
+    height:auto;
+    max-height:15rem;
+    max-width:95%;
   }
   .illus-2 .illus-text{
     text-align:left;
     line-height:1.6;
-    width:40%;
+    // width:40%;
+    max-width:30rem;
+    min-width:20rem;
+    margin-left:2rem;
   }
   .illus-2 .illus-text h4 {
     margin-left:0.75rem;

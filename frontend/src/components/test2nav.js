@@ -226,4 +226,19 @@ const NavbarNewContainer = styled.div`
     padding-right:8rem;
     
   }
+  @media only screen and (max-width: 1200px) {
+    .navbar{
+      padding-left:2rem;
+      padding-right:2rem; 
+    }
+    .btn-group{
+      margin-right: 0.5rem;
+    }
+  }
+  @media only screen and (max-width: 1000px){
+    font-size:x-small;
+    .btn{
+      font-size:x-small;
+    }
+  }
 `;

@@ -94,6 +94,7 @@ const FooterContainer = styled.div`
     strong {
         font-size: 1.825rem;
     }
+    max-width:100%
 
 
 `;
