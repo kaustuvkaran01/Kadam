@@ -1,232 +1,322 @@
 import React, { Component } from 'react';
 
 import styled from 'styled-components';
+import {Button, ButtonGroup} from 'reactstrap';
 
 //Importing the Components
 import NavbarNew from '../components/test2nav';
 import Footer from '../components/Footer';
-import bloodypuremain from '../components/images/bloodypure-main.jpg'
+import bloodypuremain from '../components/images/bloodypure-main.jpg';
+import {AiOutlineInstagram,AiOutlineFacebook,AiOutlineTwitter} from 'react-icons/ai';
+import semainillus1 from '../illustrations/se-illus/se-illus-1.png';
+import semainillus2 from '../illustrations/se-illus/se-illus-2.png';
+import semainillus3 from '../illustrations/se-illus/se-illus-3.png';
+import semainillus4 from '../illustrations/se-illus/se-illus-4.png';
+import semainillus5 from '../illustrations/se-illus/se-illus-5.png';
+import semainillus6 from '../illustrations/se-illus/se-illus-6.png';
+import semainillus7 from '../illustrations/se-illus/se-illus-7.png';
+import semainillus8 from '../illustrations/se-illus/se-illus-8.png';
+import semainillus9 from '../illustrations/se-illus/se-illus-9.png';
 
-function SexEd(){
-
-        return (
-          <SexEdContainer>
-            <NavbarNew />
-            <div className="landing-image">
-              <div className="landing-text">This is #SexEd.</div>
-            </div>
-
-            <div className="what-we-do">
-              <div className="text">
-                <h1>What we do</h1>
-                At Kadam, we realize the lack of proper sexual education and
-                awareness in the Indian educational system. We feel that since
-                there have been no proper steps taken by the system to spread
-                awareness and positive education in regards to topics such as
-                consent, will, rape, pregnancy, sexually transmitted diseases
-                (STDs), contraception, and many other vital topics, it stems
-                numerous sexual and social issues in Indian society. This in
-                turn leads to a great divide in our population’s understanding
-                and perceptions of sexuality.
-                <br /> Our Sex’Ed initiative combats this issue head on. We have
-                consolidated a number of qualified medical students, doctors,
-                and experts who are not only well-versed with these issues from
-                both a medical and legal standpoint, but are also, they
-                themselves, strong advocates of spreading positive sexual
-                education and awareness.
-              </div>
-              <div>
-                <img
-                  className="image"
-                  src={bloodypuremain}
-                  alt="something meaningful"
-                />
-              </div>
-            </div>
-            <div className="what-we-do sec-color">
-              <div>
-                <img
-                  className="image"
-                  src={bloodypuremain}
-                  alt="something meaningful"
-                />
-              </div>
-              <div className="text">
-                <h1>India</h1>
-                Our main goal is to remove the stigmas and taboos associated
-                with sexuality and educate the public in all aspects of sexual
-                education. We aim to achieve an atmosphere of inclusivity and
-                learning about one’s own body, sexuality, intercourse,
-                contraception, pregnancy, STDs, miscarriage, abortion, consent,
-                will, rape, and other core topics that are essential for a
-                growing society.
+export default function SexEd() {
+  return (
+    <SexEdContainer>
+      <NavbarNew />
+      <div className="landing-image">
+        <div className="landing-text">
+          <h1>SEX EDUCATION</h1>
+          <h2>No more “Shhh” during sexual education!</h2>
+          <p>
+            We in Kadam strive towards the path of self love and remove the
+            stigmas and taboos associated with sexuality and educate the public
+            in all aspects of sexual education.
+          </p>
+          <div class="contri">
+            <Button color="danger">Contribute</Button>{" "}
+          </div>
+          <div class="social-media">
+            <AiOutlineInstagram size="30" />
+            <AiOutlineFacebook size="30" />
+            <AiOutlineTwitter size="30" />
+          </div>
+        </div>
+      </div>
+      <BPMainContainer>
+        <div id="white1" className="illus-1">
+          <div className="micro-illus">
+            <img className="illus-image" src={semainillus1} />
+            <p className="illus-text">
+              <h4>Lack of a voice</h4>
+              <p>
+                We have every subject that is taught other than sex-ed. Sex-Ed
+                is always brushed away in every conversation and awareness is
+                never created where we are told that it is “Okay” to not speak
+                up.
+              </p>
+            </p>
+          </div>
+          <div className="micro-illus">
+            <img className="illus-image" src={semainillus2} />
+            <p className="illus-text">
+              <h4>Stigma and Taboo</h4>
+              <p>
+                Just because we have been told to not talk about it for so many
+                years doesn’t mean it is right. It is just as important as any
+                other life skill such as communication, decision making.
+              </p>
+            </p>
+          </div>
+        </div>
+        <div id="color1" className="illus-2">
+          <img className="illus-image" src={semainillus3} />
+          <p className="illus-text">
+            <h4>How deep is the problem?</h4>
+            <p>
+              Complications arising from pregnancy and unsafe abortions are a
+              leading cause of death among women aged 15–19 years, with 20% of
+              the group experiencing childbearing before 17 years of age, with
+              pregnancies often closely spaced. <br />
+              <br />
+              In India, only a meagre 19% of girls and 35% of boys have
+              comprehensive knowledge of both HIV and AIDS.
+              <br />
+              <br /> A study on child abuse in India, conducted by the Ministry
+              of Women and Child Development, reports that 53% of boys and 47%
+              of girls surveyed faced some form of sexual abuse.
+            </p>
+          </p>
+        </div>
+        <div id="white2" className="illus-1">
+          <div className="micro-illus">
+            <img className="illus-image" src={semainillus4} />
+            <p className="illus-text">
+              <h4>
                 <br />
-                Although initially aimed at college students, due to the
-                extenuating circumstances of the pandemic, we pivoted to an
-                online webinar based system during the crisis. This allowed us
-                to spread awareness and sexual education, even though we could
-                not do so in person.
-              </div>
-            </div>
-            <div className="what-we-do ">
-              <div className="text">
-                <h1>Impact.</h1>
-                The Sex’Ed initiative was conceptualized in early 2020, and was
-                launched during the unprecedented 2020 coronavirus crisis.
+                Discussion Sessions with Experts
                 <br />
-                On May 17th, 2020, the first webinar in a series of talks,
-                meetings, and webinars, was held. Wherein, we had a panel of 4
-                medical students speak on a variety of sexual education topics.
-                This was followed by a rather informative Q&A section wherein
-                the audience clarified any further doubts or misconceptions that
-                they previously had. It was a smashing success, and through
-                feedback we were able to curate the talk for further sessions.
                 <br />
-                On June 7th, 2020, we held our second webinar of the series
-                wherein we almost doubled the size of our audience, and had a
-                panel of 6 medical students speak on the same topics. With an
-                updated presentation that included new graphics, illustrations,
-                and videos, the information was easily assimilated by the
-                audience. During the Q&A section of the talk we received
-                multiple in-depth questions from the audience. This too was a
-                resounding success.
-              </div>
+              </h4>
+              <p>
+                We have consolidated a number of qualified medical students,
+                doctors, and experts who are well-versed with these issues from
+                both a medical and legal standpoint.
+              </p>
+            </p>
+          </div>
+          <div className="micro-illus">
+            <img className="illus-image" src={semainillus5} />
+            <p className="illus-text">
+              <h4>Webinars are our new classrooms</h4>
+              <p>
+                Thanks to COVID-19, we have our panel members speaking about a
+                variety of sexual education topics through webinars to our
+                participants. You can ask us anything and we will give you the
+                answer!Thanks to COVID-19, we have our panel members speaking
+                about a variety of sexual education topics through webinars to
+                our participants. You can ask us anything and we will give you
+                the answer!
+              </p>
+            </p>
+          </div>
+        </div>
+        <div id="white3" className="illus-1">
+          <div className="card dev-color-1">
+            <img src={semainillus6} />
+            <p>One Liner</p>
+          </div>
+          <div className="card dev-color-2">
+            <img src={semainillus7} />
+            <p>One Liner</p>
+          </div>
+          <div className="card dev-color-3">
+            <img src={semainillus8} />
+            <p>One Liner</p>
+          </div>
+          <div className="card dev-color-4">
+            <img src={semainillus9} />
+            <p>One Liner</p>
+          </div>
+        </div>
+      </BPMainContainer>
 
-              <div>
-                <img
-                  className="image"
-                  src={bloodypuremain}
-                  alt="something meaningful"
-                />
-              </div>
-            </div>
-            <div className="what-we-do sec-color">
-              <div>
-                <img
-                  className="image"
-                  src={bloodypuremain}
-                  alt="something meaningful"
-                />
-              </div>
-              <div className="text">
-                <h1>Where we work</h1>
-                Our primary demographic for this new and exciting endeavor is
-                children aged (ENTER AGE RANGE) who come from difficult or
-                underprivileged socioeconomic backgrounds. We identify and
-                coordinate with schools in these areas to conduct our self
-                defense classes. Wherein, our usual class consists of (ENTER
-                STUDENT/CLASS INFO). Our art programs and talent platform is
-                also similarly targeted towards underprivileged youth, wherein
-                we reach out to various benefactors and sponsors to engage and
-                encourage youth in these target areas to participate. In doing
-                so we are able to offer both cash and pride rewards to these
-                youngsters, while grooming their talents so that they can be
-                implemented in their careers further down.
-              </div>
-            </div>
-            <Footer />
-          </SexEdContainer>
-        );
-    }
+      <Footer />
+    </SexEdContainer>
+  );
+}
 
-export default SexEd;
 
 const SexEdContainer = styled.div`
-background: #fffced;
-font-family: Avenir Roman;
-width: 100vw;
-@keyframes pulse {
-    0% {
-      background-color: #000000;
-    }
-    100%{
-        background-color: #FF0080;
-    }
 
-  }
 .landing-image{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width:100%;
-    //navbar is 12vh
-    //background-image: url(${bloodypuremain});
-    //background: linear-gradient(rgba(255,0,0,.8), rgba(0,0,0,.5)),url('${bloodypuremain}');
-    //background: linear-gradient(rgba(0,0,0,0.5), rgba(255,0,0,0.5));
-    animation: pulse 5s ;
-    background:#FF0080;
-    background-size: cover;
-    background-position:center;
-    
+  display:flex;
+  align-items:center;
+  background-image:url(${bloodypuremain});
+  height:100vh;
+  background-size:cover;
+  margin:0;
 }
-@keyframes slide-top {
-    0% {
-      -webkit-transform: translateY(100px);
-              transform: translateY(100px);
-    }
-    100% {
-      -webkit-transform: translateY(0px);
-              transform: translateY(0px);
-    }
+  .landing-text{
+    display:flex;
+    flex-flow:column nowrap;
+    text-align:left;
+    background-color:rgba(0,0,0,0.6);
+    height:60%;
+    width:40%;
+    margin-left:15%;
+    color:white;
+    min-width:18rem;
+    min-height:30rem;
   }
-.landing-text{
-    padding:0 8rem;
-    color:white;
-    font-size:5vh;
-    text-align:center;
-    background: rgba(0,0,0,0.4);
-    animation: slide-top 1s ease-in-out both;
-    
-}
+  h1{
+    font-size:xx-large;
+  }
+  h2{
+    font-size:x-large;
+  }
+  h1,h2,p{
+    margin:0 1rem;
+    margin-top:1.2rem;
+    line-height:02rem;
 
-.what-we-do{
-    margin-top:5rem;
-    margin-bottom:0rem;
-    height:auto;
-    width: 100%;
+  }
+  .social-media{
     display:flex;
-    flex-flow: row wrap;
-    align-items:center;
+
+  }
+  .social-media{
+    display:flex;
+    margin-left:1rem;
+    margin-top:1rem;
+  }
+  .social-media>*{
+    margin:0.5rem 0.5rem 0.5rem 0;
+  }
+  .contri{
+    margin-left:1rem;
+    margin-top:1rem;
+  }
+`;
+
+const BPMainContainer = styled.div`
+  height:auto;
+  background: #EBDBBC;
+  display: flex;
+  flex-flow: column;
+  justify-content: center space-evenly;
+  letter-spacing:-1px;
+
+  .illus-1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    min-width:80%;
+    background: #F1E9DB;
+    align-self: center;
+    margin: 5rem ;
+    padding-bottom:2rem;
+    justify-content: space-evenly;
+    align-content: center;
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+  }
+  .illus-1 .micro-illus {
+    margin-top: 4rem;
+    width: 20rem;
+    display: flex-column;
     justify-content:center;
-}
-.image{
-    height: 50vh;
-    width:auto;
-    margin:3rem;
-    border-radius:15px;
-    transition: transform .2s;
-}
-.image:hover{
-    transform:scale(1.05);
-}
-.text{
-   height:100%;
-   width:50%; 
-   margin: 2rem;
-   font-size:2.75vh;
     text-align:center;
-    transition: transform .2s;
-    background: rgba(255,0,0,0.1);
+  }
+  .illus-1 .illus-image {
+    height: 12rem;
+  }
+  .illus-1 .illus-text {
+    height: 80%;
+    text-align:center;
+    justify-content:center;
+    align-content:center;
+    font-size: normal;
+    font-weight:600;
+  }
+  .illus-1 .illus-text h4 {
+    text-align: center;
+    font-size: x-large;
+    letter-spacing: 0.3px;
+    color: #9a3333;
+    opacity: 1;
+  }
+  .illus-1 .card {
+    width:20%;
+    height:20rem;
+    text-align:center;
+    margin: 1rem 1rem;
     padding:1rem;
-    border-radius: 15px;
-}
-.text:hover{
-    transform:scale(1.05);
-}
-h1{
-    margin-bottom:2rem;
-}
-.sec-color{
-    margin-top:5rem;
-    margin-bottom: 0rem;
-    padding-bottom: 2.5rem;
-    padding-top: 2.5rem;
-    // padding-bottom:5rem;
-    background:#FF0080;
+  
+  }
+  .illus-1 .card img{
+    width:80%;
+    align-self:center;
+  }
+  .illus-1 .card p{
+    font-weight:900;
+    font-size:x-large;
+  }
+
+  .illus-2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    background: transparent;
+    align-self: center;
+    margin: 5rem;
+    justify-content: space-evenly;
+    align-content: center;
+  }
+  .illus-2 .illus-image{
+    height:auto;
+    max-height:15rem;
+    max-width:95%;
+  }
+  .illus-2 .illus-text{
+    text-align:left;
+    line-height:1.6;
+    max-width:30rem;
+    min-width:20rem;
+    margin-left:2rem;
+    font-weight:600;
+  }
+  .illus-2 .illus-text h4 {
+    margin-left:0.75rem;
+    color:#9A3333;
+  }
+  .dev-color-1{
+    background: #E84A5F;
     color:white;
-}
-.sec-color .text {
-    background: rgba(255,0,0,0.4);
-}
+  }
+  .dev-color-1 img{
+    background: #FFB4BD;
+    height: 10rem;
+  }
+  .dev-color-2{
+    background: #FF847C;
+    color:white;
+  }
+  .dev-color-2 img{
+    background: #F8A9A3;
+    height: 10rem;
+  }
+  .dev-color-3{
+    background: #FECEAB;
+  }
+  .dev-color-3 img{
+    background: #FFDABF;
+    height: 10rem;
+  }
+  .dev-color-4{
+    background: #99B898;
+  }
+  .dev-color-4 img{
+    background: #C4D9C3;
+    height: 10rem;
+    overflowX:hidden;
+  }
+
 `;

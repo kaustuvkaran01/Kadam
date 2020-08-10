@@ -8,15 +8,18 @@ import NavbarNew from '../components/test2nav';
 import Footer from '../components/Footer';
 import bloodypuremain from '../components/images/bloodypure-main.jpg';
 import {AiOutlineInstagram,AiOutlineFacebook,AiOutlineTwitter} from 'react-icons/ai';
-import bpmainillus1 from '../illustrations/bp-illus-1.png';
-import bpmainillus2 from '../illustrations/bp-illus-2.png';
-import bpmainillus3 from '../illustrations/bp-illus-3.png';
-import bpmainillus4 from '../illustrations/bp-illus-4.png';
-import bpmainillus5 from '../illustrations/bp-illus-5.png';
-import bpmainillus6 from '../illustrations/bp-illus-6.png';
-import bpmainillus7 from '../illustrations/bp-illus-7.png';
-import bpmainillus8 from '../illustrations/bp-illus-8.png';
-import bpmainillus9 from '../illustrations/bp-illus-9.png';
+import bpmainillus1 from '../illustrations/bp-illus/bp-illus-1.png';
+import bpmainillus2 from '../illustrations/bp-illus/bp-illus-2.png';
+import bpmainillus3 from '../illustrations/bp-illus/bp-illus-3.png';
+import bpmainillus4 from '../illustrations/bp-illus/bp-illus-4.png';
+import bpmainillus5 from '../illustrations/bp-illus/bp-illus-5.png';
+import bpmainillus6 from '../illustrations/bp-illus/bp-illus-6.png';
+import bpmainillus7 from '../illustrations/bp-illus/bp-illus-7.png';
+import bpmainillus8 from '../illustrations/bp-illus/bp-illus-8.png';
+import bpmainillus9 from '../illustrations/bp-illus/bp-illus-9.png';
+import bpmainillus10 from '../illustrations/bp-illus/bp-illus-10.png';
+import bpmainillus11 from '../illustrations/bp-illus/bp-illus-11.png';
+import bpmainillus12 from '../illustrations/bp-illus/bp-illus-12.png';
 
 export default function BloodyPure() {
   return (
@@ -165,26 +168,26 @@ export default function BloodyPure() {
           </p>
         </div>
         <div id="white3" className="illus-1">
-        <div className="card">
+        <div className="card dev-color-1">
+          <img src={bpmainillus10}/>
+          <p>
+            One Liner
+          </p>
+        </div>
+        <div className="card dev-color-2">
           <img src={bpmainillus9}/>
           <p>
             One Liner
           </p>
         </div>
-        <div className="card">
-          <img src={bpmainillus9}/>
+        <div className="card dev-color-3">
+          <img src={bpmainillus11}/>
           <p>
             One Liner
           </p>
         </div>
-        <div className="card">
-          <img src={bpmainillus9}/>
-          <p>
-            One Liner
-          </p>
-        </div>
-        <div className="card">
-          <img src={bpmainillus9}/>
+        <div className="card dev-color-4">
+          <img src={bpmainillus12}/>
           <p>
             One Liner
           </p>
@@ -256,14 +259,12 @@ const BPMainContainer = styled.div`
   display: flex;
   flex-flow: column;
   justify-content: center space-evenly;
+  letter-spacing:-1px;
 
   .illus-1 {
     display: flex;
     flex-direction: row;
     flex-wrap:wrap;
-    // height: 70%;
-    // height: 110vh;
-    // width: 83%;
     min-width:80%;
     background: #f3efef;
     align-self: center;
@@ -288,7 +289,8 @@ const BPMainContainer = styled.div`
     text-align:center;
     justify-content:center;
     align-content:center;
-    font-size: small;
+    font-size: normal;
+    font-weight:600;
   }
   .illus-1 .illus-text h4 {
     text-align: center;
@@ -298,11 +300,10 @@ const BPMainContainer = styled.div`
     opacity: 1;
   }
   .illus-1 .card {
-    // width:20%;
-    height:40%;
+    width:20%;
+    height:20rem;
     text-align:center;
-    background:#FECEAB;
-    margin: 2rem 2rem;
+    margin: 1rem 1rem;
     padding:1rem;
   
   }
@@ -319,9 +320,6 @@ const BPMainContainer = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap:wrap;
-    // height: 70%;
-    // height: 50vh;
-    // width: 83%;
     background: transparent;
     align-self: center;
     margin: 5rem;
@@ -336,14 +334,45 @@ const BPMainContainer = styled.div`
   .illus-2 .illus-text{
     text-align:left;
     line-height:1.6;
-    // width:40%;
     max-width:30rem;
     min-width:20rem;
     margin-left:2rem;
+    font-weight:600;
   }
   .illus-2 .illus-text h4 {
     margin-left:0.75rem;
     color:#9A3333;
+  }
+  .dev-color-1{
+    background: #E84A5F;
+    color:white;
+  }
+  .dev-color-1 img{
+    background: #FFB4BD;
+    height: 10rem;
+  }
+  .dev-color-2{
+    background: #FF847C;
+    color:white;
+  }
+  .dev-color-2 img{
+    background: #F8A9A3;
+    height: 10rem;
+  }
+  .dev-color-3{
+    background: #FECEAB;
+  }
+  .dev-color-3 img{
+    background: #FFDABF;
+    height: 10rem;
+  }
+  .dev-color-4{
+    background: #99B898;
+  }
+  .dev-color-4 img{
+    background: #C4D9C3;
+    height: 10rem;
+    overflowX:hidden;
   }
 
 `;
