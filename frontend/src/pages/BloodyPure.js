@@ -6,6 +6,7 @@ import {Button, ButtonGroup} from 'reactstrap';
 //Importing the Components
 import NavbarNew from '../components/test2nav';
 import Footer from '../components/Footer';
+import ImpactGallery from '../components/Impact_gallery';
 import bloodypuremain from '../components/images/bloodypure-main.jpg';
 import {AiOutlineInstagram,AiOutlineFacebook,AiOutlineTwitter} from 'react-icons/ai';
 import bpmainillus1 from '../illustrations/bp-illus/bp-illus-1.png';
@@ -16,10 +17,10 @@ import bpmainillus5 from '../illustrations/bp-illus/bp-illus-5.png';
 import bpmainillus6 from '../illustrations/bp-illus/bp-illus-6.png';
 import bpmainillus7 from '../illustrations/bp-illus/bp-illus-7.png';
 import bpmainillus8 from '../illustrations/bp-illus/bp-illus-8.png';
-import bpmainillus9 from '../illustrations/bp-illus/bp-illus-9.png';
-import bpmainillus10 from '../illustrations/bp-illus/bp-illus-10.png';
-import bpmainillus11 from '../illustrations/bp-illus/bp-illus-11.png';
-import bpmainillus12 from '../illustrations/bp-illus/bp-illus-12.png';
+import card1 from '../illustrations/card1.jpg';
+import card2 from '../illustrations/card2.jpg';
+import card3 from '../illustrations/card3.jpg';
+import card4 from '../illustrations/card4.jpg';
 
 export default function BloodyPure() {
   return (
@@ -167,27 +168,28 @@ export default function BloodyPure() {
             </p>
           </p>
         </div>
+        <ImpactGallery/>
         <div id="white3" className="illus-1">
         <div className="card dev-color-1">
-          <img src={bpmainillus10}/>
+          <img src={card1}/>
           <p>
             One Liner
           </p>
         </div>
         <div className="card dev-color-2">
-          <img src={bpmainillus9}/>
+          <img src={card2}/>
           <p>
             One Liner
           </p>
         </div>
         <div className="card dev-color-3">
-          <img src={bpmainillus11}/>
+          <img src={card3}/>
           <p>
             One Liner
           </p>
         </div>
         <div className="card dev-color-4">
-          <img src={bpmainillus12}/>
+          <img src={card4}/>
           <p>
             One Liner
           </p>
@@ -300,15 +302,15 @@ const BPMainContainer = styled.div`
     opacity: 1;
   }
   .illus-1 .card {
-    width:20%;
+    // width:20%;
     height:20rem;
     text-align:center;
-    margin: 1rem 1rem;
+    margin: 1rem 0.25rem;
     padding:1rem;
   
   }
   .illus-1 .card img{
-    width:80%;
+    // width:80%;
     align-self:center;
   }
   .illus-1 .card p{
