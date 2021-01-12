@@ -11,10 +11,9 @@ import styled from 'styled-components';
 function UserPanel() {
   return (
     <UserPanelContainer>
-        <NavbarNew />
+  
         <Profile /> 
         {/* <ProfileBill /> */}
-        <Footer />
     </UserPanelContainer>
   );
 }

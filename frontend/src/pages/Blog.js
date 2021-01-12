@@ -25,7 +25,6 @@ function Blog() {
 
   return (
     <BlogContainer>
-      <NavbarNew />
       <div className="blog-main">
         {/* <p> Trending Blogs</p> */}
         {blogs.map((blog) => (
@@ -48,7 +47,6 @@ function Blog() {
           />
         ))}
       </div>
-      <Footer />
     </BlogContainer>
   );
 }

@@ -13,9 +13,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 ReactDOM.render(
   <AuthProvider>
-    <Router>
       <App />
-    </Router>
   </AuthProvider>,
   document.getElementById("root")
 );

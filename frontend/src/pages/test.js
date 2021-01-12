@@ -127,7 +127,6 @@ function Test(props) {
       }}
     >
       <TestContainer>
-        <NavbarNew />
         <div>
           <br />
           <br />

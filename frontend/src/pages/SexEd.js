@@ -21,7 +21,6 @@ import semainillus9 from '../illustrations/se-illus/se-illus-9.png';
 export default function SexEd() {
   return (
     <SexEdContainer>
-      <NavbarNew />
       <div className="landing-image">
         <div className="landing-text">
           <h1>SEX EDUCATION</h1>
@@ -138,8 +137,6 @@ export default function SexEd() {
           </div>
         </div>
       </BPMainContainer>
-
-      <Footer />
     </SexEdContainer>
   );
 }

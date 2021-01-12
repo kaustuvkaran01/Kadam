@@ -19,11 +19,9 @@ import logo2 from '../components/images/bp2.jpg';
 function Admin() {
   return (
     <AdminContainer>
-      <NavbarNew />
       <div>
       <Gallery />
       </div>
-      <Footer />
     </AdminContainer>
   );
 }

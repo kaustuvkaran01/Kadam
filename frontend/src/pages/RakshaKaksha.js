@@ -11,7 +11,6 @@ class RakshaKaksha extends Component {
     render() {
         return (
           <RakshaKakshaContainer>
-            <NavbarNew />
             <div className="landing-image">
               <div className="landing-text">This is #RakshaKaksha.</div>
             </div>
@@ -119,7 +118,6 @@ class RakshaKaksha extends Component {
                 implemented in their careers further down.
               </div>
             </div>
-            <Footer />
           </RakshaKakshaContainer>
         );
     }

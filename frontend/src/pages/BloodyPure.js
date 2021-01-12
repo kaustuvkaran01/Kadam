@@ -25,7 +25,7 @@ import card4 from '../illustrations/card4.jpg';
 export default function BloodyPure() {
   return (
     <BloodyPureContainer>
-      <NavbarNew />
+
       <div className="landing-image">
         <div className="landing-text">
           <h1>BLOODYPURE</h1>
@@ -197,7 +197,6 @@ export default function BloodyPure() {
         </div>
       </BPMainContainer>
 
-      <Footer />
     </BloodyPureContainer>
   );
 }

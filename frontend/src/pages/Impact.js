@@ -10,11 +10,9 @@ class Impact extends Component {
     render() {
         return (
             <ImpactContainer>
-                <NavbarNew />
                 <p>
                     This is the OUR Impact page.
                 </p>
-                <Footer />
             </ImpactContainer>
         );
     }

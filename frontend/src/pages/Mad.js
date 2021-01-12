@@ -25,7 +25,6 @@ function Mad() {
   }, []);
   return (
     <FundContainer>
-      <NavbarNew />
       <div className="cards">
         {fundraisers.map((fundraiser) => (
           <Card
@@ -43,7 +42,6 @@ function Mad() {
         <Card text="This is the sixth card" image={logo} />
         <Card text="This is the seventh card" image={logo} /> */}
       </div>
-      <Footer />
     </FundContainer>
   );
 }

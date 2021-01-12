@@ -22,7 +22,7 @@ class Home extends Component {
     render() {
         return (
           <HomeContainer>
-            <NavbarNew />
+
             <div className="landing-image">
               <div className="landing-text">
                 “Let us remember: One book, one pen, one child, and one teacher
@@ -142,7 +142,7 @@ class Home extends Component {
                 </p>
               </div>
             </div>
-            <Footer />
+
           </HomeContainer>
         );
     }

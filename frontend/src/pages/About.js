@@ -11,7 +11,6 @@ import Card_person from "../components/Card_person";
 function About() {
   return (
     <AboutContainer>
-      <NavbarNew />
       <div className="history">
         <h3>OUR HISTORY</h3>
         <div className="history-text">
@@ -50,7 +49,6 @@ function About() {
           <Card_person text="Siva" description="President" />
         </div>
       </div>
-      <Footer />
     </AboutContainer>
   );
 }

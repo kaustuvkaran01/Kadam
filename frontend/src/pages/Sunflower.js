@@ -10,7 +10,7 @@ import Sunflowermain from '../components/images/bloodypure-main.jpg'
 export default function Sunflower() {
   return (
     <SunflowerContainer>
-      <NavbarNew />
+
       <div className="landing-image">
         <div className="landing-text">This is #Sunflower.</div>
       </div>
@@ -93,8 +93,6 @@ export default function Sunflower() {
           targeting students at such a young age.
         </div>
       </div>
-
-      <Footer />
     </SunflowerContainer>
   );
 }
